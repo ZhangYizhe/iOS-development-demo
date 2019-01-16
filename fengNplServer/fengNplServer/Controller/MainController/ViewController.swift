@@ -94,7 +94,7 @@ class ViewController: NSViewController {
         errorRequestNum = 0
         timeConsumingNum = 0
         
-        let port = Int(portTextField.stringValue) ?? 80
+        let port = Int(portTextField.stringValue) ?? 53400
         serverModel.start(port: port) { (status, message) in
             print(message)
             if status {

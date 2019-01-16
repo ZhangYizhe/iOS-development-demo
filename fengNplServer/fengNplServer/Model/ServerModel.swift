@@ -18,7 +18,6 @@ class ServerModel {
     
     var requestNum = 0 //成功请求数
     var errorRequestNum = 0 // 错误请求数
-    
     var timeConsumingNum : Int64 = 0 //最新一次处理耗时
     
     // MARK: - server初始化
