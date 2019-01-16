@@ -1,16 +1,20 @@
 PODS:
   - Swifter (1.4.5)
+  - SwiftyTimer (2.1.0)
 
 DEPENDENCIES:
   - Swifter
+  - SwiftyTimer
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Swifter
+    - SwiftyTimer
 
 SPEC CHECKSUMS:
   Swifter: eb2bc1d192a1c09169c7fefd01971565fa940521
+  SwiftyTimer: 02dd6cf10cbc71cbf67cec494f6e5eb782102543
 
-PODFILE CHECKSUM: 6f36f6c89750d29dc2a179dd603891db90cd33e3
+PODFILE CHECKSUM: 03779bf1929a6c66a11bbcede95f1e8aea695341
 
 COCOAPODS: 1.6.0.beta.2

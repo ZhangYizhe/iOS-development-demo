@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EECAD8FD9F6C4981352C802A92702D3D"
+               BlueprintIdentifier = "79E0681EE7B4A57E47BBB211F782CA42"
                BuildableName = "Pods_fengNplServer.framework"
                BlueprintName = "Pods-fengNplServer"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "EECAD8FD9F6C4981352C802A92702D3D"
+            BlueprintIdentifier = "79E0681EE7B4A57E47BBB211F782CA42"
             BuildableName = "Pods_fengNplServer.framework"
             BlueprintName = "Pods-fengNplServer"
             ReferencedContainer = "container:Pods.xcodeproj">

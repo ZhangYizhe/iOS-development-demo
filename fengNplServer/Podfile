@@ -8,5 +8,7 @@ target 'fengNplServer' do
   # Pods for fengNplServer
 
   pod 'Swifter'
+  
+  pod 'SwiftyTimer'
 
 end
