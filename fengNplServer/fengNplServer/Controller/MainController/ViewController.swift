@@ -22,10 +22,7 @@ class ViewController: NSViewController {
     @IBOutlet weak var portTextField: NSTextField!
     @IBOutlet weak var startBtn: NSButton!
     
-    let server = HttpServer()
-    
-    let mlmodel = processmessagefilter()
-    var startTime = 0
+    let serverModel = ServerModel()
     
     var _timeConsumingNum = 0
     var timeConsumingNum: Int64 {
@@ -74,12 +71,12 @@ class ViewController: NSViewController {
         errorRequestNum = 0
         timeConsumingNum = 0
         
-        modelNameLabel.stringValue = "模型名称：\( mlmodel.model.modelDescription.metadata[.description] ?? "未知")"
-        modelVersionLabel.stringValue = "模型版本：\( mlmodel.model.modelDescription.metadata[.versionString] ?? "未知")"
+        modelNameLabel.stringValue = "模型名称：\(_MLModel().description())"
+        modelVersionLabel.stringValue = "模型版本：\(_MLModel().versionString())"
     }
     
     @IBAction func startBtnTap(_ sender: NSButton) {
-        if server.state == .running || server.state == .starting {
+        if serverModel.server.state == .running || serverModel.server.state == .starting {
             endServer()
         }else{
             startServer()
@@ -89,7 +86,7 @@ class ViewController: NSViewController {
     
     func startServer() {
         
-        if server.state == .running || server.state == .starting {
+        if serverModel.server.state == .running || serverModel.server.state == .starting {
             return
         }
         
@@ -97,30 +94,26 @@ class ViewController: NSViewController {
         errorRequestNum = 0
         timeConsumingNum = 0
         
-        
-        do {
-            var port = 80
-            if isPurnInt(string: portTextField.stringValue) {
-                port = Int(portTextField.stringValue) ?? 80
+        let port = Int(portTextField.stringValue) ?? 80
+        serverModel.start(port: port) { (status, message) in
+            print(message)
+            if status {
+                self.portTextField.isEditable = false
+                self.startBtn.title = "停止"
+                self.runTimer(type: 0)
             }else{
-                portTextField.stringValue = "\(port)"
+                self.portTextField.isEditable = true
+                self.startBtn.title = "开启"
+                self.runTimer(type: 1)
             }
-            try server.start(in_port_t(port), forceIPv4: true)
-            portTextField.isEditable = false
-            startBtn.title = "停止"
-            runTimer(type: 0)
-            print("Server has started ( port = \(try server.port()) ). Try to connect now...")
-        } catch {
-            portTextField.isEditable = true
-            startBtn.title = "开启"
-            runTimer(type: 1)
-            print("Server start error: \(error)")
         }
+        
+    
     }
     
     func endServer() {
-        if server.state == .running || server.state == .starting {
-            server.stop()
+        if serverModel.server.state == .running || serverModel.server.state == .starting {
+            serverModel.end()
             runTimer(type: 1)
             portTextField.isEditable = true
             startBtn.title = "开启"
@@ -131,26 +124,18 @@ class ViewController: NSViewController {
     func runTimer(type: Int) {
         if timer == nil {
             timer = Timer.new(every: 1.second) {
-                //获取当前时间
-                let now = Date()
-                let timeInterval:TimeInterval = now.timeIntervalSince1970
-                let nowTime = Int(timeInterval)
-                self.timeLabel.stringValue = "已运行：\(self.getMMSSFromSS(time: nowTime - self.startTime))"
+                self.timeLabel.stringValue = "已运行：\(ExtendModel().getMMSSFromSS(time: self.serverModel.getRunningTime()))"
+                self.requestNum = self.serverModel.requestNum
+                self.errorRequestNum = self.serverModel.errorRequestNum
+                self.timeConsumingNum = self.serverModel.timeConsumingNum
             }
         }
         
 
         if type == 0 {
-            self.startTime = 0
-            //获取当前时间
-            let now = Date()
-            let timeInterval:TimeInterval = now.timeIntervalSince1970
-            self.startTime = Int(timeInterval)
-            self.timeLabel.stringValue = "已运行：\(self.getMMSSFromSS(time: 0))"
-            
+            self.timeLabel.stringValue = "已运行：\(ExtendModel().getMMSSFromSS(time: serverModel.getRunningTime()))"
             timer?.start()
         }else{
-            self.startTime = 0
             timer?.invalidate()
             timer = nil
             self.timeLabel.stringValue = "尚未运行"
@@ -161,46 +146,6 @@ class ViewController: NSViewController {
         didSet {
             // Update the view, if already loaded.
         }
-    }
-    
-    //判断是否为整数
-    func isPurnInt(string: String) -> Bool {
-        
-        let scan: Scanner = Scanner(string: string)
-        
-        var val:Int = 0
-        
-        return scan.scanInt(&val) && scan.isAtEnd
-        
-    }
-    
-    /**
-     * 将秒数转为*天*小时*分*秒的形式
-     * @param time 参数：秒
-     * @return
-     */
-    func getMMSSFromSS(time: Int) -> String {
-        var dateTimes = ""
-        let days: Int = time / (60 * 60 * 24)
-        let hours: Int = (time % (60 * 60 * 24)) / (60 * 60)
-        let minutes: Int = (time % (60 * 60)) / 60
-        let seconds: Int = time % 60
-        if days > 0 {
-            dateTimes = "\(days)天" + "\(hours)小时" + "\(minutes)分" + "\(seconds)秒"
-        } else if hours > 0 {
-            dateTimes =  "\(hours)小时" + "\(minutes)分" + "\(seconds)秒"
-        } else if minutes > 0 {
-            dateTimes =  "\(minutes)分" + "\(seconds)秒"
-        } else {
-            dateTimes =  "\(seconds)秒"
-        }
-        return dateTimes
-    }
-    
-    func millisecondTimestamp() -> Int64 {
-        let timeInterval: TimeInterval = Date().timeIntervalSince1970
-        let millisecond = CLongLong(round(timeInterval*1000))
-        return millisecond
     }
     
 }

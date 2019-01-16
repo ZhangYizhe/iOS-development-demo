@@ -20,12 +20,11 @@ class _MLModel {
         return "\(mlmodel.model.modelDescription.metadata[.versionString] ?? "未知")"
     }
     
-    func getLabel(content: String,completion : @escaping (Bool, String) -> Void) {
+    func getLabel(content: String) -> String {
         guard let output = try? mlmodel.prediction(text: content) else {
-            completion(false, "运行错误")
-            return
+            return ""
         }
-        completion(true, output.label)
+        return output.label
     }
     
 }
