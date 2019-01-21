@@ -35,7 +35,7 @@ class ThemeManageViewController: UIViewController {
         
     }
     @IBAction func closeBtnTap(_ sender: UIButton) {
-        
+         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
 }
