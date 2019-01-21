@@ -1,6 +1,0 @@
-framework module Pods_fengNplServer {
-  umbrella header "Pods-fengNplServer-umbrella.h"
-
-  export *
-  module * { export * }
-}
