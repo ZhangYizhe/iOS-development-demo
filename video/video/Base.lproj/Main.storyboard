@@ -36,8 +36,11 @@
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="上一曲"/>
+                                        <connections>
+                                            <action selector="upDownBtnTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gvj-Th-nOT"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UE0-V4-GbP">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UE0-V4-GbP">
                                         <rect key="frame" x="247.5" y="135" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="GIq-EX-z7k"/>
@@ -45,6 +48,9 @@
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button" image="下一曲"/>
+                                        <connections>
+                                            <action selector="upDownBtnTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p2x-kt-g8h"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hej-Ib-ig9">
                                         <rect key="frame" x="167.5" y="130" width="40" height="40"/>
