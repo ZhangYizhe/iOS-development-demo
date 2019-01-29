@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     var link:CADisplayLink!
 
     @IBOutlet weak var playView: UIView! // 播放视图
-    @IBOutlet weak var test: NSLayoutConstraint!
+    @IBOutlet weak var playViewHeight: NSLayoutConstraint!
     var playerItem: AVPlayerItem! // 媒体资源管理对象
     var avplayer: AVPlayer! // 视频操作对象
     var playerLayer : AVPlayerLayer! // 视频显示
@@ -26,62 +26,44 @@ class ViewController: UIViewController {
     var playSliderFlag = false
     @IBOutlet weak var playNowTimeLabel: UILabel! // 当前播放时间
     @IBOutlet weak var playTotalTimeLabel: UILabel! // 当前播放时间
-    @IBOutlet weak var horizontalExpansionView: UIView!
+    @IBOutlet weak var horizontalExpansionView: UIView! // 扩展视图层
+    @IBOutlet weak var horizontalExpansionViewHeight: NSLayoutConstraint! // 扩展视图层高度
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initView()
-
     }
     
     func initView() {
-        // 检测连接是否存在 不存在报错
+        // 检测连接是否存在 不存在报错 //http://qiniu.yizheyun.cn/iphone1.mp4
         guard let url = URL(string: "http://qiniu.yizheyun.cn/iphone1.mp4") else { fatalError("连接错误") }
         playerItem = AVPlayerItem(url: url)
         playerItem.addObserver(self, forKeyPath: "loadedTimeRanges", options: NSKeyValueObservingOptions.new, context: nil) // 监听缓存进度
         playerItem.addObserver(self, forKeyPath: "status", options: NSKeyValueObservingOptions.new, context: nil) // 监听是否能开始播放
+        
         avplayer = AVPlayer(playerItem: playerItem)
         avplayer.addObserver(self, forKeyPath: "rate", options: NSKeyValueObservingOptions.new, context: nil) // 监听当前播放状态
+        
         playerLayer = AVPlayerLayer(player: avplayer)
+        
         //播放进度
         self.link = CADisplayLink(target: self, selector: #selector(update))
         self.link.add(to: RunLoop.main, forMode: RunLoop.Mode.default)
+        
+        //当前屏幕方向
+        screenOrientation(isLandscape: UIApplication.shared.statusBarOrientation.isLandscape)
 
         // 监听滑动控件
+        
         // 按下的时候
         playSliderView.addTarget(self, action: #selector(sliderTouchDown), for: UIControl.Event.touchDown)
         // 弹起的时候
         playSliderView.addTarget(self, action: #selector(sliderTouchUpOut), for: UIControl.Event.touchUpOutside)
         playSliderView.addTarget(self, action: #selector(sliderTouchUpOut), for: UIControl.Event.touchUpInside)
         playSliderView.addTarget(self, action: #selector(sliderTouchUpOut), for: UIControl.Event.touchCancel)
-    }
-    
-    @objc func update(){
-
-        // 当前播放到的时间
-        let currentTime = CMTimeGetSeconds(self.avplayer.currentTime())
-        // 总时间
-        let totalTime   = TimeInterval(playerItem.duration.value) / TimeInterval(playerItem.duration.timescale)
-        // timescale 这里表示压缩比例
-        playTotalTimeLabel.text = "\(formatPlayTime(secounds: totalTime))" // 总长度
-        if !playSliderFlag {
-            playNowTimeLabel.text = "\(formatPlayTime(secounds: currentTime))" // 当前进度
-            playSliderView.value = Float(currentTime / totalTime)
-        }
+        // 滑动的时候
+        playSliderView.addTarget(self, action: #selector(sliderValueChange), for: UIControl.Event.valueChanged)
         
-    }
-    
-    
-    @IBOutlet weak var playBtn: UIButton!
-    @IBAction func playBtnTap(_ sender: UIButton) {
-        if self.avplayer.rate == 1.0 {
-            // 只有在这个状态下才能播放
-            self.avplayer.pause()
-        } else {
-            // 只有在这个状态下才能播放
-            self.avplayer.play()
-        }
-       
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -108,18 +90,23 @@ class ViewController: UIViewController {
             }
         } else if object is AVPlayer {
             // 监听播放状态
-            if keyPath == "rate"{
+            if keyPath == "rate" {
                 setPlayBtnTitle()
             }
         }
     }
     
-    // 设置按钮文字
-    func setPlayBtnTitle() {
-        if avplayer.rate == 1.0 {
-            playBtn.setImage(UIImage(named: "暂停"), for: .normal)
-        } else {
-            playBtn.setImage(UIImage(named: "播放"), for: .normal)
+    // MARK: - 播放进度
+    @objc func update(){
+        // 当前播放到的时间
+        let currentTime = CMTimeGetSeconds(self.avplayer.currentTime())
+        // 总时间
+        let totalTime   = TimeInterval(playerItem.duration.value) / TimeInterval(playerItem.duration.timescale)
+        // timescale 这里表示压缩比例
+        playTotalTimeLabel.text = "\(formatPlayTime(secounds: totalTime))" // 总长度
+        if !playSliderFlag {
+            playNowTimeLabel.text = "\(formatPlayTime(secounds: currentTime))" // 当前进度
+            playSliderView.value = Float(currentTime / totalTime)
         }
     }
     
@@ -136,29 +123,41 @@ class ViewController: UIViewController {
     // 播放时间转换
     func formatPlayTime(secounds:TimeInterval)->String{
         if secounds.isNaN{
-            return "0:00"
+            return "00:00"
         }
         let Min = Int(secounds / 60)
         let Sec = Int(secounds.truncatingRemainder(dividingBy: 60))
         return String(format: "%02d:%02d", Min, Sec)
     }
     
-    // 旋转后重新布局
-    override func willAnimateRotation(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
-        if toInterfaceOrientation == .landscapeLeft || toInterfaceOrientation == .landscapeRight {
-            test.constant = self.view.frame.height
-            playerLayer.frame = CGRect(origin: playerLayer.frame.origin, size: self.view.frame.size)
-        } else if  toInterfaceOrientation == .portrait || toInterfaceOrientation == .portraitUpsideDown {
-            test.constant = 300
-            playerLayer.frame = CGRect(origin: playerLayer.frame.origin, size: CGSize(width: self.view.frame.width, height: 300))
+    
+    @IBOutlet weak var playBtn: UIButton!
+    @IBAction func playBtnTap(_ sender: UIButton) {
+        // 只有在这个状态下才能播放
+        if self.avplayer.rate == 1.0 {
+            self.avplayer.pause()
+        } else {
+            self.avplayer.play()
         }
+       
     }
     
-    // 当滑动时
+    // 设置按钮文字
+    func setPlayBtnTitle() {
+        if avplayer.rate == 1.0 {
+            playBtn.setImage(UIImage(named: "暂停"), for: .normal)
+        } else {
+            playBtn.setImage(UIImage(named: "播放"), for: .normal)
+        }
+    }
+
+    // MARK: - 滑动控件
     
+    // 按下时
     @objc func sliderTouchDown(slider:UISlider){
         playSliderFlag = true
     }
+    // 抬起时
     @objc func sliderTouchUpOut(slider:UISlider){
         if playerItem.status == AVPlayerItem.Status.readyToPlay{
             let duration = slider.value * Float(CMTimeGetSeconds(avplayer.currentItem!.duration))
@@ -169,9 +168,61 @@ class ViewController: UIViewController {
         } else {
             self.playSliderFlag = false
         }
-        
+    }
+    
+    // 滑动时
+    @objc func sliderValueChange(){
+        let value = playSliderView.value
+        let duration = value * Float(TimeInterval(playerItem.duration.value) / TimeInterval(playerItem.duration.timescale))
+        playNowTimeLabel.text = "\(formatPlayTime(secounds: TimeInterval(duration)))" // 当前进度
     }
 
+    // MARK: - 布局
+    @IBAction func screenOrientationBtnTap(_ sender: UIButton) {
+        var value = UIInterfaceOrientation.portrait.rawValue
+        if UIApplication.shared.statusBarOrientation.isLandscape {
+            _orientations = .portrait
+        } else {
+            _orientations = UIInterfaceOrientationMask.landscape
+            value = UIInterfaceOrientation.landscapeRight.rawValue
+            
+        }
+        UIDevice.current.setValue(value, forKey: "orientation")
+        _orientations = .all
+    }
+    
+    // 当屏幕旋转时
+    override func willAnimateRotation(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
+        screenOrientation(isLandscape: toInterfaceOrientation.isLandscape)
+    }
+    
+    // 根据屏幕方向布局
+    func screenOrientation(isLandscape: Bool) {
+        if isLandscape {
+            playViewHeight.constant = self.view.frame.height
+            horizontalExpansionViewHeight.constant = -80
+            playerLayer.frame = CGRect(origin: playerLayer.frame.origin, size: self.view.frame.size)
+        } else {
+            playViewHeight.constant = 300
+            horizontalExpansionViewHeight.constant = 0
+            playerLayer.frame = CGRect(origin: playerLayer.frame.origin, size: CGSize(width: self.view.frame.width, height: 300))
+        }
+    }
+    
+    // MARK: - 屏幕方向锁定
+    private var _orientations = UIInterfaceOrientationMask.all
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        get {
+            return self._orientations
+        }
+        set {
+            self._orientations = newValue
+        }
+    }
+    
+    override var shouldAutorotate: Bool {
+        return true
+    }
     
     deinit {
         NotificationCenter.default.removeObserver(self)

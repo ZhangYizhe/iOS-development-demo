@@ -20,7 +20,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dRw-N2-OpD">
                                 <rect key="frame" x="0.0" y="20" width="375" height="300"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="YXy-UN-F8P"/>
                                 </constraints>
@@ -71,13 +71,17 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ph1-hF-Kp3">
-                                        <rect key="frame" x="340" y="264.5" width="15" height="15"/>
+                                        <rect key="frame" x="330" y="254.5" width="35" height="35"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="15" id="7j0-4p-Mmi"/>
-                                            <constraint firstAttribute="height" constant="15" id="eIC-Z8-D2G"/>
+                                            <constraint firstAttribute="width" constant="35" id="7j0-4p-Mmi"/>
+                                            <constraint firstAttribute="height" constant="35" id="eIC-Z8-D2G"/>
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                         <state key="normal" image="全屏"/>
+                                        <connections>
+                                            <action selector="screenOrientationBtnTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IBf-56-ePO"/>
+                                        </connections>
                                     </button>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aMh-GV-XCI">
                                         <rect key="frame" x="0.0" y="298" width="375" height="2"/>
@@ -86,6 +90,7 @@
                                     </progressView>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="uJ0-Oh-MSc">
                                         <rect key="frame" x="-2" y="283" width="379" height="31"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="minimumTrackTintColor" red="0.9152941108" green="0.1981457174" blue="0.13718390459999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="maximumTrackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </slider>
@@ -95,7 +100,7 @@
                                     <constraint firstAttribute="trailing" secondItem="uJ0-Oh-MSc" secondAttribute="trailing" id="0uo-UH-E3s"/>
                                     <constraint firstItem="JCk-YC-pU8" firstAttribute="centerY" secondItem="Hej-Ib-ig9" secondAttribute="centerY" id="3TT-Om-Dmb"/>
                                     <constraint firstAttribute="bottom" secondItem="7gO-ER-cZB" secondAttribute="bottom" constant="20" id="4Qz-ta-LE2"/>
-                                    <constraint firstAttribute="trailing" secondItem="Ph1-hF-Kp3" secondAttribute="trailing" constant="20" id="5Y9-Xi-tFN"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ph1-hF-Kp3" secondAttribute="trailing" constant="10" id="5Y9-Xi-tFN"/>
                                     <constraint firstAttribute="bottom" secondItem="F46-Cy-80n" secondAttribute="bottom" constant="20" id="6Tl-OX-edO"/>
                                     <constraint firstAttribute="bottom" secondItem="aMh-GV-XCI" secondAttribute="bottom" id="EpY-iI-Itz"/>
                                     <constraint firstAttribute="bottom" secondItem="uJ0-Oh-MSc" secondAttribute="bottom" constant="-13" id="IQn-hz-c6j"/>
@@ -107,7 +112,7 @@
                                     <constraint firstItem="Hej-Ib-ig9" firstAttribute="centerY" secondItem="fJY-b1-oyQ" secondAttribute="centerY" id="cPl-15-d7K"/>
                                     <constraint firstAttribute="trailing" secondItem="aMh-GV-XCI" secondAttribute="trailing" id="frv-J0-eQJ"/>
                                     <constraint firstItem="aMh-GV-XCI" firstAttribute="leading" secondItem="fJY-b1-oyQ" secondAttribute="leading" id="lLd-SH-u3g"/>
-                                    <constraint firstItem="Ph1-hF-Kp3" firstAttribute="leading" secondItem="F46-Cy-80n" secondAttribute="trailing" constant="10" id="snL-Dg-n9h"/>
+                                    <constraint firstItem="Ph1-hF-Kp3" firstAttribute="leading" secondItem="F46-Cy-80n" secondAttribute="trailing" id="snL-Dg-n9h"/>
                                     <constraint firstItem="7gO-ER-cZB" firstAttribute="leading" secondItem="fJY-b1-oyQ" secondAttribute="leading" constant="20" id="vnm-MT-atY"/>
                                     <constraint firstItem="UE0-V4-GbP" firstAttribute="leading" secondItem="Hej-Ib-ig9" secondAttribute="trailing" constant="40" id="wLG-Rb-hJh"/>
                                 </constraints>
@@ -127,13 +132,14 @@
                     </view>
                     <connections>
                         <outlet property="horizontalExpansionView" destination="fJY-b1-oyQ" id="g4v-6J-rx8"/>
+                        <outlet property="horizontalExpansionViewHeight" destination="M5J-2u-wNV" id="Dbz-LE-f3f"/>
                         <outlet property="loadProgressView" destination="aMh-GV-XCI" id="iF9-J9-2cN"/>
                         <outlet property="playBtn" destination="Hej-Ib-ig9" id="wdx-0u-51K"/>
                         <outlet property="playNowTimeLabel" destination="7gO-ER-cZB" id="Ozf-qH-TxC"/>
                         <outlet property="playSliderView" destination="uJ0-Oh-MSc" id="M5b-bG-t8Z"/>
                         <outlet property="playTotalTimeLabel" destination="F46-Cy-80n" id="xjh-oj-m1g"/>
                         <outlet property="playView" destination="dRw-N2-OpD" id="wXE-vD-qcd"/>
-                        <outlet property="test" destination="YXy-UN-F8P" id="n5y-sH-dUO"/>
+                        <outlet property="playViewHeight" destination="YXy-UN-F8P" id="68Z-Pp-iym"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
