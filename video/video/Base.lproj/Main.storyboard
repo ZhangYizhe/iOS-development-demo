@@ -28,42 +28,47 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fJY-b1-oyQ">
                                 <rect key="frame" x="0.0" y="20" width="375" height="300"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JCk-YC-pU8">
-                                        <rect key="frame" x="97.5" y="135" width="30" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="SIe-Rp-wqU"/>
-                                            <constraint firstAttribute="height" constant="30" id="gsy-9E-dSv"/>
-                                        </constraints>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="上一曲"/>
-                                        <connections>
-                                            <action selector="upDownBtnTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gvj-Th-nOT"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UE0-V4-GbP">
-                                        <rect key="frame" x="247.5" y="135" width="30" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="GIq-EX-z7k"/>
-                                            <constraint firstAttribute="height" constant="30" id="woz-ck-ScK"/>
-                                        </constraints>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button" image="下一曲"/>
-                                        <connections>
-                                            <action selector="upDownBtnTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p2x-kt-g8h"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hej-Ib-ig9">
-                                        <rect key="frame" x="167.5" y="130" width="40" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="o4a-lk-btH"/>
-                                            <constraint firstAttribute="height" constant="40" id="q6L-6p-rSl"/>
-                                        </constraints>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="播放"/>
-                                        <connections>
-                                            <action selector="playBtnTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Ac-lb-ZWD"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="ftg-d9-X66">
+                                        <rect key="frame" x="97.5" y="130" width="180" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JCk-YC-pU8">
+                                                <rect key="frame" x="0.0" y="5" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="SIe-Rp-wqU"/>
+                                                    <constraint firstAttribute="height" constant="30" id="gsy-9E-dSv"/>
+                                                </constraints>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" image="上一曲"/>
+                                                <connections>
+                                                    <action selector="upDownBtnTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gvj-Th-nOT"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ooN-2a-6yg">
+                                                <rect key="frame" x="70" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="65B-KT-tu6"/>
+                                                    <constraint firstAttribute="height" constant="40" id="yFi-S5-sDc"/>
+                                                </constraints>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" image="播放"/>
+                                                <connections>
+                                                    <action selector="playBtnTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fdT-xi-0nO"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UE0-V4-GbP">
+                                                <rect key="frame" x="150" y="5" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="GIq-EX-z7k"/>
+                                                    <constraint firstAttribute="height" constant="30" id="woz-ck-ScK"/>
+                                                </constraints>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button" image="下一曲"/>
+                                                <connections>
+                                                    <action selector="upDownBtnTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p2x-kt-g8h"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gO-ER-cZB">
                                         <rect key="frame" x="20" y="264" width="31" height="16"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
@@ -104,23 +109,19 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="uJ0-Oh-MSc" secondAttribute="trailing" id="0uo-UH-E3s"/>
-                                    <constraint firstItem="JCk-YC-pU8" firstAttribute="centerY" secondItem="Hej-Ib-ig9" secondAttribute="centerY" id="3TT-Om-Dmb"/>
                                     <constraint firstAttribute="bottom" secondItem="7gO-ER-cZB" secondAttribute="bottom" constant="20" id="4Qz-ta-LE2"/>
                                     <constraint firstAttribute="trailing" secondItem="Ph1-hF-Kp3" secondAttribute="trailing" constant="10" id="5Y9-Xi-tFN"/>
                                     <constraint firstAttribute="bottom" secondItem="F46-Cy-80n" secondAttribute="bottom" constant="20" id="6Tl-OX-edO"/>
                                     <constraint firstAttribute="bottom" secondItem="aMh-GV-XCI" secondAttribute="bottom" id="EpY-iI-Itz"/>
                                     <constraint firstAttribute="bottom" secondItem="uJ0-Oh-MSc" secondAttribute="bottom" constant="-13" id="IQn-hz-c6j"/>
-                                    <constraint firstItem="UE0-V4-GbP" firstAttribute="centerY" secondItem="Hej-Ib-ig9" secondAttribute="centerY" id="JkR-Vg-y8Q"/>
                                     <constraint firstItem="uJ0-Oh-MSc" firstAttribute="leading" secondItem="fJY-b1-oyQ" secondAttribute="leading" id="Mfr-dF-PCg"/>
-                                    <constraint firstItem="Hej-Ib-ig9" firstAttribute="centerX" secondItem="fJY-b1-oyQ" secondAttribute="centerX" id="O2U-Oj-pfi"/>
-                                    <constraint firstItem="Hej-Ib-ig9" firstAttribute="leading" secondItem="JCk-YC-pU8" secondAttribute="trailing" constant="40" id="QGb-A1-h97"/>
                                     <constraint firstItem="Ph1-hF-Kp3" firstAttribute="centerY" secondItem="F46-Cy-80n" secondAttribute="centerY" id="W7j-jX-ThC"/>
-                                    <constraint firstItem="Hej-Ib-ig9" firstAttribute="centerY" secondItem="fJY-b1-oyQ" secondAttribute="centerY" id="cPl-15-d7K"/>
                                     <constraint firstAttribute="trailing" secondItem="aMh-GV-XCI" secondAttribute="trailing" id="frv-J0-eQJ"/>
+                                    <constraint firstItem="ftg-d9-X66" firstAttribute="centerX" secondItem="fJY-b1-oyQ" secondAttribute="centerX" id="iSb-pu-3QO"/>
                                     <constraint firstItem="aMh-GV-XCI" firstAttribute="leading" secondItem="fJY-b1-oyQ" secondAttribute="leading" id="lLd-SH-u3g"/>
                                     <constraint firstItem="Ph1-hF-Kp3" firstAttribute="leading" secondItem="F46-Cy-80n" secondAttribute="trailing" id="snL-Dg-n9h"/>
                                     <constraint firstItem="7gO-ER-cZB" firstAttribute="leading" secondItem="fJY-b1-oyQ" secondAttribute="leading" constant="20" id="vnm-MT-atY"/>
-                                    <constraint firstItem="UE0-V4-GbP" firstAttribute="leading" secondItem="Hej-Ib-ig9" secondAttribute="trailing" constant="40" id="wLG-Rb-hJh"/>
+                                    <constraint firstItem="ftg-d9-X66" firstAttribute="centerY" secondItem="fJY-b1-oyQ" secondAttribute="centerY" id="xD8-vf-SYA"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -140,7 +141,7 @@
                         <outlet property="horizontalExpansionView" destination="fJY-b1-oyQ" id="g4v-6J-rx8"/>
                         <outlet property="horizontalExpansionViewHeight" destination="M5J-2u-wNV" id="Dbz-LE-f3f"/>
                         <outlet property="loadProgressView" destination="aMh-GV-XCI" id="iF9-J9-2cN"/>
-                        <outlet property="playBtn" destination="Hej-Ib-ig9" id="wdx-0u-51K"/>
+                        <outlet property="playBtn" destination="ooN-2a-6yg" id="k7Z-vy-VXB"/>
                         <outlet property="playNowTimeLabel" destination="7gO-ER-cZB" id="Ozf-qH-TxC"/>
                         <outlet property="playSliderView" destination="uJ0-Oh-MSc" id="M5b-bG-t8Z"/>
                         <outlet property="playTotalTimeLabel" destination="F46-Cy-80n" id="xjh-oj-m1g"/>

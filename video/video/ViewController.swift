@@ -38,7 +38,7 @@ class ViewController: UIViewController {
     // MARK: - 界面初始化
     func initView() {
         // 检测连接是否存在 不存在报错
-        guard let url = URL(string: "http://qiniu.yizheyun.cn/iphone1.mp4") else { fatalError("连接错误") }
+        guard let url = URL(string: "http://qiniu.yizheyun.cn/iphone.mp4") else { fatalError("连接错误") }
         playerItem = AVPlayerItem(url: url)
         avplayer = AVPlayer(playerItem: playerItem)
         playerLayer = AVPlayerLayer(player: avplayer)
@@ -250,11 +250,31 @@ class ViewController: UIViewController {
             playViewHeight.constant = self.view.frame.height
             horizontalExpansionViewHeight.constant = -80
             playerLayer.frame = CGRect(origin: playerLayer.frame.origin, size: self.view.frame.size)
+            _isHomeIndicatorHidden = true
+            setNeedsUpdateOfHomeIndicatorAutoHidden()
+            _isStatusBarHidden = true
+            setNeedsStatusBarAppearanceUpdate()
         } else {
             playViewHeight.constant = 300
             horizontalExpansionViewHeight.constant = 0
             playerLayer.frame = CGRect(origin: playerLayer.frame.origin, size: CGSize(width: self.view.frame.width, height: 300))
+            _isHomeIndicatorHidden = false
+            setNeedsUpdateOfHomeIndicatorAutoHidden()
+            _isStatusBarHidden = false
+            setNeedsStatusBarAppearanceUpdate()
         }
+    }
+    
+    // 控制Home条显示与隐藏
+    var _isHomeIndicatorHidden = false
+    override var prefersHomeIndicatorAutoHidden: Bool {
+        return _isHomeIndicatorHidden
+    }
+    
+    // 控制顶部显示与隐藏
+    var _isStatusBarHidden = false
+    override var prefersStatusBarHidden: Bool {
+        return _isStatusBarHidden
     }
     
     // MARK: - 屏幕方向设置
