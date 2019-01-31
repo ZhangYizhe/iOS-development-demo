@@ -10,6 +10,7 @@ import UIKit
 import AVKit
 import AVFoundation
 import SwiftyTimer
+import MediaPlayer
 
 class ViewController: UIViewController {
 
@@ -80,6 +81,9 @@ class ViewController: UIViewController {
         playSliderView.addTarget(self, action: #selector(sliderTouchUpOut), for: UIControl.Event.touchCancel)
         // 滑动的时候
         playSliderView.addTarget(self, action: #selector(sliderValueChange), for: UIControl.Event.valueChanged)
+        
+        // 监听音量控制
+        initVolumeListen()
     }
     
     // MARK: - 扩展视图显示与隐藏
@@ -156,6 +160,7 @@ class ViewController: UIViewController {
         let Sec = Int(secounds.truncatingRemainder(dividingBy: 60))
         return String(format: "%02d:%02d", Min, Sec)
     }
+    
     // MARK: - 上下一曲控制
     @IBAction func upDownBtnTap(_ sender: UIButton) {
         if sender.tag == 0 { // 上一曲
@@ -223,6 +228,84 @@ class ViewController: UIViewController {
         let duration = value * Float(TimeInterval(playerItem.duration.value) / TimeInterval(playerItem.duration.timescale))
         playNowTimeLabel.text = "\(formatPlayTime(secounds: TimeInterval(duration)))" // 当前进度
     }
+    
+    // MARK: - 音量控制
+    @IBOutlet weak var volumeView: UIView!
+    func initVolumeListen() {
+        let volumePan = UIPanGestureRecognizer(target: self, action: #selector(volumePanDid(_:)))//滑动手势
+        volumePan.maximumNumberOfTouches = 1
+        volumeView.addGestureRecognizer(volumePan)//滑动手势
+    }
+    
+    var volumePanRecognizer = CGPoint(x: 0, y: 0)
+    var nowVolume : Float = 0.0
+    @objc func volumePanDid(_ recognizer:UIPanGestureRecognizer){
+        
+        let point = recognizer.location(in: self.volumeView)
+        
+        if recognizer.state == UIGestureRecognizer.State.began{
+            volumePanRecognizer = point
+            timer?.invalidate() //取消消失倒计时
+            let  audioSession = AVAudioSession.sharedInstance()
+            nowVolume = audioSession.outputVolume
+            MPVolumeView.setVolume(nowVolume)
+        }else if recognizer.state == UIGestureRecognizer.State.changed{
+            let displacementDistance = (volumePanRecognizer.y - point.y ) // 位移距离
+            var volume : Float = 0.0
+            if displacementDistance > 0 && displacementDistance < 100  { // 音量增大
+                volume = volume + Float(displacementDistance / 100)
+                MPVolumeView.setVolume(nowVolume + volume)
+            } else if displacementDistance < 0 && displacementDistance > -100{ // 音量减小
+                volume = volume + Float(displacementDistance / 100)
+                MPVolumeView.setVolume(nowVolume + volume)
+            } else if displacementDistance > 100 {
+                MPVolumeView.setVolume(1.0)
+            } else if displacementDistance < -100 {
+                MPVolumeView.setVolume(0.0)
+            }
+            
+        }else{
+            setUnDisplay() //开始消失倒计时
+        }
+    }
+    
+    // MARK: - 亮度控制
+//    func initBrightnessListen() {
+//        let brightnessPan = UIPanGestureRecognizer(target: self, action: #selector(brightnessPanDid(_:)))//滑动手势
+//        brightnessPan.maximumNumberOfTouches = 1
+//        volumeView.addGestureRecognizer(brightnessPan)//滑动手势
+//    }
+//    
+//    var brightnessPanRecognizer = CGPoint(x: 0, y: 0)
+//    @objc func brightnessPanDid(_ recognizer:UIPanGestureRecognizer){
+//        
+//        let point = recognizer.location(in: self.volumeView)
+//        
+//        if recognizer.state == UIGestureRecognizer.State.began{
+//            brightnessPanRecognizer = point
+//            timer?.invalidate() //取消消失倒计时
+//            let  audioSession = AVAudioSession.sharedInstance()
+//            nowVolume = audioSession.outputVolume
+//            MPVolumeView.setVolume(nowVolume)
+//        }else if recognizer.state == UIGestureRecognizer.State.changed{
+//            let displacementDistance = (brightnessPanRecognizer.y - point.y ) // 位移距离
+//            var volume : Float = 0.0
+//            if displacementDistance > 0 && displacementDistance < 100  { // 音量增大
+//                volume = volume + Float(displacementDistance / 100)
+//                MPVolumeView.setVolume(nowVolume + volume)
+//            } else if displacementDistance < 0 && displacementDistance > -100{ // 音量减小
+//                volume = volume + Float(displacementDistance / 100)
+//                MPVolumeView.setVolume(nowVolume + volume)
+//            } else if displacementDistance > 100 {
+//                MPVolumeView.setVolume(1.0)
+//            } else if displacementDistance < -100 {
+//                MPVolumeView.setVolume(0.0)
+//            }
+//            
+//        }else{
+//            setUnDisplay() //开始消失倒计时
+//        }
+//    }
 
     // MARK: - 布局
     @IBAction func screenOrientationBtnTap(_ sender: UIButton) {
@@ -251,18 +334,19 @@ class ViewController: UIViewController {
             horizontalExpansionViewHeight.constant = -80
             playerLayer.frame = CGRect(origin: playerLayer.frame.origin, size: self.view.frame.size)
             _isHomeIndicatorHidden = true
-            setNeedsUpdateOfHomeIndicatorAutoHidden()
+            
             _isStatusBarHidden = true
-            setNeedsStatusBarAppearanceUpdate()
+            
         } else {
             playViewHeight.constant = 300
             horizontalExpansionViewHeight.constant = 0
             playerLayer.frame = CGRect(origin: playerLayer.frame.origin, size: CGSize(width: self.view.frame.width, height: 300))
             _isHomeIndicatorHidden = false
-            setNeedsUpdateOfHomeIndicatorAutoHidden()
             _isStatusBarHidden = false
-            setNeedsStatusBarAppearanceUpdate()
         }
+        
+        setNeedsUpdateOfHomeIndicatorAutoHidden()
+        setNeedsStatusBarAppearanceUpdate()
     }
     
     // 控制Home条显示与隐藏
@@ -341,3 +425,13 @@ class ViewController: UIViewController {
     }
 }
 
+extension MPVolumeView {
+    static func setVolume(_ volume: Float) {
+        let volumeView = MPVolumeView()
+        let slider = volumeView.subviews.first(where: { $0 is UISlider }) as? UISlider
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.01) {
+            slider?.value = volume
+        }
+    }
+}

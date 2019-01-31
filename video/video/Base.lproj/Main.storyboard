@@ -28,6 +28,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fJY-b1-oyQ">
                                 <rect key="frame" x="0.0" y="20" width="375" height="300"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t8f-ab-gEK">
+                                        <rect key="frame" x="187.5" y="0.0" width="187.5" height="300"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="ftg-d9-X66">
                                         <rect key="frame" x="97.5" y="130" width="180" height="40"/>
                                         <subviews>
@@ -116,9 +120,13 @@
                                     <constraint firstAttribute="bottom" secondItem="uJ0-Oh-MSc" secondAttribute="bottom" constant="-13" id="IQn-hz-c6j"/>
                                     <constraint firstItem="uJ0-Oh-MSc" firstAttribute="leading" secondItem="fJY-b1-oyQ" secondAttribute="leading" id="Mfr-dF-PCg"/>
                                     <constraint firstItem="Ph1-hF-Kp3" firstAttribute="centerY" secondItem="F46-Cy-80n" secondAttribute="centerY" id="W7j-jX-ThC"/>
+                                    <constraint firstAttribute="trailing" secondItem="t8f-ab-gEK" secondAttribute="trailing" id="aHq-Jh-4JT"/>
                                     <constraint firstAttribute="trailing" secondItem="aMh-GV-XCI" secondAttribute="trailing" id="frv-J0-eQJ"/>
                                     <constraint firstItem="ftg-d9-X66" firstAttribute="centerX" secondItem="fJY-b1-oyQ" secondAttribute="centerX" id="iSb-pu-3QO"/>
                                     <constraint firstItem="aMh-GV-XCI" firstAttribute="leading" secondItem="fJY-b1-oyQ" secondAttribute="leading" id="lLd-SH-u3g"/>
+                                    <constraint firstItem="t8f-ab-gEK" firstAttribute="width" secondItem="fJY-b1-oyQ" secondAttribute="width" multiplier="0.5" id="pCD-qS-3jA"/>
+                                    <constraint firstAttribute="bottom" secondItem="t8f-ab-gEK" secondAttribute="bottom" id="rSt-Ub-F5m"/>
+                                    <constraint firstItem="t8f-ab-gEK" firstAttribute="top" secondItem="fJY-b1-oyQ" secondAttribute="top" id="sL1-VI-oXU"/>
                                     <constraint firstItem="Ph1-hF-Kp3" firstAttribute="leading" secondItem="F46-Cy-80n" secondAttribute="trailing" id="snL-Dg-n9h"/>
                                     <constraint firstItem="7gO-ER-cZB" firstAttribute="leading" secondItem="fJY-b1-oyQ" secondAttribute="leading" constant="20" id="vnm-MT-atY"/>
                                     <constraint firstItem="ftg-d9-X66" firstAttribute="centerY" secondItem="fJY-b1-oyQ" secondAttribute="centerY" id="xD8-vf-SYA"/>
@@ -147,6 +155,7 @@
                         <outlet property="playTotalTimeLabel" destination="F46-Cy-80n" id="xjh-oj-m1g"/>
                         <outlet property="playView" destination="dRw-N2-OpD" id="wXE-vD-qcd"/>
                         <outlet property="playViewHeight" destination="YXy-UN-F8P" id="68Z-Pp-iym"/>
+                        <outlet property="volumeView" destination="t8f-ab-gEK" id="sEx-dh-pQL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
