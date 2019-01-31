@@ -84,6 +84,9 @@ class ViewController: UIViewController {
         
         // 监听音量控制
         initVolumeListen()
+        
+        // 监听亮度控制
+        initBrightnessListen()
     }
     
     // MARK: - 扩展视图显示与隐藏
@@ -270,42 +273,41 @@ class ViewController: UIViewController {
     }
     
     // MARK: - 亮度控制
-//    func initBrightnessListen() {
-//        let brightnessPan = UIPanGestureRecognizer(target: self, action: #selector(brightnessPanDid(_:)))//滑动手势
-//        brightnessPan.maximumNumberOfTouches = 1
-//        volumeView.addGestureRecognizer(brightnessPan)//滑动手势
-//    }
-//    
-//    var brightnessPanRecognizer = CGPoint(x: 0, y: 0)
-//    @objc func brightnessPanDid(_ recognizer:UIPanGestureRecognizer){
-//        
-//        let point = recognizer.location(in: self.volumeView)
-//        
-//        if recognizer.state == UIGestureRecognizer.State.began{
-//            brightnessPanRecognizer = point
-//            timer?.invalidate() //取消消失倒计时
-//            let  audioSession = AVAudioSession.sharedInstance()
-//            nowVolume = audioSession.outputVolume
-//            MPVolumeView.setVolume(nowVolume)
-//        }else if recognizer.state == UIGestureRecognizer.State.changed{
-//            let displacementDistance = (brightnessPanRecognizer.y - point.y ) // 位移距离
-//            var volume : Float = 0.0
-//            if displacementDistance > 0 && displacementDistance < 100  { // 音量增大
-//                volume = volume + Float(displacementDistance / 100)
-//                MPVolumeView.setVolume(nowVolume + volume)
-//            } else if displacementDistance < 0 && displacementDistance > -100{ // 音量减小
-//                volume = volume + Float(displacementDistance / 100)
-//                MPVolumeView.setVolume(nowVolume + volume)
-//            } else if displacementDistance > 100 {
-//                MPVolumeView.setVolume(1.0)
-//            } else if displacementDistance < -100 {
-//                MPVolumeView.setVolume(0.0)
-//            }
-//            
-//        }else{
-//            setUnDisplay() //开始消失倒计时
-//        }
-//    }
+    @IBOutlet weak var brightnessView: UIView!
+    func initBrightnessListen() {
+        let brightnessPan = UIPanGestureRecognizer(target: self, action: #selector(brightnessPanDid(_:)))//滑动手势
+        brightnessPan.maximumNumberOfTouches = 1
+        brightnessView.addGestureRecognizer(brightnessPan)//滑动手势
+    }
+
+    var brightnessPanRecognizer = CGPoint(x: 0, y: 0)
+    var nowBrightness : CGFloat = 0.0
+    @objc func brightnessPanDid(_ recognizer:UIPanGestureRecognizer){
+
+        let point = recognizer.location(in: self.volumeView)
+
+        if recognizer.state == UIGestureRecognizer.State.began{
+            brightnessPanRecognizer = point
+            timer?.invalidate() //取消消失倒计时
+            nowBrightness = UIScreen.main.brightness
+        }else if recognizer.state == UIGestureRecognizer.State.changed{
+            let displacementDistance = (brightnessPanRecognizer.y - point.y ) // 位移距离
+            var brightness : CGFloat = 0.0
+            if displacementDistance > 0 && displacementDistance < 100  { // 音量增大
+                brightness = brightness + displacementDistance / 100
+                UIScreen.main.brightness = nowBrightness + brightness
+            } else if displacementDistance < 0 && displacementDistance > -100{ // 音量减小
+                brightness = brightness + displacementDistance / 100
+                UIScreen.main.brightness = nowBrightness + brightness
+            } else if displacementDistance > 100 {
+                UIScreen.main.brightness = 1.0
+            } else if displacementDistance < -100 {
+                UIScreen.main.brightness = 0.0
+            }
+        }else{
+            setUnDisplay() //开始消失倒计时
+        }
+    }
 
     // MARK: - 布局
     @IBAction func screenOrientationBtnTap(_ sender: UIButton) {
@@ -334,8 +336,8 @@ class ViewController: UIViewController {
             horizontalExpansionViewHeight.constant = -80
             playerLayer.frame = CGRect(origin: playerLayer.frame.origin, size: self.view.frame.size)
             _isHomeIndicatorHidden = true
-            
             _isStatusBarHidden = true
+            UIApplication.shared.isIdleTimerDisabled = true // 屏幕常亮
             
         } else {
             playViewHeight.constant = 300
@@ -343,6 +345,7 @@ class ViewController: UIViewController {
             playerLayer.frame = CGRect(origin: playerLayer.frame.origin, size: CGSize(width: self.view.frame.width, height: 300))
             _isHomeIndicatorHidden = false
             _isStatusBarHidden = false
+            UIApplication.shared.isIdleTimerDisabled = false // 屏幕不常亮
         }
         
         setNeedsUpdateOfHomeIndicatorAutoHidden()
