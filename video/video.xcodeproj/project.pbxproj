@@ -12,7 +12,6 @@
 		624DEEBC21FE911E001E67F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 624DEEBA21FE911E001E67F5 /* Main.storyboard */; };
 		624DEEBE21FE911F001E67F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 624DEEBD21FE911F001E67F5 /* Assets.xcassets */; };
 		624DEEC121FE911F001E67F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 624DEEBF21FE911F001E67F5 /* LaunchScreen.storyboard */; };
-		62BD0C7822016FBF00850BEF /* MediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BD0C7722016FBF00850BEF /* MediaModel.swift */; };
 		C53ACF61AE1F008EEF3231D4 /* Pods_video.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B4BFF86B9BC4168ACC8E5F1 /* Pods_video.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,7 +23,6 @@
 		624DEEBD21FE911F001E67F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		624DEEC021FE911F001E67F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		624DEEC221FE911F001E67F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		62BD0C7722016FBF00850BEF /* MediaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaModel.swift; sourceTree = "<group>"; };
 		7B4BFF86B9BC4168ACC8E5F1 /* Pods_video.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_video.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C60EF00065CEE73F0D97753 /* Pods-video.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-video.debug.xcconfig"; path = "Target Support Files/Pods-video/Pods-video.debug.xcconfig"; sourceTree = "<group>"; };
 		9F7A91327EE2C2E4AA6AE449 /* Pods-video.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-video.release.xcconfig"; path = "Target Support Files/Pods-video/Pods-video.release.xcconfig"; sourceTree = "<group>"; };
@@ -74,7 +72,6 @@
 				624DEEB621FE911E001E67F5 /* AppDelegate.swift */,
 				624DEEBA21FE911E001E67F5 /* Main.storyboard */,
 				624DEEB821FE911E001E67F5 /* ViewController.swift */,
-				62BD0C7722016FBF00850BEF /* MediaModel.swift */,
 				624DEEBD21FE911F001E67F5 /* Assets.xcassets */,
 				624DEEBF21FE911F001E67F5 /* LaunchScreen.storyboard */,
 				624DEEC221FE911F001E67F5 /* Info.plist */,
@@ -218,7 +215,6 @@
 			files = (
 				624DEEB921FE911E001E67F5 /* ViewController.swift in Sources */,
 				624DEEB721FE911E001E67F5 /* AppDelegate.swift in Sources */,
-				62BD0C7822016FBF00850BEF /* MediaModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
