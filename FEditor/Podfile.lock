@@ -1,0 +1,21 @@
+PODS:
+  - WordPress-Aztec-iOS (1.4.2)
+  - WordPress-Editor-iOS (1.4.2):
+    - WordPress-Aztec-iOS (= 1.4.2)
+
+DEPENDENCIES:
+  - WordPress-Aztec-iOS
+  - WordPress-Editor-iOS
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - WordPress-Aztec-iOS
+    - WordPress-Editor-iOS
+
+SPEC CHECKSUMS:
+  WordPress-Aztec-iOS: d9e816350ab1e200681d433287fbb079675e9159
+  WordPress-Editor-iOS: 5a09651534181c9f3ab43516b7666e9c55b2330e
+
+PODFILE CHECKSUM: 6643f6197ad25b20e0ef5d80e5fd169ccd2420d8
+
+COCOAPODS: 1.6.0.beta.2

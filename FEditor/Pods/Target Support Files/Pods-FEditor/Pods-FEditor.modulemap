@@ -1,0 +1,6 @@
+framework module Pods_FEditor {
+  umbrella header "Pods-FEditor-umbrella.h"
+
+  export *
+  module * { export * }
+}

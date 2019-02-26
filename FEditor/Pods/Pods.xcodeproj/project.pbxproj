@@ -1,0 +1,1591 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		02A093756BA28DC221E115874DA36711 /* UnderlineStringAttributeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A053000B5D12C86370D73E27C5E933F /* UnderlineStringAttributeConverter.swift */; };
+		02CABDB1090B0567B44232943B5E9E89 /* Aztec.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 377DB585B7B85F175549F97CC687A485 /* Aztec.framework */; };
+		02FF894A7323759FF4B0FBEEDF011E06 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 301CD0CEA3A838BFE5156D01749162DB /* Foundation.framework */; };
+		05A33E936E2113A0E5DD0A30017EAE77 /* HTMLDiv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7835A3D210135F315EB755765EF1643A /* HTMLDiv.swift */; };
+		0A3A11D39627217FF78DC8ADE383B0F1 /* VideoElementConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEF951D911A9CFC57BA0FC4AA4BCEBB /* VideoElementConverter.swift */; };
+		0B39661CA4B8C0C4BAD396772A868EFD /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C553CC6939638CC3AE26F04A6C91AB /* TextView.swift */; };
+		0B88B3993BFF51BC711CE8F3D3620F3B /* ImageElementConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9482FDA576C6F2AA8BB78EA7CF2ACC1 /* ImageElementConverter.swift */; };
+		0BD7B98E230DEF8A4911DD182E2581F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 301CD0CEA3A838BFE5156D01749162DB /* Foundation.framework */; };
+		0D342DFF46BA716BD072ED7D9877C115 /* Array+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E751328E8CF5DA0A533B86293ADA69 /* Array+Helpers.swift */; };
+		0DC02FE1830C6DABFD7F7E6DD1603478 /* ElementNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE599FBC6D7E8A2C4DB53753BF98771 /* ElementNode.swift */; };
+		0EC67DEACD183E79F1C5EE048D83D0DB /* Blockquote.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AD525148AF514810A4898FECDB836E /* Blockquote.swift */; };
+		0FC10DD07BCD146D254124F52D07ACE8 /* LineAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A97FADBBD025884999E217981863620 /* LineAttachment.swift */; };
+		114A3D20A1648FB5B4B1898177B46D78 /* PluginOutputCustomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11463E01C997DD25CA8C67ACBC062C2 /* PluginOutputCustomizer.swift */; };
+		1168945AB07270483631FC128C76D115 /* ElementAttributeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BE5E3B890F4D810A483F60237B85A8 /* ElementAttributeConverter.swift */; };
+		120087F5BE1192E4B23D465AC8E372E3 /* AttachmentToElementConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37561DF85E24116142275CA29315DC30 /* AttachmentToElementConverter.swift */; };
+		148FE71FF1CE3E1DD41F13C7DD4C48DF /* UILayoutPriority+Swift4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033D16380BFCEC7C1DF98613C9A420FD /* UILayoutPriority+Swift4.swift */; };
+		182F6BE506463B26D079B2E2D5EE6121 /* HTMLAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1D13D1AF5E05D196DBD12767A41E01 /* HTMLAttachment.swift */; };
+		18FCDE1D5728DB60F9FAC323CB16966D /* Array+ShortcodeAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40398220BD6081D22C83B4A466D12B85 /* Array+ShortcodeAttribute.swift */; };
+		1957F0958CF79A08ECA30EBC0D99CF57 /* DocumentReadingOptionKey+Swift4.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E10B7F12D2A20AE7B49834658D6453 /* DocumentReadingOptionKey+Swift4.swift */; };
+		1B6430600695A7412B5E7DDC9C773D17 /* ElementConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988E8A31D84A36DF1EF898BF841E239C /* ElementConverter.swift */; };
+		1CE0B7B02E760963B6560AEF2CD90DAD /* EmbedURLProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872FD7D01DCA8F17542D6EDB9268B82D /* EmbedURLProcessor.swift */; };
+		1EB8BC9DB35579BEED868BBCC5B1578D /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88BD6D2EC0F05C88FC3A540A675BF12 /* Attribute.swift */; };
+		1F0C2B4B36B68C1162137E26F5D66933 /* BoldFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5CFCCE83F26EB17C48DD68A4083C02 /* BoldFormatter.swift */; };
+		1FBBD0852DB7A84AAC9440145A45F02B /* NSAttributedString+FontTraits.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC88740101B9180FD05922610450FA98 /* NSAttributedString+FontTraits.swift */; };
+		215EDCFE033782F50349D27689AE42F4 /* ItalicFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1235603CD86DBF61AD28869F9A81C90B /* ItalicFormatter.swift */; };
+		221153EDB9A80775769696DCB816031C /* Pods-FEditor-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 27206F941F268B667F49A89163318946 /* Pods-FEditor-dummy.m */; };
+		224B88CC7D447980FE5ABF072EB0C1D6 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43FF084C73B58E4F257313C13908152 /* Header.swift */; };
+		25328DF33EFE75E13360F1E78405FCE7 /* BoldElementAttributeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0696B96AB3115CACF95F83A415648029 /* BoldElementAttributeConverter.swift */; };
+		25B1DEB7439F5BA73090A9524EE6CD55 /* AttributedStringSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8186E45DFA1993C8FEC0972413D3046A /* AttributedStringSerializer.swift */; };
+		266A4BBCA8A4A6154AA7EC91B4CEE7BC /* Gutenblock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24A47C7FBACF7EAC99F7ADDC51AB23D /* Gutenblock.swift */; };
+		27476094C48BA535C5A1EC897C65EBE0 /* NSAttributedString+ReplaceOcurrences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BEEF886C22F688059399BA64E16CA2 /* NSAttributedString+ReplaceOcurrences.swift */; };
+		27732D036010043F3E92BBF823637762 /* NSAttributedString+CharacterName.swift in Sources */ = {isa = PBXBuildFile; fileRef = D071688A128FBD1B649AAA7D8FFA9CD1 /* NSAttributedString+CharacterName.swift */; };
+		281591D4713B65B7FE65CC503BF7926E /* GalleryAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3056C3C423A44FC02A3BD2C8C09ABC00 /* GalleryAttachment.swift */; };
+		29181A053B07388D2F643D941F83BE8E /* CSSAttributeMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FA8D49AD87EEC153B4E294DC452626 /* CSSAttributeMatcher.swift */; };
+		298EFDEE25E539AA36CDBF23437C7616 /* Plugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38ABD2B8EBF2932ED9CE1D98B5294F2 /* Plugin.swift */; };
+		2A47BC0142F5E880F207D90CB2848305 /* ConditionalStringAttributeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1837BF3111822E18E1CBAEF77F51B29 /* ConditionalStringAttributeConverter.swift */; };
+		2B67A97032CB7315408C4B8CC02CDDCF /* GutenbergOutputHTMLTreeProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D196F9C31D461EF33002CDC809A820A /* GutenbergOutputHTMLTreeProcessor.swift */; };
+		2B7A3CC6B74AE84156D47CA2D6C94F94 /* HRElementConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E9F1479C99AE310760FB9260442E2C /* HRElementConverter.swift */; };
+		2EF5C76B1EFC48A83FEACAEB213C4D24 /* HTMLAttachmentToElementConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9353D3831591247A4AFE9B5E8F7FCED3 /* HTMLAttachmentToElementConverter.swift */; };
+		2F429FF9A9C7526C87F978B8871CE2B3 /* CSSParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8F47AC33B37EBAFEA019ACA6693DE2 /* CSSParser.swift */; };
+		2FA49B7F29CEEF73659D94ACC1FEA899 /* CSSAttributeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3BC66B08B8FC61BD8E6279562A08C5 /* CSSAttributeType.swift */; };
+		2FB31F9B3CEC476612BFB987681D6F7F /* CaptionShortcodeInputProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50CC066843BA0DF3D6D2407F467B7D0 /* CaptionShortcodeInputProcessor.swift */; };
+		32708F63A0301C09EACEDE41CA57B634 /* HTMLParagraphFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178FA0E13D5D81E46B0D59751A61595C /* HTMLParagraphFormatter.swift */; };
+		3291CD7099C79C961C7A400D249A4E00 /* GutenpackAttachmentRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D197D4F3AF0E4B3634589E0AE87183 /* GutenpackAttachmentRenderer.swift */; };
+		32CB3009F0C3A86372087FD2D0BD9CFD /* HTMLAttachmentRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B092FD9720E73127360191946960CBCD /* HTMLAttachmentRenderer.swift */; };
+		3304038E9D18D1091208A2446003CC7C /* CommentNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65772017C12D261C8A6F4A4C6D238FD6 /* CommentNode.swift */; };
+		3336993D6608907F42431CE67DF1EED7 /* FigcaptionElementConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68AC0D93C910EEBDE5EE8B13E6D6C8E /* FigcaptionElementConverter.swift */; };
+		333798CF74C9B4AB44EA74719FFE81C9 /* HTMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B9C88B37B76FC176041B38D6607551 /* HTMLParser.swift */; };
+		34C49586BB1DF3FFEB16AF00E47F1551 /* SpecialTagAttachmentRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4459853917179490B1DE0A49023E4BEA /* SpecialTagAttachmentRenderer.swift */; };
+		353C91EABD3C107F93F37216CD5539F2 /* MediaAttachment+WordPress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C57E4F6369C4CCE0EF243F0232A8E3E /* MediaAttachment+WordPress.swift */; };
+		37FC5BF7414BE4A686B7EE32C8DA425C /* StringAttributeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E655EA901FC9804B08FD328D66DFD0 /* StringAttributeConverter.swift */; };
+		38C950CE747344968AEB07C437B813A6 /* CommentAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E72B972F57E75757F2D582F2CB976C /* CommentAttachment.swift */; };
+		390119F3D8A8DBB5C76E960C79512BAB /* DocumentType+Swift4.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA158CD1B2C0281B235C02CEAF685583 /* DocumentType+Swift4.swift */; };
+		3992FB51FABA3F08CF347E86FC10A8C0 /* HTMLTreeProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82E951D59962041522068CC67F03926 /* HTMLTreeProcessor.swift */; };
+		39AFCFB74379ACC35330D3FDE1EE3220 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D7039127E9D32B90638F1999369ED3 /* Node.swift */; };
+		3B5C785AACF68FCAC2258D07534220BC /* CommentAttachmentRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE659C80E958909A1275B8B586D97BC /* CommentAttachmentRenderer.swift */; };
+		3BE5B6075B4C48D35ABBECF1CFD88E52 /* FormattingIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDC9482592D2F6828437662E857E365 /* FormattingIdentifier.swift */; };
+		3D428FBA78ADF519F842330F1C4E8415 /* HTMLProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCF9C02A8896F4FE7BAFBEFDC6CCB8C /* HTMLProcessor.swift */; };
+		3DF865779E69E0926BBF79F8B35778DE /* FontFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3931204379BAA1C40E425C71D0573652 /* FontFormatter.swift */; };
+		3E0456615C4E08A0E4486DFFB01970F0 /* String+Paragraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8003CFF4E3EAFF538C6BF46C9080B9 /* String+Paragraph.swift */; };
+		3EC7594886F9CF7A0788B84CD4B28F1F /* BoldStringAttributeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FA0CD2D83947DB0886B271ACA8153F /* BoldStringAttributeConverter.swift */; };
+		3F5D336B83CCF818854E2330C04DF59A /* FigureElementConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32442639685C73CBAE9E3B830675E094 /* FigureElementConverter.swift */; };
+		3F645DB887CCAEE6D3BE3F4D91CCC3B5 /* String+HTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE69D0B38ABB61ABF28DBFA2BBE6C54 /* String+HTML.swift */; };
+		43960AE31E8816C4C417EFEA95392CB9 /* UITextView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B8E480484A4169EDB1EC2F6CA48C3E /* UITextView+Delegate.swift */; };
+		43EB0C3D8359BFE9594413924CA47605 /* TextList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7A9F20D4DF2E9153378D9C4BC838B2 /* TextList.swift */; };
+		449D502EE4FAB6F177DF3335A2E4B262 /* String+EndOfLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DED26AAFCE53DDC2B94AB68C45F9607 /* String+EndOfLine.swift */; };
+		48B40CC00A7E7DE6C8E805C9FE5B885B /* NSAttributedString+ParagraphRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCD0D3109FE4EE7FFB03577144BC425 /* NSAttributedString+ParagraphRange.swift */; };
+		48C8A89BFD4F05E827E5D609D11B6999 /* RegexProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C610E7A6BFCB17028C3339DCDD5C1A45 /* RegexProcessor.swift */; };
+		48C9DBD043726D6E64C0F5C32FEC7EA5 /* WordPressPasteboardDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8EE2D38DC9585B13C48EB53381D7034 /* WordPressPasteboardDelegate.swift */; };
+		48E82F406AF10E5A9A5739EC6A1F439D /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88246337870C14F544D2534B63B655F5 /* EditorView.swift */; };
+		49D11296EEBC7195BAF314AE93709F6E /* UIFont+Traits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E029A4B0A12A5353B9B17E61E974109 /* UIFont+Traits.swift */; };
+		4B7A198E4966D582E139DC23A3CFA9FC /* ParagraphPropertyConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1AA4B6CA98B0E783E0A8CEBA3AF1D4 /* ParagraphPropertyConverter.swift */; };
+		4C1FB4479F1117C4C2469D93A5E67E16 /* GalleryAttachmentToElementConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2DE41C4357DE3A466CC704810EAE2C /* GalleryAttachmentToElementConverter.swift */; };
+		4C284D2396478A1151C8E7201A8EA8E0 /* FormatterElementConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEA31BF9CA9E02809A64E71D722A69 /* FormatterElementConverter.swift */; };
+		4C2DB4C738CBAB7C44545BA9D780FC21 /* String+RangeConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2244A4683CFCB6BB94222AA114B812 /* String+RangeConversion.swift */; };
+		4CF519DC573CE6EA04378B3BD5C5D6E6 /* aztec.png in Resources */ = {isa = PBXBuildFile; fileRef = E8E80BC3B7B70420A8FEC90626FD8299 /* aztec.png */; };
+		4DAEBA12297D99F651A79D4D12057E13 /* WordPress-Editor-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 653834E7AEA88C7702CE2A5FFD446633 /* WordPress-Editor-iOS-dummy.m */; };
+		4DBEFE4F2779DC075117E8FD24C884B0 /* ImageAttachment+WordPress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BC5AFED068DECCF0621FC549B9FA14 /* ImageAttachment+WordPress.swift */; };
+		4F79F9E9E0662C658D851B75C5723B06 /* ConditionalItalicStringAttributeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD3EA8BD1E9E1265EFAFFAAF5A72538 /* ConditionalItalicStringAttributeConverter.swift */; };
+		4FD5AB77024FFE62B69D82239915F197 /* ImageAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D729256EB26894A95A883BBAD6A674C /* ImageAttachment.swift */; };
+		503992A652F9A4B45185AF6835CDB502 /* UnderlineCSSAttributeMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5485BA77F969E074C00A120202947221 /* UnderlineCSSAttributeMatcher.swift */; };
+		5043D3792E706B4170A0B535DC918D59 /* GallerySupportedAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DA30EC63AB70C87640E76CDB4DC290 /* GallerySupportedAttribute.swift */; };
+		515A45D2DA74A3ABF600CC806B6AB888 /* PluginInputCustomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51D0506B11805851049A86013BA23FF /* PluginInputCustomizer.swift */; };
+		5426914B7BE4349E0375D4A95073CCAF /* VideoShortcodeProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2880585CAE56E7F55CE5B6C371B1EB /* VideoShortcodeProcessor.swift */; };
+		5487D80CA30F9F2AD674444770B71A03 /* WordPressPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF50453AD6994600E8BD8A692A7EDD3 /* WordPressPlugin.swift */; };
+		55691709BB31E87B5737EA4C17917CCD /* HTMLRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C295F233B14F89AC9A06076DE243E4B /* HTMLRepresentation.swift */; };
+		556F22FEFA7FC4CCDB66648F7441B990 /* VideoAttachment+WordPress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5914E703274B6C3B8CCB4BBB03FF8EC0 /* VideoAttachment+WordPress.swift */; };
+		58ABBAED2ABF849B56C3CBE1E8DA3007 /* NSTextingResult+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882BB9BD764A0D2A552980D28AC3770 /* NSTextingResult+Helpers.swift */; };
+		5C5688F0855F9CA516F4891654204CDB /* TextViewPasteboardDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2721FCF992397C35FB74891304C950A1 /* TextViewPasteboardDelegate.swift */; };
+		62B9515750003B5A1986E110174634DB /* GalleryShortcodeInputProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888F9A10687DC69E46CFBEF8E91930D8 /* GalleryShortcodeInputProcessor.swift */; };
+		62BDC4FBD9412A3267D54DDF28CBD3CF /* CommentNode+Gutenberg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EEF7815C63B43BABDB9BA9B7A90049 /* CommentNode+Gutenberg.swift */; };
+		64113C575161889579ECF3BC720FB3FD /* GalleryElementToTagConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114FDA57E072001623375ABC4F033083 /* GalleryElementToTagConverter.swift */; };
+		645A7991E6B9584E5C5EF82287D04F04 /* HTMLStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AED1F1D42D661032A92B935E3548594 /* HTMLStorage.swift */; };
+		6589DA18EFD2E90E8630E043520A9BF7 /* VideoAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F806C334C9C1150676341C4660C3BE6C /* VideoAttachment.swift */; };
+		67FD19448038683E9A112CA97F204F26 /* InAttributeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1C85675DDBCAA6E173D589E2FC61C6 /* InAttributeConverter.swift */; };
+		69B40A7ED80FE999405BD8FE8DEA7644 /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D824240A4373EA2B698A4CE247FACD5 /* UIImage+Resize.swift */; };
+		69F9D7516319EEB35856ED22F2D594E4 /* NSRange+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C07E63208B8A17B4629FCB6BFEC019 /* NSRange+Helpers.swift */; };
+		6A768D08BE4DD7DE0644DD1AFCC22571 /* GenericElementToTagConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049BA24BA6B9A7541C6654E0314381F9 /* GenericElementToTagConverter.swift */; };
+		6AE73D3A8F04810104109C1B4747067A /* InNodeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A46B599817071321762DF0A60DA5FEA /* InNodeConverter.swift */; };
+		6C6AE530335ACCE5728165BF4ED39094 /* AttributeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA2B578E4C8867B5C1A4D8984B00D0C /* AttributeType.swift */; };
+		6D027114220A0F06C3A6B2E8AB3323FA /* BRElementConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0451C28C4980379B72EB96837BD29FF /* BRElementConverter.swift */; };
+		6D11FA6757A58B2E997F55AC4FB3379D /* GalleryElementConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021DCB219AF2F28A1003BBA66204E065 /* GalleryElementConverter.swift */; };
+		6E2BFA1898D2B7BAF270A08042EDE5C9 /* ElementToStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747D1265B90103780D8A4C5715D3DD1E /* ElementToStringConverter.swift */; };
+		6EF83DB93234CEA22B122DB04E52939C /* RenderableAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F31DAE977614CE3B2532EB8734B4EB /* RenderableAttachment.swift */; };
+		7144F3475A2E6873A054FB8BBD06E1BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 301CD0CEA3A838BFE5156D01749162DB /* Foundation.framework */; };
+		72997671BCA57F540EACBFF6830896DB /* NSAttributedStringKey+Aztec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648FADF97530352D2B439DCAC56C901A /* NSAttributedStringKey+Aztec.swift */; };
+		732B5915C98DFF6344F985D90F1CD9B5 /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144691A4DC308781C8FEE53027901DB8 /* Metrics.swift */; };
+		75ED17F1857DB4736F9B4B4BD5760EB0 /* FigureFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECFF3006DC258D1014E385D0D6AFB74 /* FigureFormatter.swift */; };
+		75F07CB231F0625FF14C0FD0D50816B5 /* GutenbergAttributeEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1083F824D246D8CDD43111835C4F1BB9 /* GutenbergAttributeEncoder.swift */; };
+		788C4E73EE984533FF998EE0F32EDE67 /* GutenbergAttributeNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A8B725E9EAFC2D9ABD50F395E8E8CD /* GutenbergAttributeNames.swift */; };
+		7A32CF159F1E6D13AC6C75A21AFD38F2 /* ShortcodeProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285B041FF612E36E1A63B23E31BD7CEB /* ShortcodeProcessor.swift */; };
+		7B0CFE322548D14D91A716F217A2B57F /* ShortcodeAttributeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93CAC13455A196BCA35D78DA12243267 /* ShortcodeAttributeParser.swift */; };
+		7DC5C9146107DEEFCB1C2017A7899027 /* GenericElementConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2357EC419C6A00DCA11BE9B90D4319 /* GenericElementConverter.swift */; };
+		7E22E4CCCAB77BFE2F5980817F906554 /* NSAttributedString+Analyzers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C928C7C4BE58F85AB340C60D1C84B245 /* NSAttributedString+Analyzers.swift */; };
+		7F526DBFF26E518772B2D80D00E288BD /* CiteFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9500805E25403C0A11A9101CA2C998 /* CiteFormatter.swift */; };
+		80C46C569D61665408BB05C9123C9D28 /* PreFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB9EB8128E7E15BC3D3D42FDD96D9E9 /* PreFormatter.swift */; };
+		8109A9B026169DC25C0AA0CD7E7215B2 /* ParagraphAttributeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF3BD00ED438AA44B8250BEAF1B1CD0 /* ParagraphAttributeFormatter.swift */; };
+		8178D82524A90BD6E70EEEE0B31CDDD5 /* BoldCSSAttributeMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B40957F490CED76EAC915CE41436ADB /* BoldCSSAttributeMatcher.swift */; };
+		83B033B4985A7F3655506149C188C1A9 /* ParagraphProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417B6628CE5F1A7F81C90CAFA4BABEBE /* ParagraphProperty.swift */; };
+		85D7C74AEEEC5E20E0B3CEC6D9B304FA /* FormatBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A278CE4BF5722B7376340F7D82E33C /* FormatBarItem.swift */; };
+		8B9BB3C29D9DF9BD2A077CC8A31828EF /* NSAttributedString+Archive.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1183AB736911556946F8D73F3CFE32D /* NSAttributedString+Archive.swift */; };
+		8C2D1D8E1A3C6FCDBD5EBC6689BC2CE1 /* LayoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7E2311D5C0BAFA341EE6E7943A19C9 /* LayoutManager.swift */; };
+		8CEB99749F6F39F6606191C502E57099 /* PipelineProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857601BDF3BC9A1B8B6D5F215C9D2DD3 /* PipelineProcessor.swift */; };
+		8D5CDC161A1470F8CC1A8E7E75B82417 /* UnderlineElementAttributeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028FEFF7F1C2E133AEF8B90BD9473A02 /* UnderlineElementAttributeConverter.swift */; };
+		8E24DC3E4384D81E141174A43CA824EB /* OptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A194B7F56E8DC19AEF4EA34D0E41B0D8 /* OptionsTableViewController.swift */; };
+		8F789CDF9E2882491A0136CBA8103A34 /* MediaAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115037B9D1EDE7387323A0024491B227 /* MediaAttachment.swift */; };
+		8F99C12F2C5F939BCC857840441031EE /* GutenbergAttributeDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1816EA14FF2D42CE3EC8DDD0D31D9E12 /* GutenbergAttributeDecoder.swift */; };
+		940F8B9B256F1EAFBCE88A162592C10E /* ItalicElementAttributeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07B19A1E6F806A0CF9EBBAAA6E26A0C /* ItalicElementAttributeConverter.swift */; };
+		978A47AFD755140D2CCC30E524DCBECD /* CodeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498C15673BE8E843486CA187768A767A /* CodeFormatter.swift */; };
+		99C7F3A267E88DD8DF06DF9515CD3B4B /* RemovePProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565B1C59B27D4526CBD910D0379E2310 /* RemovePProcessor.swift */; };
+		9C05F14529AC481E493B172C52F3329F /* UIColor+Parsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE88E6978EEA1E1F4C9436D1CF9D0060 /* UIColor+Parsers.swift */; };
+		9CA65B29743F791DDD6C4396064F977B /* GutenpackConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9411962F993E055820CF1AE4349E6DDE /* GutenpackConverter.swift */; };
+		9E255E7E1415E4884ACDFBDE5895F91F /* NSLayoutManager+Attachments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227D16AE71F26ACB4244E8455E9C9804 /* NSLayoutManager+Attachments.swift */; };
+		9FE95F5E3836B940D20AB3F5125C5148 /* AutoPProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC864A0133A4BD5854FC54E13D65AFE /* AutoPProcessor.swift */; };
+		A0EFFBE6DE86A7CC54B7ADAC82251B86 /* HTMLPre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D191FB8C012A3EFE9590C93F71BFC9 /* HTMLPre.swift */; };
+		A100EF9D907532F850883FCC31A3CE01 /* String+RegEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD679FB051AEADFAF38DA542B1D7F76B /* String+RegEx.swift */; };
+		A3EB181923ABA6424A10A9CFBD32C018 /* FigcaptionFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89C2D185E21577BD37DC4071DBC2E72 /* FigcaptionFormatter.swift */; };
+		A6D435AF03F5C9E7282E2E57D7559B9A /* StringUTF16+RangeConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255AEB627774FE5190D3946C18C3E63D /* StringUTF16+RangeConversion.swift */; };
+		A7A8C9F9A3B2D5164E1898DA12D9D323 /* String+CharacterName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C33D12F447B79406F923EC27ED3C50 /* String+CharacterName.swift */; };
+		A8F77308464A2A5386BE495825488427 /* CaptionShortcodeOutputProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F98C48A0DA100FC750BE55A893916E /* CaptionShortcodeOutputProcessor.swift */; };
+		A8FA69F70637C0CE39956A594481FCA7 /* WordPress-Aztec-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3362F8822B271E1B6884D2FF7C449C04 /* WordPress-Aztec-iOS-dummy.m */; };
+		AA3EA71CD3FD66E4D23B5CEABA5A2312 /* ShortcodeAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9227DC8E8C4F65828BD9B4DEEB6BFEC1 /* ShortcodeAttribute.swift */; };
+		AAAFE470AF2D385A45F53747BA229309 /* BlockquoteFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4D985FE636D91946FCCEA0D2971351 /* BlockquoteFormatter.swift */; };
+		ABEA30222E1C833E6998D21679549670 /* VideoAttachmentToElementConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B7AE6197D2AEB4EDE40BB6DFB2B28A /* VideoAttachmentToElementConverter.swift */; };
+		AC2E03900E9BD40E7009067BA58AFAF7 /* GutenpackAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDFBD66D130D8C8E654AFD118ED55C4 /* GutenpackAttachment.swift */; };
+		ACDE2A0120279A93CFF68670F5460C85 /* InAttributesConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62B9B74D8DB29C730C5253D16562B90 /* InAttributesConverter.swift */; };
+		ADFD2BC3055A20E1EC3386E81698EDA2 /* Array+Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C57EA3A08AD9F1D80495712DA5AEF3 /* Array+Attribute.swift */; };
+		AE12D735B1607DB7217AE73BEC9A13EF /* NSMutableAttributedString+ParagraphProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60D70052B84677F4A93658ABDFB4A74 /* NSMutableAttributedString+ParagraphProperty.swift */; };
+		AEA65D0EE94E6EFD1EFBE39C53DE873F /* Dictionary+AttributedStringKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B691A7C44CEBA5A1C221953494315284 /* Dictionary+AttributedStringKey.swift */; };
+		B3C358F2383BD2782F922566E224AB9F /* CLinkedListToArrayConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E902141E7FE6B32C6BFB8CF59414CB /* CLinkedListToArrayConverter.swift */; };
+		B40746CF73F6F1F297DCB5DAE106F5A4 /* LinkFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF7155F3DDBA4F7B5507A87CC05754F /* LinkFormatter.swift */; };
+		B42C5A16147557425EB81602EE23AC87 /* Processor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D063F9B5665C43D8AE7F83F617ECBC21 /* Processor.swift */; };
+		B4B6945CE531AAE3D5A9953B75383E0E /* UIFont+Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764911616778DBA72EC095CCB3EEBE92 /* UIFont+Emoji.swift */; };
+		B65A158F60C9409B9BE14C801109952A /* LiFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E068315D8C26C41701608FC85E8474 /* LiFormatter.swift */; };
+		B70697D4CF3651F2B7959EE9D5F6A286 /* UnsupportedHTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B9B80C60564EBC20701581C45CF7E1 /* UnsupportedHTML.swift */; };
+		B9B35CB2281BBDE7C1083992916525D2 /* Figure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB7500E7F9BAA81FF9312629BCD5A69 /* Figure.swift */; };
+		B9B9B38C0F39EE36E419D067584008C0 /* AttributeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3F3EAEFFC8C05ED246355E5313EFA8 /* AttributeFormatter.swift */; };
+		B9E73CA33BCF8934326FC19F241D8629 /* CommentAttachmentToElementConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FE54A6B4AFE3F45D4F573BB9C61C49 /* CommentAttachmentToElementConverter.swift */; };
+		BB4D26EE156412F0EF1B102F3684627A /* Character+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF667E85E0CE9A2639520A5E5E929BA /* Character+Name.swift */; };
+		BC36A8AB2D6AF419328F287D8D234FA6 /* WordPress-Editor-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CCB5F9CA48D9DCFC9C331349D43B229 /* WordPress-Editor-iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C0773D3EA88DF78C85C1EB2465E312A2 /* TextListFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AF4FBE82BEB9940BBD3C3514D31FEA /* TextListFormatter.swift */; };
+		C3C365C5CE53C30745AF58AE7441D4B8 /* UIPasteboard+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0F3684A0002CD12B23D83D4B593EEE /* UIPasteboard+Helpers.swift */; };
+		C52E9CA52DEE667238DFA77E31A0D7E6 /* InNodesConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1028B2B0BFC7EF44D0B79B5A210F4F5 /* InNodesConverter.swift */; };
+		C625013958C8C21F4DA9E4554374336B /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB42B9833E9D7E4B0A2880E64969400 /* Converter.swift */; };
+		C7155080D8E8EC4F623B543A034322D0 /* GutenblockConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39509B91C5843A573D2960C48E264506 /* GutenblockConverter.swift */; };
+		C74D495FE7E4E346B968DC928719CCC5 /* Pods-FEditor-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8EBD3A4043606712E1224D6F5D87A303 /* Pods-FEditor-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C83FEFA749B0EC5873AA11F539505A94 /* AttachmentElementConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030BECD392B27E5C0EADCBA523A0C8A2 /* AttachmentElementConverter.swift */; };
+		C96C36068DE2501FCB815B34D84A02EE /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3ED6CC85F1ED2A0181C85BDD4A7D86BF /* Media.xcassets */; };
+		CDDAE21E14B0990DAC379BB99561947D /* TextNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F07BD5E505CBF5E35B943714FEEB53 /* TextNode.swift */; };
+		CED9E20B8677EBF030BA5CA13B4A926E /* GutenpackAttachmentToElementConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9423D2844F0C6F17CF80BD92348FE0DD /* GutenpackAttachmentToElementConverter.swift */; };
+		CFF4491B383AA1AF361CABAE71E5AFC4 /* UITextView+Undoable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46450073EB1634BAF4A408E0FBF9569 /* UITextView+Undoable.swift */; };
+		D0D82173C502E2B4EE7B0DCC7D9AB57F /* ImageAttachmentToElementConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CCFDA0FD9A38087FDC2016F477C8AD /* ImageAttachmentToElementConverter.swift */; };
+		D0E5187906FE5B9729A789BB95A4ED16 /* StrikethroughFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263A1748026843DD06334F008CA35B9C /* StrikethroughFormatter.swift */; };
+		D10A2CF649BF016FCDF87AB823217B0D /* LineAttachmentToElementConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5079CE3C1AF748AAE186CF346788A9E2 /* LineAttachmentToElementConverter.swift */; };
+		D18E27CBDCC828DABBCDB4003B2C9F80 /* WordPressInputCustomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA7C261DF1874E9B2834AE648A58EDB /* WordPressInputCustomizer.swift */; };
+		D20105F24DBFA76EEBE979EB63B543F4 /* NSAttributedStringKey+Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF23F2CDDCE8E810E386042E5447CFE0 /* NSAttributedStringKey+Conversion.swift */; };
+		D4C8CBA25E1972F9566CF16FD0034572 /* UnderlineFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C785C02B1D009D4603BF34C5E8820B64 /* UnderlineFormatter.swift */; };
+		D518C87A9C873F2C497537FF763CC8EB /* WordPress-Aztec-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D8E4575A4768957B881A014DA225C47 /* WordPress-Aztec-iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D6CC82A7F0CE64EB5C517483BF64B0BD /* AttributedStringParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0610AF9C3F49D55C7CDA542ABFD104 /* AttributedStringParser.swift */; };
+		D832D73771AFC670E0C055F7DBAC62D8 /* NSAttributedString+Lists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0508670DE78D697563741A5F89A13FBA /* NSAttributedString+Lists.swift */; };
+		DA8033398CC80DEBBB53D376361A707D /* HTMLSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607AAC6640E0B67AA82B87C423EF520D /* HTMLSerializer.swift */; };
+		DAE3DD3DFEEB25EA1D5E179B72F0D112 /* HeaderFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E844F784E792309EAEB21E169D1863 /* HeaderFormatter.swift */; };
+		DC81245D3431CA088FBD877ADC3215E2 /* GutenbergInputHTMLTreeProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61672C8D4C4FF783F03DDF3A6B34701E /* GutenbergInputHTMLTreeProcessor.swift */; };
+		DCDD3184A607A78A939339363A48A833 /* FormatBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E525283441C0368C36FD9C05DBF97DF4 /* FormatBarDelegate.swift */; };
+		DD8132419828496008090B447D8BB2E1 /* FormatBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0989A383F77EE4D60BBA6749136D48 /* FormatBar.swift */; };
+		DE145E90CEE90EA2548BCABD04EFE79C /* CSSAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18D7511420E16A4BAAAD0D55D172C2A /* CSSAttribute.swift */; };
+		E1527DF3968B8EEB6BB027A2418AEA1A /* ItalicStringAttributeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7E206398252DC5EE1956F9F242DEA7 /* ItalicStringAttributeConverter.swift */; };
+		E23D1F544F6D78F70D2D8EB6C1FF3ABB /* HTMLConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF808FE4C12EAEF83354EAEAFA021A5 /* HTMLConverter.swift */; };
+		E59371D445E8121651513D85D7035642 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C244C74747D5B35E582DB6D4645B03 /* Assets.swift */; };
+		E6098FB0E28CA97C19BC2E4DCED62386 /* CiteStringAttributeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5382C4288E55F83408895496C08BFFE8 /* CiteStringAttributeConverter.swift */; };
+		E63E83BBCA55AE0AC1979A5586C741F6 /* ColorFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1979BCDD1E2339733F86684F61B55C /* ColorFormatter.swift */; };
+		E70A2194AB84EBACB475A116DE8AFB8D /* WordPressOutputCustomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EC9C3F1C9E4ED014C23B1E8AB081DE /* WordPressOutputCustomizer.swift */; };
+		E9C72EC9D490CD9D7B921ED156513893 /* OptionsTablePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C5C3A135DB6804B940E4D749F728E8 /* OptionsTablePresenter.swift */; };
+		EC20857655E9D688CDEB01666E3C0214 /* HTMLParagraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75836698FCDC26028C40E1852C8DC473 /* HTMLParagraph.swift */; };
+		EC379C4F09616DC9B68844BC795E9EF1 /* ParagraphStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B4398643EDE5D3E3BF9FE6BE3EB190 /* ParagraphStyle.swift */; };
+		ED9F9E18ECA7BBE3844CAB61F3E69D99 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C756984933333189F96A577115D0651 /* Element.swift */; };
+		EE6A4C159844FAB483D40D459C5176EE /* NSAttributedString+Attachments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BB45F1C66D200F789E189D821C6900 /* NSAttributedString+Attachments.swift */; };
+		F0DBD061F2A4BF6BEAC148629D432016 /* HTMLLi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C4197FC0CAB5F15FA8AEA56F5371B6 /* HTMLLi.swift */; };
+		F17A68C9B3A851E29245A647EEB9384E /* NSMutableAttributedString+ReplaceOcurrences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9903F9F8C5274287FACE80D43F64C220 /* NSMutableAttributedString+ReplaceOcurrences.swift */; };
+		F18C01937FC957251F387912E730EB74 /* StandardAttributeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC4942939B18A894CC2488CA4E660B5 /* StandardAttributeFormatter.swift */; };
+		F1F9B4D1B7EC5D30687866BF9D62352B /* Figcaption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B44C6B9EFB5633BB92770FDEF037099 /* Figcaption.swift */; };
+		F2199149EA9FD7E6CF94ED96CBA01769 /* MainAttributesConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19AEA8158AFA5BF44AB82B5A12E4EBE8 /* MainAttributesConverter.swift */; };
+		F4FB8F48CA682FDCA5D54B1500EA4A84 /* PluginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617209CF69A5FD58E91DA465C002A4AB /* PluginManager.swift */; };
+		F7ED3D96F5AD83CFE2E4D4D2D34C4E5F /* ItalicCSSAttributeMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF185348B545A977501009E54B2E4195 /* ItalicCSSAttributeMatcher.swift */; };
+		F883D8EA815792578ACDBB980DC56487 /* CiteElementConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B62C3E804D859DADD17035392D1429B /* CiteElementConverter.swift */; };
+		F983D34C0028931B18322F1BF56FD9F0 /* UIStackView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4023DBD0FD76FD35FD9D69A93568E046 /* UIStackView+Helpers.swift */; };
+		FA3E5FCB4F907DBCCF9134A2FE5054D0 /* TextStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBBDFB27829829B4B686239515B656F /* TextStorage.swift */; };
+		FCADEA13FC07C1F343A4AAEA40E774B0 /* HTMLDivFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7F72552BFA6E3248619EA5C0113A90 /* HTMLDivFormatter.swift */; };
+		FF24F678BBDCCF4948973CC67D27D0E9 /* ShortcodeAttributeSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCF89DA50EC13F0A9CC7C4F47870FED /* ShortcodeAttributeSerializer.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		65389BB44758CB2CD2A013A60DA84487 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 525D39961BFEC29AE0CF910AC68A52B3;
+			remoteInfo = "WordPress-Editor-iOS";
+		};
+		7AA24B5C89EE114A4FF03F8764D033A6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 25E86B2AC404BDF00BFBAE08C01E105F;
+			remoteInfo = "WordPress-Aztec-iOS";
+		};
+		DE4D3E22E9080629C1A2F2A24DE674D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 25E86B2AC404BDF00BFBAE08C01E105F;
+			remoteInfo = "WordPress-Aztec-iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01F07BD5E505CBF5E35B943714FEEB53 /* TextNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextNode.swift; path = Aztec/Classes/Libxml2/DOM/Data/TextNode.swift; sourceTree = "<group>"; };
+		021DCB219AF2F28A1003BBA66204E065 /* GalleryElementConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GalleryElementConverter.swift; path = WordPressEditor/WordPressEditor/Classes/Plugins/WordPressPlugin/Calypso/GalleryShortcode/GalleryElementConverter.swift; sourceTree = "<group>"; };
+		028FEFF7F1C2E133AEF8B90BD9473A02 /* UnderlineElementAttributeConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UnderlineElementAttributeConverter.swift; path = Aztec/Classes/Converters/AttributesToStringAttributes/Implementations/UnderlineElementAttributeConverter.swift; sourceTree = "<group>"; };
+		030BECD392B27E5C0EADCBA523A0C8A2 /* AttachmentElementConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AttachmentElementConverter.swift; path = Aztec/Classes/Converters/ElementsToAttributedString/Base/AttachmentElementConverter.swift; sourceTree = "<group>"; };
+		033D16380BFCEC7C1DF98613C9A420FD /* UILayoutPriority+Swift4.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UILayoutPriority+Swift4.swift"; path = "Aztec/Classes/Extensions/UILayoutPriority+Swift4.swift"; sourceTree = "<group>"; };
+		049BA24BA6B9A7541C6654E0314381F9 /* GenericElementToTagConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GenericElementToTagConverter.swift; path = Aztec/Classes/Converters/ElementsToHTML/Implementations/GenericElementToTagConverter.swift; sourceTree = "<group>"; };
+		0508670DE78D697563741A5F89A13FBA /* NSAttributedString+Lists.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSAttributedString+Lists.swift"; path = "Aztec/Classes/Extensions/NSAttributedString+Lists.swift"; sourceTree = "<group>"; };
+		05B4398643EDE5D3E3BF9FE6BE3EB190 /* ParagraphStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParagraphStyle.swift; path = Aztec/Classes/TextKit/ParagraphStyle.swift; sourceTree = "<group>"; };
+		0696B96AB3115CACF95F83A415648029 /* BoldElementAttributeConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BoldElementAttributeConverter.swift; path = Aztec/Classes/Converters/AttributesToStringAttributes/Implementations/BoldElementAttributeConverter.swift; sourceTree = "<group>"; };
+		09F7EA3B9A5D361F357A77D8B479EC35 /* Pods-FEditor.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-FEditor.modulemap"; sourceTree = "<group>"; };
+		0A97FADBBD025884999E217981863620 /* LineAttachment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LineAttachment.swift; path = Aztec/Classes/TextKit/LineAttachment.swift; sourceTree = "<group>"; };
+		0AED1F1D42D661032A92B935E3548594 /* HTMLStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTMLStorage.swift; path = Aztec/Classes/TextKit/HTMLStorage.swift; sourceTree = "<group>"; };
+		0B1AA4B6CA98B0E783E0A8CEBA3AF1D4 /* ParagraphPropertyConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParagraphPropertyConverter.swift; path = Aztec/Classes/NSAttributedString/Conversions/ParagraphPropertyConverters/Base/ParagraphPropertyConverter.swift; sourceTree = "<group>"; };
+		0BD3EA8BD1E9E1265EFAFFAAF5A72538 /* ConditionalItalicStringAttributeConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConditionalItalicStringAttributeConverter.swift; path = Aztec/Classes/Converters/StringAttributesToAttributes/ConditionalConverters/ConditionalItalicStringAttributeConverter.swift; sourceTree = "<group>"; };
+		0D196F9C31D461EF33002CDC809A820A /* GutenbergOutputHTMLTreeProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GutenbergOutputHTMLTreeProcessor.swift; path = WordPressEditor/WordPressEditor/Classes/Plugins/WordPressPlugin/Gutenberg/GutenbergOutputHTMLTreeProcessor.swift; sourceTree = "<group>"; };
+		0D824240A4373EA2B698A4CE247FACD5 /* UIImage+Resize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImage+Resize.swift"; path = "Aztec/Classes/Extensions/UIImage+Resize.swift"; sourceTree = "<group>"; };
+		0DE599FBC6D7E8A2C4DB53753BF98771 /* ElementNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ElementNode.swift; path = Aztec/Classes/Libxml2/DOM/Data/ElementNode.swift; sourceTree = "<group>"; };
+		101F0D3EB7F3C134A88F1FC383161CD8 /* WordPress-Editor-iOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "WordPress-Editor-iOS-Info.plist"; sourceTree = "<group>"; };
+		1083F824D246D8CDD43111835C4F1BB9 /* GutenbergAttributeEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GutenbergAttributeEncoder.swift; path = WordPressEditor/WordPressEditor/Classes/Plugins/WordPressPlugin/Gutenberg/GutenbergAttributeEncoder.swift; sourceTree = "<group>"; };
+		114FDA57E072001623375ABC4F033083 /* GalleryElementToTagConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GalleryElementToTagConverter.swift; path = WordPressEditor/WordPressEditor/Classes/Plugins/WordPressPlugin/Calypso/GalleryShortcode/GalleryElementToTagConverter.swift; sourceTree = "<group>"; };
+		115037B9D1EDE7387323A0024491B227 /* MediaAttachment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MediaAttachment.swift; path = Aztec/Classes/TextKit/MediaAttachment.swift; sourceTree = "<group>"; };
+		1235603CD86DBF61AD28869F9A81C90B /* ItalicFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ItalicFormatter.swift; path = Aztec/Classes/Formatters/Implementations/ItalicFormatter.swift; sourceTree = "<group>"; };
+		144691A4DC308781C8FEE53027901DB8 /* Metrics.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Metrics.swift; path = Aztec/Classes/Constants/Metrics.swift; sourceTree = "<group>"; };
+		16C4197FC0CAB5F15FA8AEA56F5371B6 /* HTMLLi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTMLLi.swift; path = Aztec/Classes/TextKit/ParagraphProperty/HTMLLi.swift; sourceTree = "<group>"; };
+		16FA0CD2D83947DB0886B271ACA8153F /* BoldStringAttributeConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BoldStringAttributeConverter.swift; path = Aztec/Classes/Converters/StringAttributesToAttributes/Implementations/BoldStringAttributeConverter.swift; sourceTree = "<group>"; };
+		178FA0E13D5D81E46B0D59751A61595C /* HTMLParagraphFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTMLParagraphFormatter.swift; path = Aztec/Classes/Formatters/Implementations/HTMLParagraphFormatter.swift; sourceTree = "<group>"; };
+		1816EA14FF2D42CE3EC8DDD0D31D9E12 /* GutenbergAttributeDecoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GutenbergAttributeDecoder.swift; path = WordPressEditor/WordPressEditor/Classes/Plugins/WordPressPlugin/Gutenberg/GutenbergAttributeDecoder.swift; sourceTree = "<group>"; };
+		19AEA8158AFA5BF44AB82B5A12E4EBE8 /* MainAttributesConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MainAttributesConverter.swift; path = Aztec/Classes/Converters/AttributesToStringAttributes/Base/MainAttributesConverter.swift; sourceTree = "<group>"; };
+		1A5D09ADC43736659DBE15FE4E4C23BC /* Pods-FEditor-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FEditor-Info.plist"; sourceTree = "<group>"; };
+		1B40957F490CED76EAC915CE41436ADB /* BoldCSSAttributeMatcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BoldCSSAttributeMatcher.swift; path = Aztec/Classes/Libxml2/DOM/Logic/CSS/BoldCSSAttributeMatcher.swift; sourceTree = "<group>"; };
+		1B7E2311D5C0BAFA341EE6E7943A19C9 /* LayoutManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutManager.swift; path = Aztec/Classes/TextKit/LayoutManager.swift; sourceTree = "<group>"; };
+		1B9500805E25403C0A11A9101CA2C998 /* CiteFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CiteFormatter.swift; path = Aztec/Classes/Formatters/Implementations/CiteFormatter.swift; sourceTree = "<group>"; };
+		1BCD0D3109FE4EE7FFB03577144BC425 /* NSAttributedString+ParagraphRange.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSAttributedString+ParagraphRange.swift"; path = "Aztec/Classes/Extensions/NSAttributedString+ParagraphRange.swift"; sourceTree = "<group>"; };
+		1DDEA31BF9CA9E02809A64E71D722A69 /* FormatterElementConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormatterElementConverter.swift; path = Aztec/Classes/Converters/ElementsToAttributedString/Base/FormatterElementConverter.swift; sourceTree = "<group>"; };
+		211C0F54B361D1D9467EA1CEF729EC3A /* Pods_FEditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FEditor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		227D16AE71F26ACB4244E8455E9C9804 /* NSLayoutManager+Attachments.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSLayoutManager+Attachments.swift"; path = "Aztec/Classes/Extensions/NSLayoutManager+Attachments.swift"; sourceTree = "<group>"; };
+		255AEB627774FE5190D3946C18C3E63D /* StringUTF16+RangeConversion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "StringUTF16+RangeConversion.swift"; path = "Aztec/Classes/Extensions/StringUTF16+RangeConversion.swift"; sourceTree = "<group>"; };
+		263A1748026843DD06334F008CA35B9C /* StrikethroughFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StrikethroughFormatter.swift; path = Aztec/Classes/Formatters/Implementations/StrikethroughFormatter.swift; sourceTree = "<group>"; };
+		27206F941F268B667F49A89163318946 /* Pods-FEditor-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FEditor-dummy.m"; sourceTree = "<group>"; };
+		2721FCF992397C35FB74891304C950A1 /* TextViewPasteboardDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextViewPasteboardDelegate.swift; path = Aztec/Classes/TextKit/TextViewPasteboardDelegate.swift; sourceTree = "<group>"; };
+		285B041FF612E36E1A63B23E31BD7CEB /* ShortcodeProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShortcodeProcessor.swift; path = WordPressEditor/WordPressEditor/Classes/Processors/ShortcodeProcessor.swift; sourceTree = "<group>"; };
+		2882BB9BD764A0D2A552980D28AC3770 /* NSTextingResult+Helpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSTextingResult+Helpers.swift"; path = "Aztec/Classes/Extensions/NSTextingResult+Helpers.swift"; sourceTree = "<group>"; };
+		2BC864A0133A4BD5854FC54E13D65AFE /* AutoPProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AutoPProcessor.swift; path = WordPressEditor/WordPressEditor/Classes/Plugins/WordPressPlugin/Calypso/AutopRemovep/AutoPProcessor.swift; sourceTree = "<group>"; };
+		2D8F47AC33B37EBAFEA019ACA6693DE2 /* CSSParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CSSParser.swift; path = Aztec/Classes/Libxml2/Converters/In/CSSParser.swift; sourceTree = "<group>"; };
+		301CD0CEA3A838BFE5156D01749162DB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		3056C3C423A44FC02A3BD2C8C09ABC00 /* GalleryAttachment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GalleryAttachment.swift; path = WordPressEditor/WordPressEditor/Classes/Plugins/WordPressPlugin/Calypso/GalleryShortcode/GalleryAttachment.swift; sourceTree = "<group>"; };
+		31C244C74747D5B35E582DB6D4645B03 /* Assets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Assets.swift; path = Aztec/Classes/GUI/Assets.swift; sourceTree = "<group>"; };
+		31D191FB8C012A3EFE9590C93F71BFC9 /* HTMLPre.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTMLPre.swift; path = Aztec/Classes/TextKit/ParagraphProperty/HTMLPre.swift; sourceTree = "<group>"; };
+		32442639685C73CBAE9E3B830675E094 /* FigureElementConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FigureElementConverter.swift; path = Aztec/Classes/Converters/ElementsToAttributedString/Implementations/FigureElementConverter.swift; sourceTree = "<group>"; };
+		3362F8822B271E1B6884D2FF7C449C04 /* WordPress-Aztec-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "WordPress-Aztec-iOS-dummy.m"; sourceTree = "<group>"; };
+		37561DF85E24116142275CA29315DC30 /* AttachmentToElementConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AttachmentToElementConverter.swift; path = Aztec/Classes/NSAttributedString/Conversions/AttachmentToElementConverter/Base/AttachmentToElementConverter.swift; sourceTree = "<group>"; };
+		377DB585B7B85F175549F97CC687A485 /* Aztec.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Aztec.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		37FE54A6B4AFE3F45D4F573BB9C61C49 /* CommentAttachmentToElementConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CommentAttachmentToElementConverter.swift; path = Aztec/Classes/NSAttributedString/Conversions/AttachmentToElementConverter/CommentAttachmentToElementConverter.swift; sourceTree = "<group>"; };
+		3931204379BAA1C40E425C71D0573652 /* FontFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontFormatter.swift; path = Aztec/Classes/Formatters/Base/FontFormatter.swift; sourceTree = "<group>"; };
+		39509B91C5843A573D2960C48E264506 /* GutenblockConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GutenblockConverter.swift; path = WordPressEditor/WordPressEditor/Classes/Plugins/WordPressPlugin/Gutenberg/GutenblockConverter.swift; sourceTree = "<group>"; };
+		3C57E4F6369C4CCE0EF243F0232A8E3E /* MediaAttachment+WordPress.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MediaAttachment+WordPress.swift"; path = "WordPressEditor/WordPressEditor/Classes/Extensions/MediaAttachment+WordPress.swift"; sourceTree = "<group>"; };
+		3EA0446DA63674E8219F3E9607F2E73B /* WordPress-Editor-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "WordPress-Editor-iOS.modulemap"; sourceTree = "<group>"; };
+		3ED6CC85F1ED2A0181C85BDD4A7D86BF /* Media.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = Aztec/Assets/Media.xcassets; sourceTree = "<group>"; };
+		4023DBD0FD76FD35FD9D69A93568E046 /* UIStackView+Helpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIStackView+Helpers.swift"; path = "Aztec/Classes/Extensions/UIStackView+Helpers.swift"; sourceTree = "<group>"; };
+		40398220BD6081D22C83B4A466D12B85 /* Array+ShortcodeAttribute.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Array+ShortcodeAttribute.swift"; path = "Aztec/Classes/Extensions/Array+ShortcodeAttribute.swift"; sourceTree = "<group>"; };
+		40E9F1479C99AE310760FB9260442E2C /* HRElementConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HRElementConverter.swift; path = Aztec/Classes/Converters/ElementsToAttributedString/Implementations/HRElementConverter.swift; sourceTree = "<group>"; };
+		417B6628CE5F1A7F81C90CAFA4BABEBE /* ParagraphProperty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParagraphProperty.swift; path = Aztec/Classes/TextKit/ParagraphProperty/ParagraphProperty.swift; sourceTree = "<group>"; };
+		42E902141E7FE6B32C6BFB8CF59414CB /* CLinkedListToArrayConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CLinkedListToArrayConverter.swift; path = Aztec/Classes/Converters/HTMLToElements/CLinkedListToArrayConverter.swift; sourceTree = "<group>"; };
+		4459853917179490B1DE0A49023E4BEA /* SpecialTagAttachmentRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpecialTagAttachmentRenderer.swift; path = WordPressEditor/WordPressEditor/Classes/Renderers/SpecialTagAttachmentRenderer.swift; sourceTree = "<group>"; };
+		47E068315D8C26C41701608FC85E8474 /* LiFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LiFormatter.swift; path = Aztec/Classes/Formatters/Implementations/LiFormatter.swift; sourceTree = "<group>"; };
+		498C15673BE8E843486CA187768A767A /* CodeFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CodeFormatter.swift; path = Aztec/Classes/Formatters/Implementations/CodeFormatter.swift; sourceTree = "<group>"; };
+		4A053000B5D12C86370D73E27C5E933F /* UnderlineStringAttributeConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UnderlineStringAttributeConverter.swift; path = Aztec/Classes/Converters/StringAttributesToAttributes/Implementations/UnderlineStringAttributeConverter.swift; sourceTree = "<group>"; };
+		4A46B599817071321762DF0A60DA5FEA /* InNodeConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InNodeConverter.swift; path = Aztec/Classes/Libxml2/Converters/In/InNodeConverter.swift; sourceTree = "<group>"; };
+		4CCB5F9CA48D9DCFC9C331349D43B229 /* WordPress-Editor-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "WordPress-Editor-iOS-umbrella.h"; sourceTree = "<group>"; };
+		4DA7C261DF1874E9B2834AE648A58EDB /* WordPressInputCustomizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WordPressInputCustomizer.swift; path = WordPressEditor/WordPressEditor/Classes/Plugins/WordPressPlugin/WordPressInputCustomizer.swift; sourceTree = "<group>"; };
+		4DB9EB8128E7E15BC3D3D42FDD96D9E9 /* PreFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PreFormatter.swift; path = Aztec/Classes/Formatters/Implementations/PreFormatter.swift; sourceTree = "<group>"; };
+		4DCF9C02A8896F4FE7BAFBEFDC6CCB8C /* HTMLProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTMLProcessor.swift; path = Aztec/Classes/Processor/HTMLProcessor.swift; sourceTree = "<group>"; };
+		4EF3BD00ED438AA44B8250BEAF1B1CD0 /* ParagraphAttributeFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParagraphAttributeFormatter.swift; path = Aztec/Classes/Formatters/Base/ParagraphAttributeFormatter.swift; sourceTree = "<group>"; };
+		5079CE3C1AF748AAE186CF346788A9E2 /* LineAttachmentToElementConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LineAttachmentToElementConverter.swift; path = Aztec/Classes/NSAttributedString/Conversions/AttachmentToElementConverter/LineAttachmentToElementConverter.swift; sourceTree = "<group>"; };
+		51BC5AFED068DECCF0621FC549B9FA14 /* ImageAttachment+WordPress.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ImageAttachment+WordPress.swift"; path = "WordPressEditor/WordPressEditor/Classes/Extensions/ImageAttachment+WordPress.swift"; sourceTree = "<group>"; };
+		52BEEF886C22F688059399BA64E16CA2 /* NSAttributedString+ReplaceOcurrences.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSAttributedString+ReplaceOcurrences.swift"; path = "Aztec/Classes/Extensions/NSAttributedString+ReplaceOcurrences.swift"; sourceTree = "<group>"; };
+		5382C4288E55F83408895496C08BFFE8 /* CiteStringAttributeConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CiteStringAttributeConverter.swift; path = Aztec/Classes/Converters/StringAttributesToAttributes/Implementations/CiteStringAttributeConverter.swift; sourceTree = "<group>"; };
+		53C33D12F447B79406F923EC27ED3C50 /* String+CharacterName.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+CharacterName.swift"; path = "Aztec/Classes/Extensions/String+CharacterName.swift"; sourceTree = "<group>"; };
+		5485BA77F969E074C00A120202947221 /* UnderlineCSSAttributeMatcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UnderlineCSSAttributeMatcher.swift; path = Aztec/Classes/Libxml2/DOM/Logic/CSS/UnderlineCSSAttributeMatcher.swift; sourceTree = "<group>"; };
+		565B1C59B27D4526CBD910D0379E2310 /* RemovePProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RemovePProcessor.swift; path = WordPressEditor/WordPressEditor/Classes/Plugins/WordPressPlugin/Calypso/AutopRemovep/RemovePProcessor.swift; sourceTree = "<group>"; };
+		57FA8D49AD87EEC153B4E294DC452626 /* CSSAttributeMatcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CSSAttributeMatcher.swift; path = Aztec/Classes/Libxml2/DOM/Logic/CSS/CSSAttributeMatcher.swift; sourceTree = "<group>"; };
+		58C07E63208B8A17B4629FCB6BFEC019 /* NSRange+Helpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSRange+Helpers.swift"; path = "Aztec/Classes/Extensions/NSRange+Helpers.swift"; sourceTree = "<group>"; };
+		5914E703274B6C3B8CCB4BBB03FF8EC0 /* VideoAttachment+WordPress.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "VideoAttachment+WordPress.swift"; path = "WordPressEditor/WordPressEditor/Classes/Extensions/VideoAttachment+WordPress.swift"; sourceTree = "<group>"; };
+		59F98C48A0DA100FC750BE55A893916E /* CaptionShortcodeOutputProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CaptionShortcodeOutputProcessor.swift; path = WordPressEditor/WordPressEditor/Classes/Plugins/WordPressPlugin/Calypso/CaptionShortcode/CaptionShortcodeOutputProcessor.swift; sourceTree = "<group>"; };
+		5B6499BAA90E1C19BBA334E7F0A5F470 /* WordPress-Editor-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "WordPress-Editor-iOS-prefix.pch"; sourceTree = "<group>"; };
+		5C295F233B14F89AC9A06076DE243E4B /* HTMLRepresentation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTMLRepresentation.swift; path = Aztec/Classes/NSAttributedString/Attributes/HTMLRepresentation.swift; sourceTree = "<group>"; };
+		5CBBDFB27829829B4B686239515B656F /* TextStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextStorage.swift; path = Aztec/Classes/TextKit/TextStorage.swift; sourceTree = "<group>"; };
+		5DED26AAFCE53DDC2B94AB68C45F9607 /* String+EndOfLine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+EndOfLine.swift"; path = "Aztec/Classes/Extensions/String+EndOfLine.swift"; sourceTree = "<group>"; };
+		5E7E206398252DC5EE1956F9F242DEA7 /* ItalicStringAttributeConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ItalicStringAttributeConverter.swift; path = Aztec/Classes/Converters/StringAttributesToAttributes/Implementations/ItalicStringAttributeConverter.swift; sourceTree = "<group>"; };
+		5EE659C80E958909A1275B8B586D97BC /* CommentAttachmentRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CommentAttachmentRenderer.swift; path = Aztec/Classes/Renderers/CommentAttachmentRenderer.swift; sourceTree = "<group>"; };
+		607AAC6640E0B67AA82B87C423EF520D /* HTMLSerializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTMLSerializer.swift; path = Aztec/Classes/Libxml2/Converters/Out/HTMLSerializer.swift; sourceTree = "<group>"; };
+		61672C8D4C4FF783F03DDF3A6B34701E /* GutenbergInputHTMLTreeProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GutenbergInputHTMLTreeProcessor.swift; path = WordPressEditor/WordPressEditor/Classes/Plugins/WordPressPlugin/Gutenberg/GutenbergInputHTMLTreeProcessor.swift; sourceTree = "<group>"; };
+		617209CF69A5FD58E91DA465C002A4AB /* PluginManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PluginManager.swift; path = Aztec/Classes/Plugin/PluginManager.swift; sourceTree = "<group>"; };
+		648FADF97530352D2B439DCAC56C901A /* NSAttributedStringKey+Aztec.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSAttributedStringKey+Aztec.swift"; path = "Aztec/Classes/Extensions/NSAttributedStringKey+Aztec.swift"; sourceTree = "<group>"; };
+		653834E7AEA88C7702CE2A5FFD446633 /* WordPress-Editor-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "WordPress-Editor-iOS-dummy.m"; sourceTree = "<group>"; };
+		65772017C12D261C8A6F4A4C6D238FD6 /* CommentNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CommentNode.swift; path = Aztec/Classes/Libxml2/DOM/Data/CommentNode.swift; sourceTree = "<group>"; };
+		66B9B80C60564EBC20701581C45CF7E1 /* UnsupportedHTML.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UnsupportedHTML.swift; path = Aztec/Classes/NSAttributedString/Attributes/UnsupportedHTML.swift; sourceTree = "<group>"; };
+		66BB45F1C66D200F789E189D821C6900 /* NSAttributedString+Attachments.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSAttributedString+Attachments.swift"; path = "Aztec/Classes/Extensions/NSAttributedString+Attachments.swift"; sourceTree = "<group>"; };
+		6B44C6B9EFB5633BB92770FDEF037099 /* Figcaption.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Figcaption.swift; path = Aztec/Classes/TextKit/ParagraphProperty/Figcaption.swift; sourceTree = "<group>"; };
+		6C2357EC419C6A00DCA11BE9B90D4319 /* GenericElementConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GenericElementConverter.swift; path = Aztec/Classes/Converters/ElementsToAttributedString/Implementations/GenericElementConverter.swift; sourceTree = "<group>"; };
+		6E3B447F1EC00FEFADF03FFF39C6A098 /* WordPress-Aztec-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "WordPress-Aztec-iOS-prefix.pch"; sourceTree = "<group>"; };
+		70AC4AF19F84A588EB37339A0B53642E /* WordPress-Aztec-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "WordPress-Aztec-iOS.xcconfig"; sourceTree = "<group>"; };
+		70DA30EC63AB70C87640E76CDB4DC290 /* GallerySupportedAttribute.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GallerySupportedAttribute.swift; path = WordPressEditor/WordPressEditor/Classes/Plugins/WordPressPlugin/Calypso/GalleryShortcode/GallerySupportedAttribute.swift; sourceTree = "<group>"; };
+		72B40A7ED47F04A70D6D5B58CDE1FAF0 /* Pods-FEditor-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FEditor-frameworks.sh"; sourceTree = "<group>"; };
+		73F31DAE977614CE3B2532EB8734B4EB /* RenderableAttachment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RenderableAttachment.swift; path = Aztec/Classes/TextKit/RenderableAttachment.swift; sourceTree = "<group>"; };
+		747D1265B90103780D8A4C5715D3DD1E /* ElementToStringConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ElementToStringConverter.swift; path = Aztec/Classes/Converters/ElementsToHTML/Base/ElementToStringConverter.swift; sourceTree = "<group>"; };
+		74E655EA901FC9804B08FD328D66DFD0 /* StringAttributeConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StringAttributeConverter.swift; path = Aztec/Classes/Converters/StringAttributesToAttributes/Base/StringAttributeConverter.swift; sourceTree = "<group>"; };
+		75836698FCDC26028C40E1852C8DC473 /* HTMLParagraph.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTMLParagraph.swift; path = Aztec/Classes/TextKit/ParagraphProperty/HTMLParagraph.swift; sourceTree = "<group>"; };
+		764911616778DBA72EC095CCB3EEBE92 /* UIFont+Emoji.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIFont+Emoji.swift"; path = "Aztec/Classes/Extensions/UIFont+Emoji.swift"; sourceTree = "<group>"; };
+		7835A3D210135F315EB755765EF1643A /* HTMLDiv.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTMLDiv.swift; path = Aztec/Classes/TextKit/ParagraphProperty/HTMLDiv.swift; sourceTree = "<group>"; };
+		7B3F3EAEFFC8C05ED246355E5313EFA8 /* AttributeFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AttributeFormatter.swift; path = Aztec/Classes/Formatters/Base/AttributeFormatter.swift; sourceTree = "<group>"; };
+		7BC4942939B18A894CC2488CA4E660B5 /* StandardAttributeFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StandardAttributeFormatter.swift; path = Aztec/Classes/Formatters/Base/StandardAttributeFormatter.swift; sourceTree = "<group>"; };
+		7CB42B9833E9D7E4B0A2880E64969400 /* Converter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Converter.swift; path = Aztec/Classes/Converters/HTMLToElements/Converter.swift; sourceTree = "<group>"; };
+		7D729256EB26894A95A883BBAD6A674C /* ImageAttachment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageAttachment.swift; path = Aztec/Classes/TextKit/ImageAttachment.swift; sourceTree = "<group>"; };
+		7FCF89DA50EC13F0A9CC7C4F47870FED /* ShortcodeAttributeSerializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShortcodeAttributeSerializer.swift; path = Aztec/Classes/Processor/ShortcodeAttributeSerializer.swift; sourceTree = "<group>"; };
+		801720F3B4060789452593A7C3A52B62 /* WordPress-Editor-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "WordPress-Editor-iOS.xcconfig"; sourceTree = "<group>"; };
+		8186E45DFA1993C8FEC0972413D3046A /* AttributedStringSerializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AttributedStringSerializer.swift; path = Aztec/Classes/NSAttributedString/Conversions/AttributedStringSerializer.swift; sourceTree = "<group>"; };
+		857601BDF3BC9A1B8B6D5F215C9D2DD3 /* PipelineProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PipelineProcessor.swift; path = Aztec/Classes/Processor/PipelineProcessor.swift; sourceTree = "<group>"; };
+		85EEF7815C63B43BABDB9BA9B7A90049 /* CommentNode+Gutenberg.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CommentNode+Gutenberg.swift"; path = "WordPressEditor/WordPressEditor/Classes/Plugins/WordPressPlugin/Gutenberg/CommentNode+Gutenberg.swift"; sourceTree = "<group>"; };
+		872FD7D01DCA8F17542D6EDB9268B82D /* EmbedURLProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EmbedURLProcessor.swift; path = WordPressEditor/WordPressEditor/Classes/Processors/EmbedURLProcessor.swift; sourceTree = "<group>"; };
+		88246337870C14F544D2534B63B655F5 /* EditorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EditorView.swift; path = Aztec/Classes/EditorView/EditorView.swift; sourceTree = "<group>"; };
+		888F9A10687DC69E46CFBEF8E91930D8 /* GalleryShortcodeInputProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GalleryShortcodeInputProcessor.swift; path = WordPressEditor/WordPressEditor/Classes/Plugins/WordPressPlugin/Calypso/GalleryShortcode/GalleryShortcodeInputProcessor.swift; sourceTree = "<group>"; };
+		8B62C3E804D859DADD17035392D1429B /* CiteElementConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CiteElementConverter.swift; path = Aztec/Classes/Converters/ElementsToAttributedString/Implementations/CiteElementConverter.swift; sourceTree = "<group>"; };
+		8C0989A383F77EE4D60BBA6749136D48 /* FormatBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormatBar.swift; path = Aztec/Classes/GUI/FormatBar/FormatBar.swift; sourceTree = "<group>"; };
+		8C756984933333189F96A577115D0651 /* Element.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Element.swift; path = Aztec/Classes/Libxml2/DOM/Data/Element.swift; sourceTree = "<group>"; };
+		8C8003CFF4E3EAFF538C6BF46C9080B9 /* String+Paragraph.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Paragraph.swift"; path = "Aztec/Classes/Extensions/String+Paragraph.swift"; sourceTree = "<group>"; };
+		8CBB01CFB664CC1FB26CFC36D9B01C0A /* Aztec.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Aztec.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D8E4575A4768957B881A014DA225C47 /* WordPress-Aztec-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "WordPress-Aztec-iOS-umbrella.h"; sourceTree = "<group>"; };
+		8DB7500E7F9BAA81FF9312629BCD5A69 /* Figure.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Figure.swift; path = Aztec/Classes/TextKit/ParagraphProperty/Figure.swift; sourceTree = "<group>"; };
+		8E029A4B0A12A5353B9B17E61E974109 /* UIFont+Traits.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIFont+Traits.swift"; path = "Aztec/Classes/Extensions/UIFont+Traits.swift"; sourceTree = "<group>"; };
+		8EBD3A4043606712E1224D6F5D87A303 /* Pods-FEditor-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FEditor-umbrella.h"; sourceTree = "<group>"; };
+		90AF4FBE82BEB9940BBD3C3514D31FEA /* TextListFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextListFormatter.swift; path = Aztec/Classes/Formatters/Implementations/TextListFormatter.swift; sourceTree = "<group>"; };
+		9227DC8E8C4F65828BD9B4DEEB6BFEC1 /* ShortcodeAttribute.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShortcodeAttribute.swift; path = Aztec/Classes/Processor/ShortcodeAttribute.swift; sourceTree = "<group>"; };
+		9353D3831591247A4AFE9B5E8F7FCED3 /* HTMLAttachmentToElementConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTMLAttachmentToElementConverter.swift; path = Aztec/Classes/NSAttributedString/Conversions/AttachmentToElementConverter/HTMLAttachmentToElementConverter.swift; sourceTree = "<group>"; };
+		93CAC13455A196BCA35D78DA12243267 /* ShortcodeAttributeParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShortcodeAttributeParser.swift; path = Aztec/Classes/Processor/ShortcodeAttributeParser.swift; sourceTree = "<group>"; };
+		9411962F993E055820CF1AE4349E6DDE /* GutenpackConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GutenpackConverter.swift; path = WordPressEditor/WordPressEditor/Classes/Plugins/WordPressPlugin/Gutenberg/GutenpackConverter.swift; sourceTree = "<group>"; };
+		9423D2844F0C6F17CF80BD92348FE0DD /* GutenpackAttachmentToElementConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GutenpackAttachmentToElementConverter.swift; path = WordPressEditor/WordPressEditor/Classes/Plugins/WordPressPlugin/Gutenberg/GutenpackAttachmentToElementConverter.swift; sourceTree = "<group>"; };
+		983F898746CAE0BAD9AA6321F924E4DA /* Pods-FEditor-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FEditor-acknowledgements.markdown"; sourceTree = "<group>"; };
+		988E8A31D84A36DF1EF898BF841E239C /* ElementConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ElementConverter.swift; path = Aztec/Classes/Converters/ElementsToAttributedString/Base/ElementConverter.swift; sourceTree = "<group>"; };
+		9903F9F8C5274287FACE80D43F64C220 /* NSMutableAttributedString+ReplaceOcurrences.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSMutableAttributedString+ReplaceOcurrences.swift"; path = "Aztec/Classes/Extensions/NSMutableAttributedString+ReplaceOcurrences.swift"; sourceTree = "<group>"; };
+		99B7AE6197D2AEB4EDE40BB6DFB2B28A /* VideoAttachmentToElementConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VideoAttachmentToElementConverter.swift; path = Aztec/Classes/NSAttributedString/Conversions/AttachmentToElementConverter/VideoAttachmentToElementConverter.swift; sourceTree = "<group>"; };
+		9AA2B578E4C8867B5C1A4D8984B00D0C /* AttributeType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AttributeType.swift; path = Aztec/Classes/Libxml2/DOM/Data/AttributeType.swift; sourceTree = "<group>"; };
+		9B1979BCDD1E2339733F86684F61B55C /* ColorFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorFormatter.swift; path = Aztec/Classes/Formatters/Implementations/ColorFormatter.swift; sourceTree = "<group>"; };
+		9B7A9F20D4DF2E9153378D9C4BC838B2 /* TextList.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextList.swift; path = Aztec/Classes/TextKit/ParagraphProperty/TextList.swift; sourceTree = "<group>"; };
+		9C1C85675DDBCAA6E173D589E2FC61C6 /* InAttributeConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InAttributeConverter.swift; path = Aztec/Classes/Libxml2/Converters/In/InAttributeConverter.swift; sourceTree = "<group>"; };
+		9FDC9482592D2F6828437662E857E365 /* FormattingIdentifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormattingIdentifier.swift; path = Aztec/Classes/GUI/FormatBar/FormattingIdentifier.swift; sourceTree = "<group>"; };
+		9FFC799D4CDCE903DBFF371A32BD3D11 /* Pods-FEditor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FEditor.release.xcconfig"; sourceTree = "<group>"; };
+		A07B19A1E6F806A0CF9EBBAAA6E26A0C /* ItalicElementAttributeConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ItalicElementAttributeConverter.swift; path = Aztec/Classes/Converters/AttributesToStringAttributes/Implementations/ItalicElementAttributeConverter.swift; sourceTree = "<group>"; };
+		A194B7F56E8DC19AEF4EA34D0E41B0D8 /* OptionsTableViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OptionsTableViewController.swift; path = WordPressEditor/WordPressEditor/Classes/ViewControllers/OptionsTableViewController/OptionsTableViewController.swift; sourceTree = "<group>"; };
+		A24A47C7FBACF7EAC99F7ADDC51AB23D /* Gutenblock.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Gutenblock.swift; path = WordPressEditor/WordPressEditor/Classes/Plugins/WordPressPlugin/Gutenberg/Gutenblock.swift; sourceTree = "<group>"; };
+		A62B9B74D8DB29C730C5253D16562B90 /* InAttributesConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InAttributesConverter.swift; path = Aztec/Classes/Libxml2/Converters/In/InAttributesConverter.swift; sourceTree = "<group>"; };
+		A88BD6D2EC0F05C88FC3A540A675BF12 /* Attribute.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Attribute.swift; path = Aztec/Classes/Libxml2/DOM/Data/Attribute.swift; sourceTree = "<group>"; };
+		A9D197D4F3AF0E4B3634589E0AE87183 /* GutenpackAttachmentRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GutenpackAttachmentRenderer.swift; path = WordPressEditor/WordPressEditor/Classes/Plugins/WordPressPlugin/Gutenberg/GutenpackAttachmentRenderer.swift; sourceTree = "<group>"; };
+		A9E72B972F57E75757F2D582F2CB976C /* CommentAttachment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CommentAttachment.swift; path = Aztec/Classes/TextKit/CommentAttachment.swift; sourceTree = "<group>"; };
+		AA2880585CAE56E7F55CE5B6C371B1EB /* VideoShortcodeProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VideoShortcodeProcessor.swift; path = WordPressEditor/WordPressEditor/Classes/Plugins/WordPressPlugin/Calypso/VideoShortcode/VideoShortcodeProcessor.swift; sourceTree = "<group>"; };
+		ADF7155F3DDBA4F7B5507A87CC05754F /* LinkFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LinkFormatter.swift; path = Aztec/Classes/Formatters/Implementations/LinkFormatter.swift; sourceTree = "<group>"; };
+		AE5CFCCE83F26EB17C48DD68A4083C02 /* BoldFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BoldFormatter.swift; path = Aztec/Classes/Formatters/Implementations/BoldFormatter.swift; sourceTree = "<group>"; };
+		B092FD9720E73127360191946960CBCD /* HTMLAttachmentRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTMLAttachmentRenderer.swift; path = Aztec/Classes/Renderers/HTMLAttachmentRenderer.swift; sourceTree = "<group>"; };
+		B36AB396275697EEE1A5B13BA8A38FE3 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B60D70052B84677F4A93658ABDFB4A74 /* NSMutableAttributedString+ParagraphProperty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSMutableAttributedString+ParagraphProperty.swift"; path = "Aztec/Classes/Extensions/NSMutableAttributedString+ParagraphProperty.swift"; sourceTree = "<group>"; };
+		B691A7C44CEBA5A1C221953494315284 /* Dictionary+AttributedStringKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Dictionary+AttributedStringKey.swift"; path = "Aztec/Classes/Extensions/Dictionary+AttributedStringKey.swift"; sourceTree = "<group>"; };
+		B6C57EA3A08AD9F1D80495712DA5AEF3 /* Array+Attribute.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Array+Attribute.swift"; path = "Aztec/Classes/Extensions/Array+Attribute.swift"; sourceTree = "<group>"; };
+		B6E751328E8CF5DA0A533B86293ADA69 /* Array+Helpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Array+Helpers.swift"; path = "Aztec/Classes/Extensions/Array+Helpers.swift"; sourceTree = "<group>"; };
+		BA1D13D1AF5E05D196DBD12767A41E01 /* HTMLAttachment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTMLAttachment.swift; path = Aztec/Classes/TextKit/HTMLAttachment.swift; sourceTree = "<group>"; };
+		BBF667E85E0CE9A2639520A5E5E929BA /* Character+Name.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Character+Name.swift"; path = "Aztec/Classes/Extensions/Character+Name.swift"; sourceTree = "<group>"; };
+		BD0610AF9C3F49D55C7CDA542ABFD104 /* AttributedStringParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AttributedStringParser.swift; path = Aztec/Classes/NSAttributedString/Conversions/AttributedStringParser.swift; sourceTree = "<group>"; };
+		BD679FB051AEADFAF38DA542B1D7F76B /* String+RegEx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+RegEx.swift"; path = "WordPressEditor/WordPressEditor/Classes/Extensions/String+RegEx.swift"; sourceTree = "<group>"; };
+		BEDFBD66D130D8C8E654AFD118ED55C4 /* GutenpackAttachment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GutenpackAttachment.swift; path = WordPressEditor/WordPressEditor/Classes/Plugins/WordPressPlugin/Gutenberg/GutenpackAttachment.swift; sourceTree = "<group>"; };
+		C0A278CE4BF5722B7376340F7D82E33C /* FormatBarItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormatBarItem.swift; path = Aztec/Classes/GUI/FormatBar/FormatBarItem.swift; sourceTree = "<group>"; };
+		C610E7A6BFCB17028C3339DCDD5C1A45 /* RegexProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RegexProcessor.swift; path = Aztec/Classes/Processor/RegexProcessor.swift; sourceTree = "<group>"; };
+		C6D7039127E9D32B90638F1999369ED3 /* Node.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Node.swift; path = Aztec/Classes/Libxml2/DOM/Data/Node.swift; sourceTree = "<group>"; };
+		C785C02B1D009D4603BF34C5E8820B64 /* UnderlineFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UnderlineFormatter.swift; path = Aztec/Classes/Formatters/Implementations/UnderlineFormatter.swift; sourceTree = "<group>"; };
+		C7BE5E3B890F4D810A483F60237B85A8 /* ElementAttributeConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ElementAttributeConverter.swift; path = Aztec/Classes/Converters/AttributesToStringAttributes/Base/ElementAttributeConverter.swift; sourceTree = "<group>"; };
+		C7C553CC6939638CC3AE26F04A6C91AB /* TextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextView.swift; path = Aztec/Classes/TextKit/TextView.swift; sourceTree = "<group>"; };
+		C82E951D59962041522068CC67F03926 /* HTMLTreeProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTMLTreeProcessor.swift; path = Aztec/Classes/Processor/HTMLTreeProcessor.swift; sourceTree = "<group>"; };
+		C8CCFDA0FD9A38087FDC2016F477C8AD /* ImageAttachmentToElementConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageAttachmentToElementConverter.swift; path = Aztec/Classes/NSAttributedString/Conversions/AttachmentToElementConverter/ImageAttachmentToElementConverter.swift; sourceTree = "<group>"; };
+		C8EE2D38DC9585B13C48EB53381D7034 /* WordPressPasteboardDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WordPressPasteboardDelegate.swift; path = WordPressEditor/WordPressEditor/Classes/Plugins/WordPressPlugin/Calypso/Embeds/WordPressPasteboardDelegate.swift; sourceTree = "<group>"; };
+		C928C7C4BE58F85AB340C60D1C84B245 /* NSAttributedString+Analyzers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSAttributedString+Analyzers.swift"; path = "Aztec/Classes/Extensions/NSAttributedString+Analyzers.swift"; sourceTree = "<group>"; };
+		CA0F3684A0002CD12B23D83D4B593EEE /* UIPasteboard+Helpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIPasteboard+Helpers.swift"; path = "Aztec/Classes/Extensions/UIPasteboard+Helpers.swift"; sourceTree = "<group>"; };
+		CA158CD1B2C0281B235C02CEAF685583 /* DocumentType+Swift4.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DocumentType+Swift4.swift"; path = "Aztec/Classes/Extensions/DocumentType+Swift4.swift"; sourceTree = "<group>"; };
+		CB044C9D72653CF926EA9E9632A471D2 /* Pods-FEditor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FEditor.debug.xcconfig"; sourceTree = "<group>"; };
+		CC7F72552BFA6E3248619EA5C0113A90 /* HTMLDivFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTMLDivFormatter.swift; path = Aztec/Classes/Formatters/Implementations/HTMLDivFormatter.swift; sourceTree = "<group>"; };
+		CCE69D0B38ABB61ABF28DBFA2BBE6C54 /* String+HTML.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+HTML.swift"; path = "Aztec/Classes/Extensions/String+HTML.swift"; sourceTree = "<group>"; };
+		CE2244A4683CFCB6BB94222AA114B812 /* String+RangeConversion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+RangeConversion.swift"; path = "Aztec/Classes/Extensions/String+RangeConversion.swift"; sourceTree = "<group>"; };
+		CEF808FE4C12EAEF83354EAEAFA021A5 /* HTMLConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTMLConverter.swift; path = Aztec/Classes/NSAttributedString/Conversions/HTMLConverter.swift; sourceTree = "<group>"; };
+		CF185348B545A977501009E54B2E4195 /* ItalicCSSAttributeMatcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ItalicCSSAttributeMatcher.swift; path = Aztec/Classes/Libxml2/DOM/Logic/CSS/ItalicCSSAttributeMatcher.swift; sourceTree = "<group>"; };
+		CF26F636646AA494C7075F34F5795D94 /* WordPress-Aztec-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "WordPress-Aztec-iOS.modulemap"; sourceTree = "<group>"; };
+		D063F9B5665C43D8AE7F83F617ECBC21 /* Processor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Processor.swift; path = Aztec/Classes/Processor/Processor.swift; sourceTree = "<group>"; };
+		D071688A128FBD1B649AAA7D8FFA9CD1 /* NSAttributedString+CharacterName.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSAttributedString+CharacterName.swift"; path = "Aztec/Classes/Extensions/NSAttributedString+CharacterName.swift"; sourceTree = "<group>"; };
+		D1028B2B0BFC7EF44D0B79B5A210F4F5 /* InNodesConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InNodesConverter.swift; path = Aztec/Classes/Libxml2/Converters/In/InNodesConverter.swift; sourceTree = "<group>"; };
+		D1183AB736911556946F8D73F3CFE32D /* NSAttributedString+Archive.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSAttributedString+Archive.swift"; path = "Aztec/Classes/Extensions/NSAttributedString+Archive.swift"; sourceTree = "<group>"; };
+		D38ABD2B8EBF2932ED9CE1D98B5294F2 /* Plugin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Plugin.swift; path = Aztec/Classes/Plugin/Plugin.swift; sourceTree = "<group>"; };
+		D4A8B725E9EAFC2D9ABD50F395E8E8CD /* GutenbergAttributeNames.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GutenbergAttributeNames.swift; path = WordPressEditor/WordPressEditor/Classes/Plugins/WordPressPlugin/Gutenberg/GutenbergAttributeNames.swift; sourceTree = "<group>"; };
+		D68AC0D93C910EEBDE5EE8B13E6D6C8E /* FigcaptionElementConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FigcaptionElementConverter.swift; path = Aztec/Classes/Converters/ElementsToAttributedString/Implementations/FigcaptionElementConverter.swift; sourceTree = "<group>"; };
+		D7EC9C3F1C9E4ED014C23B1E8AB081DE /* WordPressOutputCustomizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WordPressOutputCustomizer.swift; path = WordPressEditor/WordPressEditor/Classes/Plugins/WordPressPlugin/WordPressOutputCustomizer.swift; sourceTree = "<group>"; };
+		D8E10B7F12D2A20AE7B49834658D6453 /* DocumentReadingOptionKey+Swift4.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DocumentReadingOptionKey+Swift4.swift"; path = "Aztec/Classes/Extensions/DocumentReadingOptionKey+Swift4.swift"; sourceTree = "<group>"; };
+		DE88E6978EEA1E1F4C9436D1CF9D0060 /* UIColor+Parsers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIColor+Parsers.swift"; path = "Aztec/Classes/Extensions/UIColor+Parsers.swift"; sourceTree = "<group>"; };
+		DECFF3006DC258D1014E385D0D6AFB74 /* FigureFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FigureFormatter.swift; path = Aztec/Classes/Formatters/Implementations/FigureFormatter.swift; sourceTree = "<group>"; };
+		DF23F2CDDCE8E810E386042E5447CFE0 /* NSAttributedStringKey+Conversion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSAttributedStringKey+Conversion.swift"; path = "Aztec/Classes/Extensions/NSAttributedStringKey+Conversion.swift"; sourceTree = "<group>"; };
+		DFEF951D911A9CFC57BA0FC4AA4BCEBB /* VideoElementConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VideoElementConverter.swift; path = Aztec/Classes/Converters/ElementsToAttributedString/Implementations/VideoElementConverter.swift; sourceTree = "<group>"; };
+		E0E844F784E792309EAEB21E169D1863 /* HeaderFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeaderFormatter.swift; path = Aztec/Classes/Formatters/Implementations/HeaderFormatter.swift; sourceTree = "<group>"; };
+		E1837BF3111822E18E1CBAEF77F51B29 /* ConditionalStringAttributeConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConditionalStringAttributeConverter.swift; path = Aztec/Classes/Converters/StringAttributesToAttributes/Base/ConditionalStringAttributeConverter.swift; sourceTree = "<group>"; };
+		E27A1220380B84EF4E537D00A66C1811 /* WordPressEditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WordPressEditor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2B9C88B37B76FC176041B38D6607551 /* HTMLParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTMLParser.swift; path = Aztec/Classes/Libxml2/Converters/In/HTMLParser.swift; sourceTree = "<group>"; };
+		E43FF084C73B58E4F257313C13908152 /* Header.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Header.swift; path = Aztec/Classes/TextKit/ParagraphProperty/Header.swift; sourceTree = "<group>"; };
+		E46450073EB1634BAF4A408E0FBF9569 /* UITextView+Undoable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITextView+Undoable.swift"; path = "Aztec/Classes/Extensions/UITextView+Undoable.swift"; sourceTree = "<group>"; };
+		E4FA18E91BDE54E04545CA17D133FDC8 /* WordPress-Aztec-iOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "WordPress-Aztec-iOS-Info.plist"; sourceTree = "<group>"; };
+		E50CC066843BA0DF3D6D2407F467B7D0 /* CaptionShortcodeInputProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CaptionShortcodeInputProcessor.swift; path = WordPressEditor/WordPressEditor/Classes/Plugins/WordPressPlugin/Calypso/CaptionShortcode/CaptionShortcodeInputProcessor.swift; sourceTree = "<group>"; };
+		E525283441C0368C36FD9C05DBF97DF4 /* FormatBarDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormatBarDelegate.swift; path = Aztec/Classes/GUI/FormatBar/FormatBarDelegate.swift; sourceTree = "<group>"; };
+		E6B8E480484A4169EDB1EC2F6CA48C3E /* UITextView+Delegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITextView+Delegate.swift"; path = "Aztec/Classes/Extensions/UITextView+Delegate.swift"; sourceTree = "<group>"; };
+		E6C5C3A135DB6804B940E4D749F728E8 /* OptionsTablePresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OptionsTablePresenter.swift; path = WordPressEditor/WordPressEditor/Classes/ViewControllers/OptionsTableViewController/OptionsTablePresenter.swift; sourceTree = "<group>"; };
+		E8E80BC3B7B70420A8FEC90626FD8299 /* aztec.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = aztec.png; path = WordPressEditor/WordPressEditor/Assets/aztec.png; sourceTree = "<group>"; };
+		EA0D0AF383FA6296B5B65178215D4A48 /* Pods-FEditor-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FEditor-acknowledgements.plist"; sourceTree = "<group>"; };
+		EC3BC66B08B8FC61BD8E6279562A08C5 /* CSSAttributeType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CSSAttributeType.swift; path = Aztec/Classes/Libxml2/DOM/Data/CSSAttributeType.swift; sourceTree = "<group>"; };
+		F0451C28C4980379B72EB96837BD29FF /* BRElementConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BRElementConverter.swift; path = Aztec/Classes/Converters/ElementsToAttributedString/Implementations/BRElementConverter.swift; sourceTree = "<group>"; };
+		F11463E01C997DD25CA8C67ACBC062C2 /* PluginOutputCustomizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PluginOutputCustomizer.swift; path = Aztec/Classes/Plugin/PluginOutputCustomizer.swift; sourceTree = "<group>"; };
+		F18D7511420E16A4BAAAD0D55D172C2A /* CSSAttribute.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CSSAttribute.swift; path = Aztec/Classes/Libxml2/DOM/Data/CSSAttribute.swift; sourceTree = "<group>"; };
+		F3AD525148AF514810A4898FECDB836E /* Blockquote.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Blockquote.swift; path = Aztec/Classes/TextKit/ParagraphProperty/Blockquote.swift; sourceTree = "<group>"; };
+		F51D0506B11805851049A86013BA23FF /* PluginInputCustomizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PluginInputCustomizer.swift; path = Aztec/Classes/Plugin/PluginInputCustomizer.swift; sourceTree = "<group>"; };
+		F806C334C9C1150676341C4660C3BE6C /* VideoAttachment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = VideoAttachment.swift; path = Aztec/Classes/TextKit/VideoAttachment.swift; sourceTree = "<group>"; };
+		F89C2D185E21577BD37DC4071DBC2E72 /* FigcaptionFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FigcaptionFormatter.swift; path = Aztec/Classes/Formatters/Implementations/FigcaptionFormatter.swift; sourceTree = "<group>"; };
+		F9482FDA576C6F2AA8BB78EA7CF2ACC1 /* ImageElementConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageElementConverter.swift; path = Aztec/Classes/Converters/ElementsToAttributedString/Implementations/ImageElementConverter.swift; sourceTree = "<group>"; };
+		FA4D985FE636D91946FCCEA0D2971351 /* BlockquoteFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BlockquoteFormatter.swift; path = Aztec/Classes/Formatters/Implementations/BlockquoteFormatter.swift; sourceTree = "<group>"; };
+		FAF50453AD6994600E8BD8A692A7EDD3 /* WordPressPlugin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WordPressPlugin.swift; path = WordPressEditor/WordPressEditor/Classes/Plugins/WordPressPlugin/WordPressPlugin.swift; sourceTree = "<group>"; };
+		FC2DE41C4357DE3A466CC704810EAE2C /* GalleryAttachmentToElementConverter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GalleryAttachmentToElementConverter.swift; path = WordPressEditor/WordPressEditor/Classes/Plugins/WordPressPlugin/Calypso/GalleryShortcode/GalleryAttachmentToElementConverter.swift; sourceTree = "<group>"; };
+		FC88740101B9180FD05922610450FA98 /* NSAttributedString+FontTraits.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSAttributedString+FontTraits.swift"; path = "Aztec/Classes/Extensions/NSAttributedString+FontTraits.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		12A8A0DC0D2CFE027547B7D8FEB11F3F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7144F3475A2E6873A054FB8BBD06E1BC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73F2551B04E74C3CF2F5E43C436DB010 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02FF894A7323759FF4B0FBEEDF011E06 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A450423AE740B80BCD80A23572D28246 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02CABDB1090B0567B44232943B5E9E89 /* Aztec.framework in Frameworks */,
+				0BD7B98E230DEF8A4911DD182E2581F7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		11F71D295F204AE20F81EA4BF7AB6702 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				377DB585B7B85F175549F97CC687A485 /* Aztec.framework */,
+				9844BD180825D0344A640951C0195B7D /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		51D8171035ACFD526C438E373BB7E539 /* Pods-FEditor */ = {
+			isa = PBXGroup;
+			children = (
+				09F7EA3B9A5D361F357A77D8B479EC35 /* Pods-FEditor.modulemap */,
+				983F898746CAE0BAD9AA6321F924E4DA /* Pods-FEditor-acknowledgements.markdown */,
+				EA0D0AF383FA6296B5B65178215D4A48 /* Pods-FEditor-acknowledgements.plist */,
+				27206F941F268B667F49A89163318946 /* Pods-FEditor-dummy.m */,
+				72B40A7ED47F04A70D6D5B58CDE1FAF0 /* Pods-FEditor-frameworks.sh */,
+				1A5D09ADC43736659DBE15FE4E4C23BC /* Pods-FEditor-Info.plist */,
+				8EBD3A4043606712E1224D6F5D87A303 /* Pods-FEditor-umbrella.h */,
+				CB044C9D72653CF926EA9E9632A471D2 /* Pods-FEditor.debug.xcconfig */,
+				9FFC799D4CDCE903DBFF371A32BD3D11 /* Pods-FEditor.release.xcconfig */,
+			);
+			name = "Pods-FEditor";
+			path = "Target Support Files/Pods-FEditor";
+			sourceTree = "<group>";
+		};
+		5E7870FA5B09623BEF6074350F69A2B4 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				51D8171035ACFD526C438E373BB7E539 /* Pods-FEditor */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		6066F1D64CD5C1374C97F41B21C7772E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9F3A3DC6D49E83F61119147D00F18B8C /* WordPress-Aztec-iOS */,
+				80C12E569CC724BB2291B8173D47211B /* WordPress-Editor-iOS */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		66BA05758B565E084DEBF1AF3ABF4C33 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8CBB01CFB664CC1FB26CFC36D9B01C0A /* Aztec.framework */,
+				211C0F54B361D1D9467EA1CEF729EC3A /* Pods_FEditor.framework */,
+				E27A1220380B84EF4E537D00A66C1811 /* WordPressEditor.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				B36AB396275697EEE1A5B13BA8A38FE3 /* Podfile */,
+				11F71D295F204AE20F81EA4BF7AB6702 /* Frameworks */,
+				6066F1D64CD5C1374C97F41B21C7772E /* Pods */,
+				66BA05758B565E084DEBF1AF3ABF4C33 /* Products */,
+				5E7870FA5B09623BEF6074350F69A2B4 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		80C12E569CC724BB2291B8173D47211B /* WordPress-Editor-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				2BC864A0133A4BD5854FC54E13D65AFE /* AutoPProcessor.swift */,
+				E50CC066843BA0DF3D6D2407F467B7D0 /* CaptionShortcodeInputProcessor.swift */,
+				59F98C48A0DA100FC750BE55A893916E /* CaptionShortcodeOutputProcessor.swift */,
+				85EEF7815C63B43BABDB9BA9B7A90049 /* CommentNode+Gutenberg.swift */,
+				872FD7D01DCA8F17542D6EDB9268B82D /* EmbedURLProcessor.swift */,
+				3056C3C423A44FC02A3BD2C8C09ABC00 /* GalleryAttachment.swift */,
+				FC2DE41C4357DE3A466CC704810EAE2C /* GalleryAttachmentToElementConverter.swift */,
+				021DCB219AF2F28A1003BBA66204E065 /* GalleryElementConverter.swift */,
+				114FDA57E072001623375ABC4F033083 /* GalleryElementToTagConverter.swift */,
+				888F9A10687DC69E46CFBEF8E91930D8 /* GalleryShortcodeInputProcessor.swift */,
+				70DA30EC63AB70C87640E76CDB4DC290 /* GallerySupportedAttribute.swift */,
+				1816EA14FF2D42CE3EC8DDD0D31D9E12 /* GutenbergAttributeDecoder.swift */,
+				1083F824D246D8CDD43111835C4F1BB9 /* GutenbergAttributeEncoder.swift */,
+				D4A8B725E9EAFC2D9ABD50F395E8E8CD /* GutenbergAttributeNames.swift */,
+				61672C8D4C4FF783F03DDF3A6B34701E /* GutenbergInputHTMLTreeProcessor.swift */,
+				0D196F9C31D461EF33002CDC809A820A /* GutenbergOutputHTMLTreeProcessor.swift */,
+				A24A47C7FBACF7EAC99F7ADDC51AB23D /* Gutenblock.swift */,
+				39509B91C5843A573D2960C48E264506 /* GutenblockConverter.swift */,
+				BEDFBD66D130D8C8E654AFD118ED55C4 /* GutenpackAttachment.swift */,
+				A9D197D4F3AF0E4B3634589E0AE87183 /* GutenpackAttachmentRenderer.swift */,
+				9423D2844F0C6F17CF80BD92348FE0DD /* GutenpackAttachmentToElementConverter.swift */,
+				9411962F993E055820CF1AE4349E6DDE /* GutenpackConverter.swift */,
+				51BC5AFED068DECCF0621FC549B9FA14 /* ImageAttachment+WordPress.swift */,
+				3C57E4F6369C4CCE0EF243F0232A8E3E /* MediaAttachment+WordPress.swift */,
+				E6C5C3A135DB6804B940E4D749F728E8 /* OptionsTablePresenter.swift */,
+				A194B7F56E8DC19AEF4EA34D0E41B0D8 /* OptionsTableViewController.swift */,
+				565B1C59B27D4526CBD910D0379E2310 /* RemovePProcessor.swift */,
+				285B041FF612E36E1A63B23E31BD7CEB /* ShortcodeProcessor.swift */,
+				4459853917179490B1DE0A49023E4BEA /* SpecialTagAttachmentRenderer.swift */,
+				BD679FB051AEADFAF38DA542B1D7F76B /* String+RegEx.swift */,
+				5914E703274B6C3B8CCB4BBB03FF8EC0 /* VideoAttachment+WordPress.swift */,
+				AA2880585CAE56E7F55CE5B6C371B1EB /* VideoShortcodeProcessor.swift */,
+				4DA7C261DF1874E9B2834AE648A58EDB /* WordPressInputCustomizer.swift */,
+				D7EC9C3F1C9E4ED014C23B1E8AB081DE /* WordPressOutputCustomizer.swift */,
+				C8EE2D38DC9585B13C48EB53381D7034 /* WordPressPasteboardDelegate.swift */,
+				FAF50453AD6994600E8BD8A692A7EDD3 /* WordPressPlugin.swift */,
+				8EBCD7DFEE6E28F0AC01CB1C6DADD20B /* Resources */,
+				EC04E4D4F243D60AAD6466EAC9465228 /* Support Files */,
+			);
+			path = "WordPress-Editor-iOS";
+			sourceTree = "<group>";
+		};
+		84E23187542054411B01274E1CE4562E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				CF26F636646AA494C7075F34F5795D94 /* WordPress-Aztec-iOS.modulemap */,
+				70AC4AF19F84A588EB37339A0B53642E /* WordPress-Aztec-iOS.xcconfig */,
+				3362F8822B271E1B6884D2FF7C449C04 /* WordPress-Aztec-iOS-dummy.m */,
+				E4FA18E91BDE54E04545CA17D133FDC8 /* WordPress-Aztec-iOS-Info.plist */,
+				6E3B447F1EC00FEFADF03FFF39C6A098 /* WordPress-Aztec-iOS-prefix.pch */,
+				8D8E4575A4768957B881A014DA225C47 /* WordPress-Aztec-iOS-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/WordPress-Aztec-iOS";
+			sourceTree = "<group>";
+		};
+		8EBCD7DFEE6E28F0AC01CB1C6DADD20B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E8E80BC3B7B70420A8FEC90626FD8299 /* aztec.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		9844BD180825D0344A640951C0195B7D /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				301CD0CEA3A838BFE5156D01749162DB /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		9F3A3DC6D49E83F61119147D00F18B8C /* WordPress-Aztec-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				B6C57EA3A08AD9F1D80495712DA5AEF3 /* Array+Attribute.swift */,
+				B6E751328E8CF5DA0A533B86293ADA69 /* Array+Helpers.swift */,
+				40398220BD6081D22C83B4A466D12B85 /* Array+ShortcodeAttribute.swift */,
+				31C244C74747D5B35E582DB6D4645B03 /* Assets.swift */,
+				030BECD392B27E5C0EADCBA523A0C8A2 /* AttachmentElementConverter.swift */,
+				37561DF85E24116142275CA29315DC30 /* AttachmentToElementConverter.swift */,
+				A88BD6D2EC0F05C88FC3A540A675BF12 /* Attribute.swift */,
+				BD0610AF9C3F49D55C7CDA542ABFD104 /* AttributedStringParser.swift */,
+				8186E45DFA1993C8FEC0972413D3046A /* AttributedStringSerializer.swift */,
+				7B3F3EAEFFC8C05ED246355E5313EFA8 /* AttributeFormatter.swift */,
+				9AA2B578E4C8867B5C1A4D8984B00D0C /* AttributeType.swift */,
+				F3AD525148AF514810A4898FECDB836E /* Blockquote.swift */,
+				FA4D985FE636D91946FCCEA0D2971351 /* BlockquoteFormatter.swift */,
+				1B40957F490CED76EAC915CE41436ADB /* BoldCSSAttributeMatcher.swift */,
+				0696B96AB3115CACF95F83A415648029 /* BoldElementAttributeConverter.swift */,
+				AE5CFCCE83F26EB17C48DD68A4083C02 /* BoldFormatter.swift */,
+				16FA0CD2D83947DB0886B271ACA8153F /* BoldStringAttributeConverter.swift */,
+				F0451C28C4980379B72EB96837BD29FF /* BRElementConverter.swift */,
+				BBF667E85E0CE9A2639520A5E5E929BA /* Character+Name.swift */,
+				8B62C3E804D859DADD17035392D1429B /* CiteElementConverter.swift */,
+				1B9500805E25403C0A11A9101CA2C998 /* CiteFormatter.swift */,
+				5382C4288E55F83408895496C08BFFE8 /* CiteStringAttributeConverter.swift */,
+				42E902141E7FE6B32C6BFB8CF59414CB /* CLinkedListToArrayConverter.swift */,
+				498C15673BE8E843486CA187768A767A /* CodeFormatter.swift */,
+				9B1979BCDD1E2339733F86684F61B55C /* ColorFormatter.swift */,
+				A9E72B972F57E75757F2D582F2CB976C /* CommentAttachment.swift */,
+				5EE659C80E958909A1275B8B586D97BC /* CommentAttachmentRenderer.swift */,
+				37FE54A6B4AFE3F45D4F573BB9C61C49 /* CommentAttachmentToElementConverter.swift */,
+				65772017C12D261C8A6F4A4C6D238FD6 /* CommentNode.swift */,
+				0BD3EA8BD1E9E1265EFAFFAAF5A72538 /* ConditionalItalicStringAttributeConverter.swift */,
+				E1837BF3111822E18E1CBAEF77F51B29 /* ConditionalStringAttributeConverter.swift */,
+				7CB42B9833E9D7E4B0A2880E64969400 /* Converter.swift */,
+				F18D7511420E16A4BAAAD0D55D172C2A /* CSSAttribute.swift */,
+				57FA8D49AD87EEC153B4E294DC452626 /* CSSAttributeMatcher.swift */,
+				EC3BC66B08B8FC61BD8E6279562A08C5 /* CSSAttributeType.swift */,
+				2D8F47AC33B37EBAFEA019ACA6693DE2 /* CSSParser.swift */,
+				B691A7C44CEBA5A1C221953494315284 /* Dictionary+AttributedStringKey.swift */,
+				D8E10B7F12D2A20AE7B49834658D6453 /* DocumentReadingOptionKey+Swift4.swift */,
+				CA158CD1B2C0281B235C02CEAF685583 /* DocumentType+Swift4.swift */,
+				88246337870C14F544D2534B63B655F5 /* EditorView.swift */,
+				8C756984933333189F96A577115D0651 /* Element.swift */,
+				C7BE5E3B890F4D810A483F60237B85A8 /* ElementAttributeConverter.swift */,
+				988E8A31D84A36DF1EF898BF841E239C /* ElementConverter.swift */,
+				0DE599FBC6D7E8A2C4DB53753BF98771 /* ElementNode.swift */,
+				747D1265B90103780D8A4C5715D3DD1E /* ElementToStringConverter.swift */,
+				6B44C6B9EFB5633BB92770FDEF037099 /* Figcaption.swift */,
+				D68AC0D93C910EEBDE5EE8B13E6D6C8E /* FigcaptionElementConverter.swift */,
+				F89C2D185E21577BD37DC4071DBC2E72 /* FigcaptionFormatter.swift */,
+				8DB7500E7F9BAA81FF9312629BCD5A69 /* Figure.swift */,
+				32442639685C73CBAE9E3B830675E094 /* FigureElementConverter.swift */,
+				DECFF3006DC258D1014E385D0D6AFB74 /* FigureFormatter.swift */,
+				3931204379BAA1C40E425C71D0573652 /* FontFormatter.swift */,
+				8C0989A383F77EE4D60BBA6749136D48 /* FormatBar.swift */,
+				E525283441C0368C36FD9C05DBF97DF4 /* FormatBarDelegate.swift */,
+				C0A278CE4BF5722B7376340F7D82E33C /* FormatBarItem.swift */,
+				1DDEA31BF9CA9E02809A64E71D722A69 /* FormatterElementConverter.swift */,
+				9FDC9482592D2F6828437662E857E365 /* FormattingIdentifier.swift */,
+				6C2357EC419C6A00DCA11BE9B90D4319 /* GenericElementConverter.swift */,
+				049BA24BA6B9A7541C6654E0314381F9 /* GenericElementToTagConverter.swift */,
+				E43FF084C73B58E4F257313C13908152 /* Header.swift */,
+				E0E844F784E792309EAEB21E169D1863 /* HeaderFormatter.swift */,
+				40E9F1479C99AE310760FB9260442E2C /* HRElementConverter.swift */,
+				BA1D13D1AF5E05D196DBD12767A41E01 /* HTMLAttachment.swift */,
+				B092FD9720E73127360191946960CBCD /* HTMLAttachmentRenderer.swift */,
+				9353D3831591247A4AFE9B5E8F7FCED3 /* HTMLAttachmentToElementConverter.swift */,
+				CEF808FE4C12EAEF83354EAEAFA021A5 /* HTMLConverter.swift */,
+				7835A3D210135F315EB755765EF1643A /* HTMLDiv.swift */,
+				CC7F72552BFA6E3248619EA5C0113A90 /* HTMLDivFormatter.swift */,
+				16C4197FC0CAB5F15FA8AEA56F5371B6 /* HTMLLi.swift */,
+				75836698FCDC26028C40E1852C8DC473 /* HTMLParagraph.swift */,
+				178FA0E13D5D81E46B0D59751A61595C /* HTMLParagraphFormatter.swift */,
+				E2B9C88B37B76FC176041B38D6607551 /* HTMLParser.swift */,
+				31D191FB8C012A3EFE9590C93F71BFC9 /* HTMLPre.swift */,
+				4DCF9C02A8896F4FE7BAFBEFDC6CCB8C /* HTMLProcessor.swift */,
+				5C295F233B14F89AC9A06076DE243E4B /* HTMLRepresentation.swift */,
+				607AAC6640E0B67AA82B87C423EF520D /* HTMLSerializer.swift */,
+				0AED1F1D42D661032A92B935E3548594 /* HTMLStorage.swift */,
+				C82E951D59962041522068CC67F03926 /* HTMLTreeProcessor.swift */,
+				7D729256EB26894A95A883BBAD6A674C /* ImageAttachment.swift */,
+				C8CCFDA0FD9A38087FDC2016F477C8AD /* ImageAttachmentToElementConverter.swift */,
+				F9482FDA576C6F2AA8BB78EA7CF2ACC1 /* ImageElementConverter.swift */,
+				9C1C85675DDBCAA6E173D589E2FC61C6 /* InAttributeConverter.swift */,
+				A62B9B74D8DB29C730C5253D16562B90 /* InAttributesConverter.swift */,
+				4A46B599817071321762DF0A60DA5FEA /* InNodeConverter.swift */,
+				D1028B2B0BFC7EF44D0B79B5A210F4F5 /* InNodesConverter.swift */,
+				CF185348B545A977501009E54B2E4195 /* ItalicCSSAttributeMatcher.swift */,
+				A07B19A1E6F806A0CF9EBBAAA6E26A0C /* ItalicElementAttributeConverter.swift */,
+				1235603CD86DBF61AD28869F9A81C90B /* ItalicFormatter.swift */,
+				5E7E206398252DC5EE1956F9F242DEA7 /* ItalicStringAttributeConverter.swift */,
+				1B7E2311D5C0BAFA341EE6E7943A19C9 /* LayoutManager.swift */,
+				47E068315D8C26C41701608FC85E8474 /* LiFormatter.swift */,
+				0A97FADBBD025884999E217981863620 /* LineAttachment.swift */,
+				5079CE3C1AF748AAE186CF346788A9E2 /* LineAttachmentToElementConverter.swift */,
+				ADF7155F3DDBA4F7B5507A87CC05754F /* LinkFormatter.swift */,
+				19AEA8158AFA5BF44AB82B5A12E4EBE8 /* MainAttributesConverter.swift */,
+				115037B9D1EDE7387323A0024491B227 /* MediaAttachment.swift */,
+				144691A4DC308781C8FEE53027901DB8 /* Metrics.swift */,
+				C6D7039127E9D32B90638F1999369ED3 /* Node.swift */,
+				C928C7C4BE58F85AB340C60D1C84B245 /* NSAttributedString+Analyzers.swift */,
+				D1183AB736911556946F8D73F3CFE32D /* NSAttributedString+Archive.swift */,
+				66BB45F1C66D200F789E189D821C6900 /* NSAttributedString+Attachments.swift */,
+				D071688A128FBD1B649AAA7D8FFA9CD1 /* NSAttributedString+CharacterName.swift */,
+				FC88740101B9180FD05922610450FA98 /* NSAttributedString+FontTraits.swift */,
+				0508670DE78D697563741A5F89A13FBA /* NSAttributedString+Lists.swift */,
+				1BCD0D3109FE4EE7FFB03577144BC425 /* NSAttributedString+ParagraphRange.swift */,
+				52BEEF886C22F688059399BA64E16CA2 /* NSAttributedString+ReplaceOcurrences.swift */,
+				648FADF97530352D2B439DCAC56C901A /* NSAttributedStringKey+Aztec.swift */,
+				DF23F2CDDCE8E810E386042E5447CFE0 /* NSAttributedStringKey+Conversion.swift */,
+				227D16AE71F26ACB4244E8455E9C9804 /* NSLayoutManager+Attachments.swift */,
+				B60D70052B84677F4A93658ABDFB4A74 /* NSMutableAttributedString+ParagraphProperty.swift */,
+				9903F9F8C5274287FACE80D43F64C220 /* NSMutableAttributedString+ReplaceOcurrences.swift */,
+				58C07E63208B8A17B4629FCB6BFEC019 /* NSRange+Helpers.swift */,
+				2882BB9BD764A0D2A552980D28AC3770 /* NSTextingResult+Helpers.swift */,
+				4EF3BD00ED438AA44B8250BEAF1B1CD0 /* ParagraphAttributeFormatter.swift */,
+				417B6628CE5F1A7F81C90CAFA4BABEBE /* ParagraphProperty.swift */,
+				0B1AA4B6CA98B0E783E0A8CEBA3AF1D4 /* ParagraphPropertyConverter.swift */,
+				05B4398643EDE5D3E3BF9FE6BE3EB190 /* ParagraphStyle.swift */,
+				857601BDF3BC9A1B8B6D5F215C9D2DD3 /* PipelineProcessor.swift */,
+				D38ABD2B8EBF2932ED9CE1D98B5294F2 /* Plugin.swift */,
+				F51D0506B11805851049A86013BA23FF /* PluginInputCustomizer.swift */,
+				617209CF69A5FD58E91DA465C002A4AB /* PluginManager.swift */,
+				F11463E01C997DD25CA8C67ACBC062C2 /* PluginOutputCustomizer.swift */,
+				4DB9EB8128E7E15BC3D3D42FDD96D9E9 /* PreFormatter.swift */,
+				D063F9B5665C43D8AE7F83F617ECBC21 /* Processor.swift */,
+				C610E7A6BFCB17028C3339DCDD5C1A45 /* RegexProcessor.swift */,
+				73F31DAE977614CE3B2532EB8734B4EB /* RenderableAttachment.swift */,
+				9227DC8E8C4F65828BD9B4DEEB6BFEC1 /* ShortcodeAttribute.swift */,
+				93CAC13455A196BCA35D78DA12243267 /* ShortcodeAttributeParser.swift */,
+				7FCF89DA50EC13F0A9CC7C4F47870FED /* ShortcodeAttributeSerializer.swift */,
+				7BC4942939B18A894CC2488CA4E660B5 /* StandardAttributeFormatter.swift */,
+				263A1748026843DD06334F008CA35B9C /* StrikethroughFormatter.swift */,
+				53C33D12F447B79406F923EC27ED3C50 /* String+CharacterName.swift */,
+				5DED26AAFCE53DDC2B94AB68C45F9607 /* String+EndOfLine.swift */,
+				CCE69D0B38ABB61ABF28DBFA2BBE6C54 /* String+HTML.swift */,
+				8C8003CFF4E3EAFF538C6BF46C9080B9 /* String+Paragraph.swift */,
+				CE2244A4683CFCB6BB94222AA114B812 /* String+RangeConversion.swift */,
+				74E655EA901FC9804B08FD328D66DFD0 /* StringAttributeConverter.swift */,
+				255AEB627774FE5190D3946C18C3E63D /* StringUTF16+RangeConversion.swift */,
+				9B7A9F20D4DF2E9153378D9C4BC838B2 /* TextList.swift */,
+				90AF4FBE82BEB9940BBD3C3514D31FEA /* TextListFormatter.swift */,
+				01F07BD5E505CBF5E35B943714FEEB53 /* TextNode.swift */,
+				5CBBDFB27829829B4B686239515B656F /* TextStorage.swift */,
+				C7C553CC6939638CC3AE26F04A6C91AB /* TextView.swift */,
+				2721FCF992397C35FB74891304C950A1 /* TextViewPasteboardDelegate.swift */,
+				DE88E6978EEA1E1F4C9436D1CF9D0060 /* UIColor+Parsers.swift */,
+				764911616778DBA72EC095CCB3EEBE92 /* UIFont+Emoji.swift */,
+				8E029A4B0A12A5353B9B17E61E974109 /* UIFont+Traits.swift */,
+				0D824240A4373EA2B698A4CE247FACD5 /* UIImage+Resize.swift */,
+				033D16380BFCEC7C1DF98613C9A420FD /* UILayoutPriority+Swift4.swift */,
+				CA0F3684A0002CD12B23D83D4B593EEE /* UIPasteboard+Helpers.swift */,
+				4023DBD0FD76FD35FD9D69A93568E046 /* UIStackView+Helpers.swift */,
+				E6B8E480484A4169EDB1EC2F6CA48C3E /* UITextView+Delegate.swift */,
+				E46450073EB1634BAF4A408E0FBF9569 /* UITextView+Undoable.swift */,
+				5485BA77F969E074C00A120202947221 /* UnderlineCSSAttributeMatcher.swift */,
+				028FEFF7F1C2E133AEF8B90BD9473A02 /* UnderlineElementAttributeConverter.swift */,
+				C785C02B1D009D4603BF34C5E8820B64 /* UnderlineFormatter.swift */,
+				4A053000B5D12C86370D73E27C5E933F /* UnderlineStringAttributeConverter.swift */,
+				66B9B80C60564EBC20701581C45CF7E1 /* UnsupportedHTML.swift */,
+				F806C334C9C1150676341C4660C3BE6C /* VideoAttachment.swift */,
+				99B7AE6197D2AEB4EDE40BB6DFB2B28A /* VideoAttachmentToElementConverter.swift */,
+				DFEF951D911A9CFC57BA0FC4AA4BCEBB /* VideoElementConverter.swift */,
+				E5CC5B0B4719D0EC98C1AF9E9015302F /* Resources */,
+				84E23187542054411B01274E1CE4562E /* Support Files */,
+			);
+			path = "WordPress-Aztec-iOS";
+			sourceTree = "<group>";
+		};
+		E5CC5B0B4719D0EC98C1AF9E9015302F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3ED6CC85F1ED2A0181C85BDD4A7D86BF /* Media.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		EC04E4D4F243D60AAD6466EAC9465228 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3EA0446DA63674E8219F3E9607F2E73B /* WordPress-Editor-iOS.modulemap */,
+				801720F3B4060789452593A7C3A52B62 /* WordPress-Editor-iOS.xcconfig */,
+				653834E7AEA88C7702CE2A5FFD446633 /* WordPress-Editor-iOS-dummy.m */,
+				101F0D3EB7F3C134A88F1FC383161CD8 /* WordPress-Editor-iOS-Info.plist */,
+				5B6499BAA90E1C19BBA334E7F0A5F470 /* WordPress-Editor-iOS-prefix.pch */,
+				4CCB5F9CA48D9DCFC9C331349D43B229 /* WordPress-Editor-iOS-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/WordPress-Editor-iOS";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		4FBCEB7B546E91749BB5D1BF5F050F4D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC36A8AB2D6AF419328F287D8D234FA6 /* WordPress-Editor-iOS-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A7449E3AE60A4C5B2C81A28D0A71136 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C74D495FE7E4E346B968DC928719CCC5 /* Pods-FEditor-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DEE96C231D40D585D8EA04B0476FDC07 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D518C87A9C873F2C497537FF763CC8EB /* WordPress-Aztec-iOS-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		25E86B2AC404BDF00BFBAE08C01E105F /* WordPress-Aztec-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0F24B72E485FC76CFD2F225978DCE3CB /* Build configuration list for PBXNativeTarget "WordPress-Aztec-iOS" */;
+			buildPhases = (
+				DEE96C231D40D585D8EA04B0476FDC07 /* Headers */,
+				7FD33657B8249867998EDBA328385364 /* Sources */,
+				73F2551B04E74C3CF2F5E43C436DB010 /* Frameworks */,
+				CD8626740F3E30D9DB6C18332EB4237D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WordPress-Aztec-iOS";
+			productName = "WordPress-Aztec-iOS";
+			productReference = 8CBB01CFB664CC1FB26CFC36D9B01C0A /* Aztec.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		2DDB89A23BA8DDF752CEAD079E66CDF2 /* Pods-FEditor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 025F7A80637B628A8C2025963A6C91EA /* Build configuration list for PBXNativeTarget "Pods-FEditor" */;
+			buildPhases = (
+				7A7449E3AE60A4C5B2C81A28D0A71136 /* Headers */,
+				C584BC9EFAAF0EDA33EE582268DEC6E1 /* Sources */,
+				12A8A0DC0D2CFE027547B7D8FEB11F3F /* Frameworks */,
+				570874DE03C96D8984449C72ACB3F62A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0C6239B2B6D73CAD7AA8FEE4D924CE9D /* PBXTargetDependency */,
+				9ADBE65813016E90AC7429A10C859B63 /* PBXTargetDependency */,
+			);
+			name = "Pods-FEditor";
+			productName = "Pods-FEditor";
+			productReference = 211C0F54B361D1D9467EA1CEF729EC3A /* Pods_FEditor.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		525D39961BFEC29AE0CF910AC68A52B3 /* WordPress-Editor-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 899C5AB18D00E6736FF9DF9EE5A4410D /* Build configuration list for PBXNativeTarget "WordPress-Editor-iOS" */;
+			buildPhases = (
+				4FBCEB7B546E91749BB5D1BF5F050F4D /* Headers */,
+				D43F735A01AD6DAB6DF813837F7A5C3E /* Sources */,
+				A450423AE740B80BCD80A23572D28246 /* Frameworks */,
+				FD22230021EDFB2E25E45349DDF9C4E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5BB87D2B0E3ED68BBED0DB24368787F4 /* PBXTargetDependency */,
+			);
+			name = "WordPress-Editor-iOS";
+			productName = "WordPress-Editor-iOS";
+			productReference = E27A1220380B84EF4E537D00A66C1811 /* WordPressEditor.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 66BA05758B565E084DEBF1AF3ABF4C33 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2DDB89A23BA8DDF752CEAD079E66CDF2 /* Pods-FEditor */,
+				25E86B2AC404BDF00BFBAE08C01E105F /* WordPress-Aztec-iOS */,
+				525D39961BFEC29AE0CF910AC68A52B3 /* WordPress-Editor-iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		570874DE03C96D8984449C72ACB3F62A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD8626740F3E30D9DB6C18332EB4237D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C96C36068DE2501FCB815B34D84A02EE /* Media.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD22230021EDFB2E25E45349DDF9C4E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CF519DC573CE6EA04378B3BD5C5D6E6 /* aztec.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7FD33657B8249867998EDBA328385364 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADFD2BC3055A20E1EC3386E81698EDA2 /* Array+Attribute.swift in Sources */,
+				0D342DFF46BA716BD072ED7D9877C115 /* Array+Helpers.swift in Sources */,
+				18FCDE1D5728DB60F9FAC323CB16966D /* Array+ShortcodeAttribute.swift in Sources */,
+				E59371D445E8121651513D85D7035642 /* Assets.swift in Sources */,
+				C83FEFA749B0EC5873AA11F539505A94 /* AttachmentElementConverter.swift in Sources */,
+				120087F5BE1192E4B23D465AC8E372E3 /* AttachmentToElementConverter.swift in Sources */,
+				1EB8BC9DB35579BEED868BBCC5B1578D /* Attribute.swift in Sources */,
+				D6CC82A7F0CE64EB5C517483BF64B0BD /* AttributedStringParser.swift in Sources */,
+				25B1DEB7439F5BA73090A9524EE6CD55 /* AttributedStringSerializer.swift in Sources */,
+				B9B9B38C0F39EE36E419D067584008C0 /* AttributeFormatter.swift in Sources */,
+				6C6AE530335ACCE5728165BF4ED39094 /* AttributeType.swift in Sources */,
+				0EC67DEACD183E79F1C5EE048D83D0DB /* Blockquote.swift in Sources */,
+				AAAFE470AF2D385A45F53747BA229309 /* BlockquoteFormatter.swift in Sources */,
+				8178D82524A90BD6E70EEEE0B31CDDD5 /* BoldCSSAttributeMatcher.swift in Sources */,
+				25328DF33EFE75E13360F1E78405FCE7 /* BoldElementAttributeConverter.swift in Sources */,
+				1F0C2B4B36B68C1162137E26F5D66933 /* BoldFormatter.swift in Sources */,
+				3EC7594886F9CF7A0788B84CD4B28F1F /* BoldStringAttributeConverter.swift in Sources */,
+				6D027114220A0F06C3A6B2E8AB3323FA /* BRElementConverter.swift in Sources */,
+				BB4D26EE156412F0EF1B102F3684627A /* Character+Name.swift in Sources */,
+				F883D8EA815792578ACDBB980DC56487 /* CiteElementConverter.swift in Sources */,
+				7F526DBFF26E518772B2D80D00E288BD /* CiteFormatter.swift in Sources */,
+				E6098FB0E28CA97C19BC2E4DCED62386 /* CiteStringAttributeConverter.swift in Sources */,
+				B3C358F2383BD2782F922566E224AB9F /* CLinkedListToArrayConverter.swift in Sources */,
+				978A47AFD755140D2CCC30E524DCBECD /* CodeFormatter.swift in Sources */,
+				E63E83BBCA55AE0AC1979A5586C741F6 /* ColorFormatter.swift in Sources */,
+				38C950CE747344968AEB07C437B813A6 /* CommentAttachment.swift in Sources */,
+				3B5C785AACF68FCAC2258D07534220BC /* CommentAttachmentRenderer.swift in Sources */,
+				B9E73CA33BCF8934326FC19F241D8629 /* CommentAttachmentToElementConverter.swift in Sources */,
+				3304038E9D18D1091208A2446003CC7C /* CommentNode.swift in Sources */,
+				4F79F9E9E0662C658D851B75C5723B06 /* ConditionalItalicStringAttributeConverter.swift in Sources */,
+				2A47BC0142F5E880F207D90CB2848305 /* ConditionalStringAttributeConverter.swift in Sources */,
+				C625013958C8C21F4DA9E4554374336B /* Converter.swift in Sources */,
+				DE145E90CEE90EA2548BCABD04EFE79C /* CSSAttribute.swift in Sources */,
+				29181A053B07388D2F643D941F83BE8E /* CSSAttributeMatcher.swift in Sources */,
+				2FA49B7F29CEEF73659D94ACC1FEA899 /* CSSAttributeType.swift in Sources */,
+				2F429FF9A9C7526C87F978B8871CE2B3 /* CSSParser.swift in Sources */,
+				AEA65D0EE94E6EFD1EFBE39C53DE873F /* Dictionary+AttributedStringKey.swift in Sources */,
+				1957F0958CF79A08ECA30EBC0D99CF57 /* DocumentReadingOptionKey+Swift4.swift in Sources */,
+				390119F3D8A8DBB5C76E960C79512BAB /* DocumentType+Swift4.swift in Sources */,
+				48E82F406AF10E5A9A5739EC6A1F439D /* EditorView.swift in Sources */,
+				ED9F9E18ECA7BBE3844CAB61F3E69D99 /* Element.swift in Sources */,
+				1168945AB07270483631FC128C76D115 /* ElementAttributeConverter.swift in Sources */,
+				1B6430600695A7412B5E7DDC9C773D17 /* ElementConverter.swift in Sources */,
+				0DC02FE1830C6DABFD7F7E6DD1603478 /* ElementNode.swift in Sources */,
+				6E2BFA1898D2B7BAF270A08042EDE5C9 /* ElementToStringConverter.swift in Sources */,
+				F1F9B4D1B7EC5D30687866BF9D62352B /* Figcaption.swift in Sources */,
+				3336993D6608907F42431CE67DF1EED7 /* FigcaptionElementConverter.swift in Sources */,
+				A3EB181923ABA6424A10A9CFBD32C018 /* FigcaptionFormatter.swift in Sources */,
+				B9B35CB2281BBDE7C1083992916525D2 /* Figure.swift in Sources */,
+				3F5D336B83CCF818854E2330C04DF59A /* FigureElementConverter.swift in Sources */,
+				75ED17F1857DB4736F9B4B4BD5760EB0 /* FigureFormatter.swift in Sources */,
+				3DF865779E69E0926BBF79F8B35778DE /* FontFormatter.swift in Sources */,
+				DD8132419828496008090B447D8BB2E1 /* FormatBar.swift in Sources */,
+				DCDD3184A607A78A939339363A48A833 /* FormatBarDelegate.swift in Sources */,
+				85D7C74AEEEC5E20E0B3CEC6D9B304FA /* FormatBarItem.swift in Sources */,
+				4C284D2396478A1151C8E7201A8EA8E0 /* FormatterElementConverter.swift in Sources */,
+				3BE5B6075B4C48D35ABBECF1CFD88E52 /* FormattingIdentifier.swift in Sources */,
+				7DC5C9146107DEEFCB1C2017A7899027 /* GenericElementConverter.swift in Sources */,
+				6A768D08BE4DD7DE0644DD1AFCC22571 /* GenericElementToTagConverter.swift in Sources */,
+				224B88CC7D447980FE5ABF072EB0C1D6 /* Header.swift in Sources */,
+				DAE3DD3DFEEB25EA1D5E179B72F0D112 /* HeaderFormatter.swift in Sources */,
+				2B7A3CC6B74AE84156D47CA2D6C94F94 /* HRElementConverter.swift in Sources */,
+				182F6BE506463B26D079B2E2D5EE6121 /* HTMLAttachment.swift in Sources */,
+				32CB3009F0C3A86372087FD2D0BD9CFD /* HTMLAttachmentRenderer.swift in Sources */,
+				2EF5C76B1EFC48A83FEACAEB213C4D24 /* HTMLAttachmentToElementConverter.swift in Sources */,
+				E23D1F544F6D78F70D2D8EB6C1FF3ABB /* HTMLConverter.swift in Sources */,
+				05A33E936E2113A0E5DD0A30017EAE77 /* HTMLDiv.swift in Sources */,
+				FCADEA13FC07C1F343A4AAEA40E774B0 /* HTMLDivFormatter.swift in Sources */,
+				F0DBD061F2A4BF6BEAC148629D432016 /* HTMLLi.swift in Sources */,
+				EC20857655E9D688CDEB01666E3C0214 /* HTMLParagraph.swift in Sources */,
+				32708F63A0301C09EACEDE41CA57B634 /* HTMLParagraphFormatter.swift in Sources */,
+				333798CF74C9B4AB44EA74719FFE81C9 /* HTMLParser.swift in Sources */,
+				A0EFFBE6DE86A7CC54B7ADAC82251B86 /* HTMLPre.swift in Sources */,
+				3D428FBA78ADF519F842330F1C4E8415 /* HTMLProcessor.swift in Sources */,
+				55691709BB31E87B5737EA4C17917CCD /* HTMLRepresentation.swift in Sources */,
+				DA8033398CC80DEBBB53D376361A707D /* HTMLSerializer.swift in Sources */,
+				645A7991E6B9584E5C5EF82287D04F04 /* HTMLStorage.swift in Sources */,
+				3992FB51FABA3F08CF347E86FC10A8C0 /* HTMLTreeProcessor.swift in Sources */,
+				4FD5AB77024FFE62B69D82239915F197 /* ImageAttachment.swift in Sources */,
+				D0D82173C502E2B4EE7B0DCC7D9AB57F /* ImageAttachmentToElementConverter.swift in Sources */,
+				0B88B3993BFF51BC711CE8F3D3620F3B /* ImageElementConverter.swift in Sources */,
+				67FD19448038683E9A112CA97F204F26 /* InAttributeConverter.swift in Sources */,
+				ACDE2A0120279A93CFF68670F5460C85 /* InAttributesConverter.swift in Sources */,
+				6AE73D3A8F04810104109C1B4747067A /* InNodeConverter.swift in Sources */,
+				C52E9CA52DEE667238DFA77E31A0D7E6 /* InNodesConverter.swift in Sources */,
+				F7ED3D96F5AD83CFE2E4D4D2D34C4E5F /* ItalicCSSAttributeMatcher.swift in Sources */,
+				940F8B9B256F1EAFBCE88A162592C10E /* ItalicElementAttributeConverter.swift in Sources */,
+				215EDCFE033782F50349D27689AE42F4 /* ItalicFormatter.swift in Sources */,
+				E1527DF3968B8EEB6BB027A2418AEA1A /* ItalicStringAttributeConverter.swift in Sources */,
+				8C2D1D8E1A3C6FCDBD5EBC6689BC2CE1 /* LayoutManager.swift in Sources */,
+				B65A158F60C9409B9BE14C801109952A /* LiFormatter.swift in Sources */,
+				0FC10DD07BCD146D254124F52D07ACE8 /* LineAttachment.swift in Sources */,
+				D10A2CF649BF016FCDF87AB823217B0D /* LineAttachmentToElementConverter.swift in Sources */,
+				B40746CF73F6F1F297DCB5DAE106F5A4 /* LinkFormatter.swift in Sources */,
+				F2199149EA9FD7E6CF94ED96CBA01769 /* MainAttributesConverter.swift in Sources */,
+				8F789CDF9E2882491A0136CBA8103A34 /* MediaAttachment.swift in Sources */,
+				732B5915C98DFF6344F985D90F1CD9B5 /* Metrics.swift in Sources */,
+				39AFCFB74379ACC35330D3FDE1EE3220 /* Node.swift in Sources */,
+				7E22E4CCCAB77BFE2F5980817F906554 /* NSAttributedString+Analyzers.swift in Sources */,
+				8B9BB3C29D9DF9BD2A077CC8A31828EF /* NSAttributedString+Archive.swift in Sources */,
+				EE6A4C159844FAB483D40D459C5176EE /* NSAttributedString+Attachments.swift in Sources */,
+				27732D036010043F3E92BBF823637762 /* NSAttributedString+CharacterName.swift in Sources */,
+				1FBBD0852DB7A84AAC9440145A45F02B /* NSAttributedString+FontTraits.swift in Sources */,
+				D832D73771AFC670E0C055F7DBAC62D8 /* NSAttributedString+Lists.swift in Sources */,
+				48B40CC00A7E7DE6C8E805C9FE5B885B /* NSAttributedString+ParagraphRange.swift in Sources */,
+				27476094C48BA535C5A1EC897C65EBE0 /* NSAttributedString+ReplaceOcurrences.swift in Sources */,
+				72997671BCA57F540EACBFF6830896DB /* NSAttributedStringKey+Aztec.swift in Sources */,
+				D20105F24DBFA76EEBE979EB63B543F4 /* NSAttributedStringKey+Conversion.swift in Sources */,
+				9E255E7E1415E4884ACDFBDE5895F91F /* NSLayoutManager+Attachments.swift in Sources */,
+				AE12D735B1607DB7217AE73BEC9A13EF /* NSMutableAttributedString+ParagraphProperty.swift in Sources */,
+				F17A68C9B3A851E29245A647EEB9384E /* NSMutableAttributedString+ReplaceOcurrences.swift in Sources */,
+				69F9D7516319EEB35856ED22F2D594E4 /* NSRange+Helpers.swift in Sources */,
+				58ABBAED2ABF849B56C3CBE1E8DA3007 /* NSTextingResult+Helpers.swift in Sources */,
+				8109A9B026169DC25C0AA0CD7E7215B2 /* ParagraphAttributeFormatter.swift in Sources */,
+				83B033B4985A7F3655506149C188C1A9 /* ParagraphProperty.swift in Sources */,
+				4B7A198E4966D582E139DC23A3CFA9FC /* ParagraphPropertyConverter.swift in Sources */,
+				EC379C4F09616DC9B68844BC795E9EF1 /* ParagraphStyle.swift in Sources */,
+				8CEB99749F6F39F6606191C502E57099 /* PipelineProcessor.swift in Sources */,
+				298EFDEE25E539AA36CDBF23437C7616 /* Plugin.swift in Sources */,
+				515A45D2DA74A3ABF600CC806B6AB888 /* PluginInputCustomizer.swift in Sources */,
+				F4FB8F48CA682FDCA5D54B1500EA4A84 /* PluginManager.swift in Sources */,
+				114A3D20A1648FB5B4B1898177B46D78 /* PluginOutputCustomizer.swift in Sources */,
+				80C46C569D61665408BB05C9123C9D28 /* PreFormatter.swift in Sources */,
+				B42C5A16147557425EB81602EE23AC87 /* Processor.swift in Sources */,
+				48C8A89BFD4F05E827E5D609D11B6999 /* RegexProcessor.swift in Sources */,
+				6EF83DB93234CEA22B122DB04E52939C /* RenderableAttachment.swift in Sources */,
+				AA3EA71CD3FD66E4D23B5CEABA5A2312 /* ShortcodeAttribute.swift in Sources */,
+				7B0CFE322548D14D91A716F217A2B57F /* ShortcodeAttributeParser.swift in Sources */,
+				FF24F678BBDCCF4948973CC67D27D0E9 /* ShortcodeAttributeSerializer.swift in Sources */,
+				F18C01937FC957251F387912E730EB74 /* StandardAttributeFormatter.swift in Sources */,
+				D0E5187906FE5B9729A789BB95A4ED16 /* StrikethroughFormatter.swift in Sources */,
+				A7A8C9F9A3B2D5164E1898DA12D9D323 /* String+CharacterName.swift in Sources */,
+				449D502EE4FAB6F177DF3335A2E4B262 /* String+EndOfLine.swift in Sources */,
+				3F645DB887CCAEE6D3BE3F4D91CCC3B5 /* String+HTML.swift in Sources */,
+				3E0456615C4E08A0E4486DFFB01970F0 /* String+Paragraph.swift in Sources */,
+				4C2DB4C738CBAB7C44545BA9D780FC21 /* String+RangeConversion.swift in Sources */,
+				37FC5BF7414BE4A686B7EE32C8DA425C /* StringAttributeConverter.swift in Sources */,
+				A6D435AF03F5C9E7282E2E57D7559B9A /* StringUTF16+RangeConversion.swift in Sources */,
+				43EB0C3D8359BFE9594413924CA47605 /* TextList.swift in Sources */,
+				C0773D3EA88DF78C85C1EB2465E312A2 /* TextListFormatter.swift in Sources */,
+				CDDAE21E14B0990DAC379BB99561947D /* TextNode.swift in Sources */,
+				FA3E5FCB4F907DBCCF9134A2FE5054D0 /* TextStorage.swift in Sources */,
+				0B39661CA4B8C0C4BAD396772A868EFD /* TextView.swift in Sources */,
+				5C5688F0855F9CA516F4891654204CDB /* TextViewPasteboardDelegate.swift in Sources */,
+				9C05F14529AC481E493B172C52F3329F /* UIColor+Parsers.swift in Sources */,
+				B4B6945CE531AAE3D5A9953B75383E0E /* UIFont+Emoji.swift in Sources */,
+				49D11296EEBC7195BAF314AE93709F6E /* UIFont+Traits.swift in Sources */,
+				69B40A7ED80FE999405BD8FE8DEA7644 /* UIImage+Resize.swift in Sources */,
+				148FE71FF1CE3E1DD41F13C7DD4C48DF /* UILayoutPriority+Swift4.swift in Sources */,
+				C3C365C5CE53C30745AF58AE7441D4B8 /* UIPasteboard+Helpers.swift in Sources */,
+				F983D34C0028931B18322F1BF56FD9F0 /* UIStackView+Helpers.swift in Sources */,
+				43960AE31E8816C4C417EFEA95392CB9 /* UITextView+Delegate.swift in Sources */,
+				CFF4491B383AA1AF361CABAE71E5AFC4 /* UITextView+Undoable.swift in Sources */,
+				503992A652F9A4B45185AF6835CDB502 /* UnderlineCSSAttributeMatcher.swift in Sources */,
+				8D5CDC161A1470F8CC1A8E7E75B82417 /* UnderlineElementAttributeConverter.swift in Sources */,
+				D4C8CBA25E1972F9566CF16FD0034572 /* UnderlineFormatter.swift in Sources */,
+				02A093756BA28DC221E115874DA36711 /* UnderlineStringAttributeConverter.swift in Sources */,
+				B70697D4CF3651F2B7959EE9D5F6A286 /* UnsupportedHTML.swift in Sources */,
+				6589DA18EFD2E90E8630E043520A9BF7 /* VideoAttachment.swift in Sources */,
+				ABEA30222E1C833E6998D21679549670 /* VideoAttachmentToElementConverter.swift in Sources */,
+				0A3A11D39627217FF78DC8ADE383B0F1 /* VideoElementConverter.swift in Sources */,
+				A8FA69F70637C0CE39956A594481FCA7 /* WordPress-Aztec-iOS-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C584BC9EFAAF0EDA33EE582268DEC6E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				221153EDB9A80775769696DCB816031C /* Pods-FEditor-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D43F735A01AD6DAB6DF813837F7A5C3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FE95F5E3836B940D20AB3F5125C5148 /* AutoPProcessor.swift in Sources */,
+				2FB31F9B3CEC476612BFB987681D6F7F /* CaptionShortcodeInputProcessor.swift in Sources */,
+				A8F77308464A2A5386BE495825488427 /* CaptionShortcodeOutputProcessor.swift in Sources */,
+				62BDC4FBD9412A3267D54DDF28CBD3CF /* CommentNode+Gutenberg.swift in Sources */,
+				1CE0B7B02E760963B6560AEF2CD90DAD /* EmbedURLProcessor.swift in Sources */,
+				281591D4713B65B7FE65CC503BF7926E /* GalleryAttachment.swift in Sources */,
+				4C1FB4479F1117C4C2469D93A5E67E16 /* GalleryAttachmentToElementConverter.swift in Sources */,
+				6D11FA6757A58B2E997F55AC4FB3379D /* GalleryElementConverter.swift in Sources */,
+				64113C575161889579ECF3BC720FB3FD /* GalleryElementToTagConverter.swift in Sources */,
+				62B9515750003B5A1986E110174634DB /* GalleryShortcodeInputProcessor.swift in Sources */,
+				5043D3792E706B4170A0B535DC918D59 /* GallerySupportedAttribute.swift in Sources */,
+				8F99C12F2C5F939BCC857840441031EE /* GutenbergAttributeDecoder.swift in Sources */,
+				75F07CB231F0625FF14C0FD0D50816B5 /* GutenbergAttributeEncoder.swift in Sources */,
+				788C4E73EE984533FF998EE0F32EDE67 /* GutenbergAttributeNames.swift in Sources */,
+				DC81245D3431CA088FBD877ADC3215E2 /* GutenbergInputHTMLTreeProcessor.swift in Sources */,
+				2B67A97032CB7315408C4B8CC02CDDCF /* GutenbergOutputHTMLTreeProcessor.swift in Sources */,
+				266A4BBCA8A4A6154AA7EC91B4CEE7BC /* Gutenblock.swift in Sources */,
+				C7155080D8E8EC4F623B543A034322D0 /* GutenblockConverter.swift in Sources */,
+				AC2E03900E9BD40E7009067BA58AFAF7 /* GutenpackAttachment.swift in Sources */,
+				3291CD7099C79C961C7A400D249A4E00 /* GutenpackAttachmentRenderer.swift in Sources */,
+				CED9E20B8677EBF030BA5CA13B4A926E /* GutenpackAttachmentToElementConverter.swift in Sources */,
+				9CA65B29743F791DDD6C4396064F977B /* GutenpackConverter.swift in Sources */,
+				4DBEFE4F2779DC075117E8FD24C884B0 /* ImageAttachment+WordPress.swift in Sources */,
+				353C91EABD3C107F93F37216CD5539F2 /* MediaAttachment+WordPress.swift in Sources */,
+				E9C72EC9D490CD9D7B921ED156513893 /* OptionsTablePresenter.swift in Sources */,
+				8E24DC3E4384D81E141174A43CA824EB /* OptionsTableViewController.swift in Sources */,
+				99C7F3A267E88DD8DF06DF9515CD3B4B /* RemovePProcessor.swift in Sources */,
+				7A32CF159F1E6D13AC6C75A21AFD38F2 /* ShortcodeProcessor.swift in Sources */,
+				34C49586BB1DF3FFEB16AF00E47F1551 /* SpecialTagAttachmentRenderer.swift in Sources */,
+				A100EF9D907532F850883FCC31A3CE01 /* String+RegEx.swift in Sources */,
+				556F22FEFA7FC4CCDB66648F7441B990 /* VideoAttachment+WordPress.swift in Sources */,
+				5426914B7BE4349E0375D4A95073CCAF /* VideoShortcodeProcessor.swift in Sources */,
+				4DAEBA12297D99F651A79D4D12057E13 /* WordPress-Editor-iOS-dummy.m in Sources */,
+				D18E27CBDCC828DABBCDB4003B2C9F80 /* WordPressInputCustomizer.swift in Sources */,
+				E70A2194AB84EBACB475A116DE8AFB8D /* WordPressOutputCustomizer.swift in Sources */,
+				48C9DBD043726D6E64C0F5C32FEC7EA5 /* WordPressPasteboardDelegate.swift in Sources */,
+				5487D80CA30F9F2AD674444770B71A03 /* WordPressPlugin.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0C6239B2B6D73CAD7AA8FEE4D924CE9D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "WordPress-Aztec-iOS";
+			target = 25E86B2AC404BDF00BFBAE08C01E105F /* WordPress-Aztec-iOS */;
+			targetProxy = 7AA24B5C89EE114A4FF03F8764D033A6 /* PBXContainerItemProxy */;
+		};
+		5BB87D2B0E3ED68BBED0DB24368787F4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "WordPress-Aztec-iOS";
+			target = 25E86B2AC404BDF00BFBAE08C01E105F /* WordPress-Aztec-iOS */;
+			targetProxy = DE4D3E22E9080629C1A2F2A24DE674D8 /* PBXContainerItemProxy */;
+		};
+		9ADBE65813016E90AC7429A10C859B63 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "WordPress-Editor-iOS";
+			target = 525D39961BFEC29AE0CF910AC68A52B3 /* WordPress-Editor-iOS */;
+			targetProxy = 65389BB44758CB2CD2A013A60DA84487 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		105F90BF10F8688032FB629A9DA204FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		1B428E14E70C81789177188F80374676 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 801720F3B4060789452593A7C3A52B62 /* WordPress-Editor-iOS.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/WordPress-Editor-iOS/WordPress-Editor-iOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/WordPress-Editor-iOS/WordPress-Editor-iOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/WordPress-Editor-iOS/WordPress-Editor-iOS.modulemap";
+				PRODUCT_MODULE_NAME = WordPressEditor;
+				PRODUCT_NAME = WordPressEditor;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4523AD7643ED91A440EAEA20025EC111 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		69C8654FC3E2A38D3E5BE82E94C159E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB044C9D72653CF926EA9E9632A471D2 /* Pods-FEditor.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-FEditor/Pods-FEditor-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-FEditor/Pods-FEditor.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		847796CD7B2A45A92EAE3C2A47DD25DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 801720F3B4060789452593A7C3A52B62 /* WordPress-Editor-iOS.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/WordPress-Editor-iOS/WordPress-Editor-iOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/WordPress-Editor-iOS/WordPress-Editor-iOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/WordPress-Editor-iOS/WordPress-Editor-iOS.modulemap";
+				PRODUCT_MODULE_NAME = WordPressEditor;
+				PRODUCT_NAME = WordPressEditor;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C549A69C7F0EE7A9EA5319FC978700F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9FFC799D4CDCE903DBFF371A32BD3D11 /* Pods-FEditor.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-FEditor/Pods-FEditor-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-FEditor/Pods-FEditor.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E09E2BDE413B27B99E0C840C08C98388 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70AC4AF19F84A588EB37339A0B53642E /* WordPress-Aztec-iOS.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/WordPress-Aztec-iOS/WordPress-Aztec-iOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/WordPress-Aztec-iOS/WordPress-Aztec-iOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/WordPress-Aztec-iOS/WordPress-Aztec-iOS.modulemap";
+				PRODUCT_MODULE_NAME = Aztec;
+				PRODUCT_NAME = Aztec;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E3234D495B836733A19721AC3763A42D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70AC4AF19F84A588EB37339A0B53642E /* WordPress-Aztec-iOS.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/WordPress-Aztec-iOS/WordPress-Aztec-iOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/WordPress-Aztec-iOS/WordPress-Aztec-iOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/WordPress-Aztec-iOS/WordPress-Aztec-iOS.modulemap";
+				PRODUCT_MODULE_NAME = Aztec;
+				PRODUCT_NAME = Aztec;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		025F7A80637B628A8C2025963A6C91EA /* Build configuration list for PBXNativeTarget "Pods-FEditor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69C8654FC3E2A38D3E5BE82E94C159E0 /* Debug */,
+				C549A69C7F0EE7A9EA5319FC978700F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0F24B72E485FC76CFD2F225978DCE3CB /* Build configuration list for PBXNativeTarget "WordPress-Aztec-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3234D495B836733A19721AC3763A42D /* Debug */,
+				E09E2BDE413B27B99E0C840C08C98388 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				105F90BF10F8688032FB629A9DA204FD /* Debug */,
+				4523AD7643ED91A440EAEA20025EC111 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		899C5AB18D00E6736FF9DF9EE5A4410D /* Build configuration list for PBXNativeTarget "WordPress-Editor-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B428E14E70C81789177188F80374676 /* Debug */,
+				847796CD7B2A45A92EAE3C2A47DD25DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
