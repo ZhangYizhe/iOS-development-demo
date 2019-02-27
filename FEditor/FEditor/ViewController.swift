@@ -8,6 +8,7 @@
 
 import UIKit
 import Aztec
+import WordPressEditor
 
 class ViewController: UIViewController {
     @IBOutlet weak var textCanvasView: UIView!
@@ -34,9 +35,8 @@ class ViewController: UIViewController {
     
     
     func createToolbar() -> Aztec.FormatBar {
-        let mediaItem = makeToolbarButton(identifier: .media)
+//        let mediaItem = makeToolbarButton(identifier: .media)
         let scrollableItems = scrollableItemsForToolbar
-        let overflowItems = overflowItemsForToolbar //更多操作
         
         let toolbar = Aztec.FormatBar()
         
@@ -51,20 +51,31 @@ class ViewController: UIViewController {
         toolbar.autoresizingMask = [ .flexibleHeight ]
         toolbar.formatter = self
         
-        toolbar.leadingItem = mediaItem
-        toolbar.setDefaultItems(scrollableItems, overflowItems: overflowItems)
+//        toolbar.leadingItem = mediaItem
         toolbar.overflowToolbar(expand: true)
-        
-//        toolbar.setDefaultItems(scrollableItems) // 一次性全部显示
+        toolbar.setDefaultItems(scrollableItems)
         
         toolbar.barItemHandler = { [weak self] item in
 //            self?.handleAction(for: item)
+            
+            self!.toggleHeader(fromItem: item)
         }
         
         toolbar.leadingItemHandler = { [weak self] item in
 //            self?.showImagePicker()
         }
         
+        let hideKeyboardBtnView = UIView()
+        hideKeyboardBtnView.frame = CGRect(origin: CGPoint(x: toolbar.frame.width - toolbar.frame.height, y: 0), size: CGSize(width: toolbar.frame.height, height: toolbar.frame.height - 2))
+        hideKeyboardBtnView.backgroundColor = toolbar.backgroundColor
+        toolbar.addSubview(hideKeyboardBtnView)
+        hideKeyboardBtnView.center.y = toolbar.center.y
+        
+        let test = UIButton()
+        test.setImage(UIImage(named: "editor_keyboard_hide")!, for: .normal)
+        test.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: test.intrinsicContentSize)
+        hideKeyboardBtnView.addSubview(test)
+        test.center = CGPoint(x: hideKeyboardBtnView.frame.width / 2, y: hideKeyboardBtnView.frame.height / 2)
         return toolbar
     }
     
@@ -75,8 +86,9 @@ class ViewController: UIViewController {
         return button
     }
 
+    // MARK: - Toolbar 菜单初始化
     var scrollableItemsForToolbar: [FormatBarItem] {
-        let headerButton = makeToolbarButton(identifier: .p)
+        let headerButton = makeToolbarButton(identifier: .media)
         
         var alternativeIcons = [String: UIImage]()
         let headings = Constants.headers.suffix(from: 1) // Remove paragraph style
@@ -87,7 +99,7 @@ class ViewController: UIViewController {
         headerButton.alternativeIcons = alternativeIcons
         
         
-        let listButton = makeToolbarButton(identifier: .unorderedlist)
+        let listButton = makeToolbarButton(identifier: .more)
         var listIcons = [String: UIImage]()
         for list in Constants.lists {
             listIcons[list.formattingIdentifier.rawValue] = list.iconImage
@@ -101,24 +113,76 @@ class ViewController: UIViewController {
             makeToolbarButton(identifier: .blockquote),
             makeToolbarButton(identifier: .bold),
             makeToolbarButton(identifier: .italic),
-            makeToolbarButton(identifier: .link)
+            makeToolbarButton(identifier: .link),
+            makeToolbarButton(identifier: .underline),
+            makeToolbarButton(identifier: .strikethrough),
+            makeToolbarButton(identifier: .unorderedlist)
         ]
     }
     
-    var overflowItemsForToolbar: [FormatBarItem] {
-        return [
-            makeToolbarButton(identifier: .underline),
-            makeToolbarButton(identifier: .strikethrough),
-            makeToolbarButton(identifier: .code),
-            makeToolbarButton(identifier: .horizontalruler),
-            makeToolbarButton(identifier: .more),
-            makeToolbarButton(identifier: .sourcecode)
-        ]
+    // MARK: - 字号选择
+    
+    private lazy var optionsTablePresenter = OptionsTablePresenter(presentingViewController: self, presentingTextView: textView)
+    func toggleHeader(fromItem item: FormatBarItem) {
+        guard !optionsTablePresenter.isOnScreen() else {
+            optionsTablePresenter.dismiss()
+            return
+        }
+        
+        let options = Constants.headers.map { headerType -> OptionsTableViewOption in
+            let attributes: [NSAttributedString.Key: Any] = [
+                .font: UIFont.systemFont(ofSize: CGFloat(headerType.fontSize))
+            ]
+            
+            let title = NSAttributedString(string: headerType.description, attributes: attributes)
+            return OptionsTableViewOption(image: headerType.iconImage, title: title)
+        }
+        
+        let selectedIndex = Constants.headers.index(of: headerLevelForSelectedText())
+        let optionsTableViewController = OptionsTableViewController(options: options)
+        optionsTableViewController.cellDeselectedTintColor = .gray
+        
+        optionsTablePresenter.present(
+            optionsTableViewController,
+            fromBarItem: item,
+            selectedRowIndex: selectedIndex,
+            onSelect: { [weak self] selected in
+                guard let range = self?.textView.selectedRange else {
+                    return
+                }
+                
+                self?.textView.toggleHeader(Constants.headers[selected], range: range)
+                self?.optionsTablePresenter.dismiss()
+        })
     }
+    
+    func headerLevelForSelectedText() -> Header.HeaderType {
+        var identifiers = Set<FormattingIdentifier>()
+        if (textView.selectedRange.length > 0) {
+            identifiers = textView.formattingIdentifiersSpanningRange(textView.selectedRange)
+        } else {
+            identifiers = textView.formattingIdentifiersForTypingAttributes()
+        }
+        let mapping: [FormattingIdentifier: Header.HeaderType] = [
+            .header1 : .h1,
+            .header2 : .h2,
+            .header3 : .h3,
+            .header4 : .h4,
+            .header5 : .h5,
+            .header6 : .h6,
+            ]
+        for (key,value) in mapping {
+            if identifiers.contains(key) {
+                return value
+            }
+        }
+        return .none
+    }
+
 
 }
 
-// 输入框代理
+// MARK: - 输入框代理
 extension ViewController: UITextViewDelegate {
     func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
         
@@ -128,10 +192,10 @@ extension ViewController: UITextViewDelegate {
     }
 }
 
-// 标准样式
+// MARK: - 标准样式
 extension ViewController {
     struct Constants {
-        static let defaultContentFont   = UIFont.systemFont(ofSize: 14)
+        static let defaultContentFont   = UIFont.systemFont(ofSize: 16)
         static let defaultHtmlFont      = UIFont.systemFont(ofSize: 24)
         static let defaultMissingImage  = UIImage(named: "missingImage")!
         static let formatBarIconSize    = CGSize(width: 20.0, height: 20.0)
@@ -158,49 +222,49 @@ extension ViewController : Aztec.FormatBarDelegate {
     }
 }
 
-// 拓展键盘图标
+// MARK: - 拓展键盘图标
 extension FormattingIdentifier {
     var iconImage: UIImage {
         
         switch(self) {
         case .media:
-            return UIImage(named: "missingImage")!
+            return UIImage(named: "editor_media_normal")!
         case .p:
-            return UIImage(named: "missingImage")!
+            return UIImage(named: "editor_keyboard_hide")!
         case .bold:
-            return UIImage(named: "missingImage")!
+            return UIImage(named: "editor_bold_normal")!
         case .italic:
-            return UIImage(named: "missingImage")!
+            return UIImage(named: "editor_italic_normal")!
         case .underline:
-            return UIImage(named: "missingImage")!
+            return UIImage(named: "editor_underline_normal")!
         case .strikethrough:
-            return UIImage(named: "missingImage")!
+            return UIImage(named: "editor_strikethrough_normal")!
         case .blockquote:
-            return UIImage(named: "missingImage")!
+            return UIImage(named: "editor_block_normal")!
         case .orderedlist:
-            return UIImage(named: "missingImage")!
+            return UIImage(named: "editor_orderlist_normal")!
         case .unorderedlist:
-            return UIImage(named: "missingImage")!
+            return UIImage(named: "editor_unorderlist_normal")!
         case .link:
-            return UIImage(named: "missingImage")!
+            return UIImage(named: "editor_link_normal")!
         case .horizontalruler:
             return UIImage(named: "missingImage")!
         case .sourcecode:
             return UIImage(named: "missingImage")!
         case .more:
-            return UIImage(named: "missingImage")!
+            return UIImage(named: "editor_heading_normal")!
         case .header1:
-            return UIImage(named: "missingImage")!
+            return UIImage()
         case .header2:
-            return UIImage(named: "missingImage")!
+            return UIImage()
         case .header3:
-            return UIImage(named: "missingImage")!
+            return UIImage()
         case .header4:
-            return UIImage(named: "missingImage")!
+            return UIImage()
         case .header5:
-            return UIImage(named: "missingImage")!
+            return UIImage()
         case .header6:
-            return UIImage(named: "missingImage")!
+            return UIImage()
         case .code:
             return UIImage(named: "missingImage")!
         default:
@@ -226,9 +290,9 @@ private extension Header.HeaderType {
     
     var description: String {
         switch self {
-        case .none: return NSLocalizedString("Default", comment: "Description of the default paragraph formatting style in the editor.")
-        case .h1: return "Heading 1"
-        case .h2: return "Heading 2"
+        case .none: return NSLocalizedString("默认", comment: "Description of the default paragraph formatting style in the editor.")
+        case .h1: return "字号一"
+        case .h2: return "字号二"
         case .h3: return "Heading 3"
         case .h4: return "Heading 4"
         case .h5: return "Heading 5"
