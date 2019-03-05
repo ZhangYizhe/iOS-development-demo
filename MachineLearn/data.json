@@ -1,0 +1,12 @@
+[
+    {
+        "text": "The movie was fantastic!",
+        "label": "正面"
+    }, {
+        "text": "Very boring. Fell asleep.",
+        "label": "负面"
+    }, {
+        "text": "It was just OK.",
+        "label": "中性"
+    }
+]
