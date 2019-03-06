@@ -59,7 +59,9 @@ class DownloadModel:NSObject, URLSessionDownloadDelegate {
         let documnets:String = NSHomeDirectory() + "/Documents/TextClassifier.mlmodel"
         //创建文件管理器
         let fileManager = FileManager.default
-        try? fileManager.removeItem(atPath: documnets)
+        if fileManager.fileExists(atPath: documnets) {
+            try? fileManager.removeItem(atPath: documnets)
+        }
         try! fileManager.moveItem(atPath: locationPath, toPath: documnets)
         print("new location:\(documnets)")
     }

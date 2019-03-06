@@ -12,7 +12,7 @@
 		622CBEFD222E415A009688F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 622CBEFB222E415A009688F5 /* Main.storyboard */; };
 		622CBEFF222E415B009688F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 622CBEFE222E415B009688F5 /* Assets.xcassets */; };
 		622CBF02222E415B009688F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 622CBF00222E415B009688F5 /* LaunchScreen.storyboard */; };
-		62F5FDE8222E60B5007AEAD7 /* MachineLearnModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F5FDE7222E60B5007AEAD7 /* MachineLearnModel.swift */; };
+		62F5FDE8222E60B5007AEAD7 /* FengMLModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F5FDE7222E60B5007AEAD7 /* FengMLModel.swift */; };
 		62F5FDEC222E6439007AEAD7 /* DownloadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F5FDEB222E6439007AEAD7 /* DownloadModel.swift */; };
 		62F5FDF2222E73D5007AEAD7 /* TextClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 62F5FDF1222E73D5007AEAD7 /* TextClassifier.mlmodel */; };
 /* End PBXBuildFile section */
@@ -25,7 +25,7 @@
 		622CBEFE222E415B009688F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		622CBF01222E415B009688F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		622CBF03222E415B009688F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		62F5FDE7222E60B5007AEAD7 /* MachineLearnModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineLearnModel.swift; sourceTree = "<group>"; };
+		62F5FDE7222E60B5007AEAD7 /* FengMLModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FengMLModel.swift; sourceTree = "<group>"; };
 		62F5FDEB222E6439007AEAD7 /* DownloadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadModel.swift; sourceTree = "<group>"; };
 		62F5FDF1222E73D5007AEAD7 /* TextClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = TextClassifier.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -62,15 +62,39 @@
 			children = (
 				622CBEF7222E415A009688F5 /* AppDelegate.swift */,
 				622CBEFB222E415A009688F5 /* Main.storyboard */,
-				62F5FDF1222E73D5007AEAD7 /* TextClassifier.mlmodel */,
 				622CBEF9222E415A009688F5 /* ViewController.swift */,
-				62F5FDEB222E6439007AEAD7 /* DownloadModel.swift */,
-				62F5FDE7222E60B5007AEAD7 /* MachineLearnModel.swift */,
+				62C7CF0E222F552E0040D554 /* Countroller */,
+				62C7CF0D222F55260040D554 /* View */,
+				62C7CF0C222F550B0040D554 /* Model */,
 				622CBEFE222E415B009688F5 /* Assets.xcassets */,
 				622CBF00222E415B009688F5 /* LaunchScreen.storyboard */,
 				622CBF03222E415B009688F5 /* Info.plist */,
 			);
 			path = MachineLearn;
+			sourceTree = "<group>";
+		};
+		62C7CF0C222F550B0040D554 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				62F5FDF1222E73D5007AEAD7 /* TextClassifier.mlmodel */,
+				62F5FDEB222E6439007AEAD7 /* DownloadModel.swift */,
+				62F5FDE7222E60B5007AEAD7 /* FengMLModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		62C7CF0D222F55260040D554 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		62C7CF0E222F552E0040D554 /* Countroller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Countroller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,7 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				622CBEFA222E415A009688F5 /* ViewController.swift in Sources */,
-				62F5FDE8222E60B5007AEAD7 /* MachineLearnModel.swift in Sources */,
+				62F5FDE8222E60B5007AEAD7 /* FengMLModel.swift in Sources */,
 				622CBEF8222E415A009688F5 /* AppDelegate.swift in Sources */,
 				62F5FDF2222E73D5007AEAD7 /* TextClassifier.mlmodel in Sources */,
 				62F5FDEC222E6439007AEAD7 /* DownloadModel.swift in Sources */,
