@@ -1,0 +1,11 @@
+framework module ArrayDisorderSDK {
+  umbrella header "ArrayDisorderSDK.h"
+
+  export *
+  module * { export * }
+}
+
+module ArrayDisorderSDK.Swift {
+    header "ArrayDisorderSDK-Swift.h"
+    requires objc
+}
