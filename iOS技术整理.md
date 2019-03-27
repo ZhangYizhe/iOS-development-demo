@@ -122,11 +122,7 @@ KVC、KVO Swift中使用KVC和KVO的类都必须必须继承自NSObject
 
 	//接收通知
 	let NotifyChatMsgRecv = NSNotification.Name(rawValue:"notifyChatMsgRecv")
-	NotificationCenter.default.addObserver(
-    self,
-		selector:#selector(didMsgRecv(notification:)),
-    name: NotifyChatMsgRecv, 
-    object: nil)
+NotificationCenter.default.addObserver(self,selector:#selector(didMsgRecv(notification:)),name: NotifyChatMsgRecv, object: nil)
 
 	//子页面的反馈通知响应方法
 	//通知处理函数
@@ -149,6 +145,12 @@ KVC、KVO Swift中使用KVC和KVO的类都必须必须继承自NSObject
 ## 闭包 
 
 闭包就是能够读取其他函数内部变量的函数
+
+```swift
+{(parameters) -> return type in
+   statements
+}
+```
 
 ```swift
 // MARK:- 变量闭包
