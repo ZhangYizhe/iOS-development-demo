@@ -1,9 +1,5 @@
 # iOS-development-demo
 
-### Swift技术整理
-
-[文档](https://github.com/ZhangYizhe/iOS-development-demo/blob/master/iOS技术整理.md)
-
 ### websocketDemo
 
 im通讯小样
