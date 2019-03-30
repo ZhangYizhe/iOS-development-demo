@@ -8,131 +8,142 @@
 
 import UIKit
 
-class ViewController: UIViewController,UIGestureRecognizerDelegate {
+class ViewController: UIViewController,UIGestureRecognizerDelegate,UIScrollViewDelegate {
 
-    @IBOutlet weak var testView: UIView!
+    var nodes = NodeModel.node(type: "", location: [0], parent: [], childrens: [], line: CAShapeLayer(), view: nil) // 根标签
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
         initView()
     }
+    
 
-    let scrollView = UIScrollView()
     func initView() {
-        scrollView.frame = self.view.frame
-        scrollView.contentSize = CGSize(width: 1000, height: 1000)
-//        scrollView.contentOffset = CGPoint(x: 500 - self.view.frame.width/2, y: 500 - self.view.frame.height/2)
-//        self.view.addSubview(scrollView)
-        
-        createBlock()
+        initCanvas()
+
+        // 创建根标签
+        let label = LabelView.sharedLabelView.create(self, view: canvasView, location: [0], title: "根标签", point: CGPoint(x: 0, y: 0)) as! SpecialLabel
+        label.addHandle = { [weak self] (result) in
+            guard let self = self else { return }
+            self.addNode(nodes: &self.nodes, location: result)
+            self.createLine(nodes: self.nodes)
+        }
+        nodes.view = label
+        scrollView.setContentOffset(CGPoint(x: (1000 - self.view.frame.width + label.intrinsicContentSize.width) / 2, y: (1000 - self.view.frame.height) / 2), animated: true)
+        createLine(nodes: nodes)
     }
     
-    let label = SpecialLabel()
-    let label2 = SpecialLabel()
-    func createBlock() {
+
+    // MARK: - 新增标签
+    func addNode(nodes: inout NodeModel.node,location: [Int]) {
+        var _location = location
+        if _location.count > 1 {
+            _location.removeFirst()
+            return addNode(nodes: &nodes.childrens[_location.first ?? 0], location: _location)
+        }
+        _location = nodes.location
+        _location.append(nodes.childrens.count)
+        for i in 0..<nodes.childrens.count{
+            if nodes.childrens[i].location.last != i {
+                _location[_location.count - 1] = i
+            }
+        }
         
-        label.isUserInteractionEnabled = true
-        label.textInsets = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
-        label.backgroundColor = .red
-        label.text = "标签1"
-        label.frame = CGRect(x: 300, y: 300, width: label.intrinsicContentSize.width, height: label.intrinsicContentSize.height)
-        self.view.addSubview(label)
-        // 触摸
-        let touch = UIPanGestureRecognizer(target: self, action: #selector(panLabelDid(_:)))
-        touch.maximumNumberOfTouches = 1
-        label.addGestureRecognizer(touch)
-        // 移动通知
-        label.addObserver(self, forKeyPath: "center", options: .new, context: UnsafeMutableRawPointer.init(bitPattern: "label1".hashValue))
-        
-        label2.isUserInteractionEnabled = true
-        label2.textInsets = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
-        label2.backgroundColor = .red
-        label2.text = "标签2"
-        label2.frame = CGRect(x: 100, y: 300, width: label2.intrinsicContentSize.width, height: label2.intrinsicContentSize.height)
-        self.view.addSubview(label2)
-        
-        // 触摸
-        let touch2 = UIPanGestureRecognizer(target: self, action: #selector(panLabel2Did(_:)))
-        touch2.maximumNumberOfTouches = 1
-        label2.addGestureRecognizer(touch2)
-        
-        // 移动通知
-        label2.addObserver(self, forKeyPath: "center", options: .new, context: UnsafeMutableRawPointer.init(bitPattern: "label2".hashValue))
-        
-        
-        drawBezier()
-        
+        let label = LabelView.sharedLabelView.create(self, view: canvasView, location: _location, title: "\(_location)", point: CGPoint(x: nodes.view?.frame.maxX ?? 30, y: nodes.view?.frame.maxY ?? 30)) as! SpecialLabel
+        label.addHandle = {[weak self](result) in
+            guard let self = self else { return }
+            self.addNode(nodes: &self.nodes, location: result)
+            self.createLine(nodes: self.nodes)
+        }
+        label.deleteHandle = { [weak self] (result) in
+            guard let self = self else { return }
+            self.deleteNode(nodes: &self.nodes, location: result)
+            self.createLine(nodes: self.nodes)
+        }
+        nodes.childrens.insert(NodeModel.node(type: "", location: _location, parent: [nodes], childrens: [], line: CAShapeLayer(), view: label), at: _location.last ?? nodes.childrens.count)
     }
-    let pathLayer = CAShapeLayer()
+    
+    // MARK: - 删除标签及其子标签
+    func deleteNode(nodes: inout NodeModel.node, location: [Int]){
+        var _location = location
+        if _location.count > 2 {
+            _location.removeFirst()
+            deleteNode(nodes: &nodes.childrens[_location.first ?? 0], location: _location)
+            return
+        }
+        _location.removeFirst()
+        deleteAllNode(nodes: nodes.childrens[_location.first ?? 0]) //
+        nodes.childrens.remove(at: location.last ?? 0)
+    }
+    
+    // 遍历删除子标签视图
+    func deleteAllNode(nodes: NodeModel.node) {
+        for node in nodes.childrens{
+            deleteAllNode(nodes: node)
+        }
+        nodes.line.removeFromSuperlayer()
+        nodes.view?.removeFromSuperview()
+    }
+
+    // MARK:- 创建线标签
+    func createLine(nodes : NodeModel.node) {
+        for node in nodes.childrens {
+            let line = node.line
+            var parents: UILabel? = nodes.view
+            var children: UILabel? = node.view
+            LineView.drawBezier(canvasView, line: line, a: &parents, b: &children)
+            if node.childrens.count > 0 {
+                createLine(nodes: node)
+            }
+        }
+    }
+
+    // MARK: - 监听并移动标签位置
+    @objc func panDid(_ recognizer:UIPanGestureRecognizer){
+        guard let touchView = recognizer.view else {
+            return
+        }
+        let point = recognizer.location(in: touchView)
+        if touchView.center.y + point.y - touchView.frame.height/2 < UIApplication.shared.statusBarFrame.height {
+            return
+        }
+        touchView.center = CGPoint(x: touchView.center.x + point.x - touchView.frame.width/2, y: touchView.center.y + point.y - touchView.frame.height/2)
+    }
+    
+    // MARK: - 发生标签移动时动态刷新线
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "center" {
-            drawBezier()
+            createLine(nodes: nodes)
         }
     }
     
-    @objc func panLabelDid(_ recognizer:UIPanGestureRecognizer){
-        let point = recognizer.location(in: self.label)
-        if label.center.y + point.y - label.frame.height/2 < UIApplication.shared.statusBarFrame.height {
-            return
-        }
-        label.center = CGPoint(x: label.center.x + point.x - label.frame.width/2, y: label.center.y + point.y - label.frame.height/2)
+    // MARK: - 创建画布
+    var scrollView: UIScrollView!
+    let canvasView = UIView()
+    func initCanvas() {
+        scrollView = UIScrollView()
+        scrollView.minimumZoomScale = 0.6 //最小比例
+        scrollView.maximumZoomScale = 2 //最大比例
+        scrollView.delegate = self
+        scrollView.frame = self.view.bounds
+        canvasView.frame = CGRect(x: 0, y: 0, width: 1000, height: 1000)
+        scrollView.contentSize = canvasView.bounds.size
+        scrollView.addSubview(canvasView)
+        self.view.addSubview(scrollView)
     }
-    
-    @objc func panLabel2Did(_ recognizer:UIPanGestureRecognizer){
-        let point = recognizer.location(in: self.label2)
-        if label2.center.y + point.y - label2.frame.height/2 < UIApplication.shared.statusBarFrame.height {
-            return
-        }
-        label2.center = CGPoint(x: label2.center.x + point.x - label2.frame.width/2, y: label2.center.y + point.y - label2.frame.height/2)
-    }
-    
-    // 绘制曲线
-    func drawBezier() {
-        pathLayer.removeFromSuperlayer()
-        let linePath = UIBezierPath()
-        linePath.move(to: CGPoint(x:label.center.x, y:label.center.y))
-        linePath.addCurve(to: CGPoint(x: label2.center.x, y: label2.center.y), controlPoint1: CGPoint(x: (140 + label.center.x)/2, y: 110), controlPoint2: CGPoint(x: (140 + label.center.x)/2, y: 200))
-        //设定颜色，并绘制它们
-        UIColor.clear.setFill()
-        UIColor.black.setStroke()
-        linePath.stroke()
-        
-        pathLayer.lineWidth = 2
-        pathLayer.lineDashPhase = 10.0
-        pathLayer.lineDashPattern = [10,5]
-        pathLayer.fillColor = UIColor.clear.cgColor
-        pathLayer.strokeColor = UIColor.orange.cgColor
-        pathLayer.frame = self.view.bounds
-        pathLayer.path = linePath.cgPath
-        
-        self.view.layer.addSublayer(pathLayer)
-        self.view.bringSubviewToFront(label)
-        self.view.bringSubviewToFront(label2)
-    }
-
 
 }
 
-// label标签外扩
-class SpecialLabel: UILabel {
-    
-    var textInsets: UIEdgeInsets = .zero
-    
-    override func drawText(in rect: CGRect) {
-        super.drawText(in: rect.inset(by: textInsets))
-    }
-    
-    
-    override func textRect(forBounds bounds: CGRect, limitedToNumberOfLines numberOfLines: Int) -> CGRect {
-        let insets = textInsets
-        var rect = super.textRect(forBounds: bounds.inset(by: insets), limitedToNumberOfLines: numberOfLines)
-        
-        rect.origin.x -= insets.left
-        rect.origin.y -= insets.top
-        rect.size.width += (insets.left + insets.right)
-        rect.size.height += (insets.top + insets.bottom)
-        return rect
+extension ViewController {
+    // MARK: - 画布放大缩小
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        for subview : AnyObject in scrollView.subviews {
+            if subview.isKind(of: UIView.self) {
+                return subview as? UIView
+            }
+        }
+        return nil
     }
 }
+
 
