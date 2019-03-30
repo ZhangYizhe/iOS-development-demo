@@ -44,8 +44,9 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate,UIScrollViewD
         _location = nodes.location
         _location.append(nodes.childrens.count)
         for i in 0..<nodes.childrens.count{
-            if nodes.childrens[i].location.last != i {
+            if nodes.childrens[i].view == nil {
                 _location[_location.count - 1] = i
+                break
             }
         }
         
@@ -60,7 +61,13 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate,UIScrollViewD
             self.deleteNode(nodes: &self.nodes, location: result)
             self.createLine(nodes: self.nodes)
         }
-        nodes.childrens.insert(NodeModel.node(type: "", location: _location, parent: [nodes], childrens: [], line: CAShapeLayer(), view: label), at: _location.last ?? nodes.childrens.count)
+        if nodes.childrens.count-1 > _location.last ?? nodes.childrens.count {
+            nodes.childrens[_location.last ?? nodes.childrens.count] = NodeModel.node(type: "", location: _location, parent: [nodes], childrens: [], line: CAShapeLayer(), view: label)
+        } else {
+            nodes.childrens.insert(NodeModel.node(type: "", location: _location, parent: [nodes], childrens: [], line: CAShapeLayer(), view: label), at: _location.last ?? nodes.childrens.count)
+        }
+//        nodes.childrens[_location.last ?? nodes.childrens.count] = NodeModel.node(type: "", location: _location, parent: [nodes], childrens: [], line: CAShapeLayer(), view: label)
+//
     }
     
     // MARK: - 删除标签及其子标签
@@ -72,8 +79,8 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate,UIScrollViewD
             return
         }
         _location.removeFirst()
-        deleteAllNode(nodes: nodes.childrens[_location.first ?? 0]) //
-        nodes.childrens.remove(at: location.last ?? 0)
+        deleteAllNode(nodes: nodes.childrens[_location.first ?? 0])
+        nodes.childrens[location.last ?? 0] = NodeModel.node(type: "", location: nodes.childrens[_location.first ?? 0].location, parent: [], childrens: [], line: CAShapeLayer(), view: nil)
     }
     
     // 遍历删除子标签视图
