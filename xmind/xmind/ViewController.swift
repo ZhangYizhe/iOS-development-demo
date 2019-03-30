@@ -66,8 +66,6 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate,UIScrollViewD
         } else {
             nodes.childrens.insert(NodeModel.node(type: "", location: _location, parent: [nodes], childrens: [], line: CAShapeLayer(), view: label), at: _location.last ?? nodes.childrens.count)
         }
-//        nodes.childrens[_location.last ?? nodes.childrens.count] = NodeModel.node(type: "", location: _location, parent: [nodes], childrens: [], line: CAShapeLayer(), view: label)
-//
     }
     
     // MARK: - 删除标签及其子标签
