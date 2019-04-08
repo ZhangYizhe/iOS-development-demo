@@ -9,7 +9,6 @@
             <connections>
                 <outlet property="currentTimeTextField" destination="RVC-k3-3UU" id="TX7-BF-BKM"/>
                 <outlet property="playPauseBtn" destination="7eR-rC-Eu9" id="dHw-es-dch"/>
-                <outlet property="playSliderView" destination="d3t-Ec-yWV" id="J45-vF-fqR"/>
                 <outlet property="totalTimeTextField" destination="Reh-bq-bDo" id="7N6-4v-oZP"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
                 <outlet property="volumeSliderView" destination="LNa-wY-3s2" id="2b0-03-qaM"/>
@@ -21,13 +20,6 @@
             <rect key="frame" x="0.0" y="0.0" width="500" height="50"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="d3t-Ec-yWV">
-                    <rect key="frame" x="8" y="33" width="484" height="19"/>
-                    <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="1" tickMarkPosition="above" sliderType="linear" id="YS6-yi-HJF"/>
-                    <connections>
-                        <action selector="playSliderAction:" target="-2" id="xaz-Iw-YtP"/>
-                    </connections>
-                </slider>
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="O2S-Ae-tLU">
                     <rect key="frame" x="0.0" y="0.0" width="500" height="35"/>
                     <subviews>
@@ -182,6 +174,7 @@
                     </subviews>
                     <constraints>
                         <constraint firstItem="GRE-Mu-NAG" firstAttribute="centerY" secondItem="O2S-Ae-tLU" secondAttribute="centerY" id="0rP-j1-GeM"/>
+                        <constraint firstAttribute="height" constant="35" id="8jF-gC-AFi"/>
                         <constraint firstAttribute="trailing" secondItem="3zj-ix-8wS" secondAttribute="trailing" constant="20" id="QQW-tK-CSZ"/>
                         <constraint firstItem="GRE-Mu-NAG" firstAttribute="leading" secondItem="O2S-Ae-tLU" secondAttribute="leading" constant="20" id="xAd-Vi-fz1"/>
                         <constraint firstItem="3zj-ix-8wS" firstAttribute="centerY" secondItem="O2S-Ae-tLU" secondAttribute="centerY" id="z08-5f-BTn"/>
@@ -189,11 +182,7 @@
                 </customView>
             </subviews>
             <constraints>
-                <constraint firstItem="d3t-Ec-yWV" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="4bo-YH-ZwP"/>
-                <constraint firstItem="O2S-Ae-tLU" firstAttribute="top" secondItem="d3t-Ec-yWV" secondAttribute="bottom" id="7Cd-c3-ajI"/>
                 <constraint firstItem="O2S-Ae-tLU" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="NFI-dA-ZWI"/>
-                <constraint firstItem="d3t-Ec-yWV" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="10" id="TAS-Tu-TbX"/>
-                <constraint firstAttribute="trailing" secondItem="d3t-Ec-yWV" secondAttribute="trailing" constant="10" id="br6-zQ-gAm"/>
                 <constraint firstAttribute="trailing" secondItem="O2S-Ae-tLU" secondAttribute="trailing" id="heg-6M-x0m"/>
                 <constraint firstAttribute="bottom" secondItem="O2S-Ae-tLU" secondAttribute="bottom" id="iIK-BD-0fz"/>
             </constraints>

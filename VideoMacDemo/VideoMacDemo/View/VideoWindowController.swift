@@ -55,6 +55,8 @@ class VideoWindowController: NSWindowController, NSWindowDelegate {
     
     func drawSize() {
         videoControlView?.view.frame = CGRect(x: 0, y: 0, width: self.window?.frame.width ?? 100, height: 60)
+        videoControlView?.reloadLoadProgress(videoControlView?.loadProgress ?? 0.0)
+        videoControlView?.reloadPlayProgress(videoControlView?.playProgress ?? 0.0)
         guard let videoViewBounds = videoView?.view.bounds else {
             return
         }
