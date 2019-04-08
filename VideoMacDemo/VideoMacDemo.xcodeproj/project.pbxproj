@@ -134,7 +134,6 @@
 				D2C13F25B8F51037D35263EB /* Pods-VideoMacDemo.debug.xcconfig */,
 				2B9017CB0ABDE4A38ADB612A /* Pods-VideoMacDemo.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

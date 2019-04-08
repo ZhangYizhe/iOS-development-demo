@@ -7,7 +7,12 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="VideoControlView" customModule="VideoMacDemo" customModuleProvider="target">
             <connections>
+                <outlet property="currentTimeTextField" destination="RVC-k3-3UU" id="TX7-BF-BKM"/>
+                <outlet property="playPauseBtn" destination="7eR-rC-Eu9" id="dHw-es-dch"/>
+                <outlet property="playSliderView" destination="d3t-Ec-yWV" id="J45-vF-fqR"/>
+                <outlet property="totalTimeTextField" destination="Reh-bq-bDo" id="7N6-4v-oZP"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+                <outlet property="volumeSliderView" destination="LNa-wY-3s2" id="2b0-03-qaM"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
@@ -18,7 +23,10 @@
             <subviews>
                 <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="d3t-Ec-yWV">
                     <rect key="frame" x="8" y="33" width="484" height="19"/>
-                    <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="YS6-yi-HJF"/>
+                    <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="1" tickMarkPosition="above" sliderType="linear" id="YS6-yi-HJF"/>
+                    <connections>
+                        <action selector="playSliderAction:" target="-2" id="xaz-Iw-YtP"/>
+                    </connections>
                 </slider>
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="O2S-Ae-tLU">
                     <rect key="frame" x="0.0" y="0.0" width="500" height="35"/>
@@ -35,6 +43,9 @@
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" metaFont="system"/>
                                     </buttonCell>
+                                    <connections>
+                                        <action selector="playPauseBtnTap:" target="-2" id="GU7-az-D68"/>
+                                    </connections>
                                 </button>
                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="284-NP-cvl">
                                     <rect key="frame" x="32" y="0.0" width="20" height="31"/>
@@ -119,7 +130,10 @@
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="60" id="jTq-XQ-dca"/>
                                             </constraints>
-                                            <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="sFv-gc-n5g"/>
+                                            <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="1" doubleValue="0.5" tickMarkPosition="above" sliderType="linear" id="sFv-gc-n5g"/>
+                                            <connections>
+                                                <action selector="volumeSliderAction:" target="-2" id="mgm-kO-eJL"/>
+                                            </connections>
                                         </slider>
                                         <button translatesAutoresizingMaskIntoConstraints="NO" id="Vxa-Rn-vK5">
                                             <rect key="frame" x="80" y="3" width="10" height="10"/>

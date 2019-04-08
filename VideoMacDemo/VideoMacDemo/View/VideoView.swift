@@ -12,18 +12,16 @@ import AVFoundation
 
 class VideoView: NSViewController {
     
-    static let sharedVideoView = VideoView(nibName: "VideoView", bundle: Bundle.main)
+//    static let sharedVideoView = VideoView(nibName: "VideoView", bundle: Bundle.main)
 
     let avPlayerView = AVPlayerView()
-    
+    var playerItem : AVPlayerItem? = nil
     var urls : [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.wantsLayer = true
         self.view.layer?.backgroundColor = .black
-        
-        urls.append("http://oss-cdn.ipo3.com/ipo3/public/attachment/ad/201809/21/20/origin/20180921201620_788.mp4")
         
         initPlay(0)
         
@@ -34,7 +32,7 @@ class VideoView: NSViewController {
         let fileURL = URL(string: url)
         let avAsset = AVURLAsset(url: fileURL!, options: nil)
         
-        let playerItem = AVPlayerItem(asset: avAsset)
+        playerItem = AVPlayerItem(asset: avAsset)
         let videoPlayer = AVPlayer(playerItem: playerItem)
         avPlayerView.player = videoPlayer
         avPlayerView.controlsStyle = .none
@@ -42,12 +40,7 @@ class VideoView: NSViewController {
         self.view.addSubview(avPlayerView)
     }
     
-    var isPlay : () -> Bool = {
-        if sharedVideoView.avPlayerView.player?.rate == 1.0 {
-            return true
-        }
-        return false
-    }
-    
-    
+//    deinit {
+//        print("视频销毁")
+//    }
 }
