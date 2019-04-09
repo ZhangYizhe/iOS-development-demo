@@ -27,20 +27,19 @@ class VideoWindowController: NSWindowController, NSWindowDelegate {
         }
     }
 
-    var videoView : VideoView?
-    var videoControlView : VideoControlView?
+    var videoView : VideoViewController?
+    var videoControlView : VideoControlViewController?
     
     override func windowDidLoad() {
         super.windowDidLoad()
 
-        videoView = VideoView(nibName: "VideoView", bundle: Bundle.main)
+        videoView = VideoViewController(nibName: "VideoView", bundle: Bundle.main)
         videoView?.urls = urls
         videoView?.index = index
         self.contentViewController = videoView
         
-        videoControlView = VideoControlView(nibName: "VideoControlView", bundle: Bundle.main)
-        
-        
+        videoControlView = VideoControlViewController(nibName: "VideoControlView", bundle: Bundle.main)
+
         if videoView != nil || videoControlView != nil {
             self.contentViewController?.view.addSubview(videoControlView!.view)
             videoControlView!.VideoViewDelegate = videoView

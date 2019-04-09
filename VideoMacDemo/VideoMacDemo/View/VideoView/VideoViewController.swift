@@ -10,9 +10,7 @@ import Cocoa
 import AVKit
 import AVFoundation
 
-class VideoView: NSViewController {
-    
-//    static let sharedVideoView = VideoView(nibName: "VideoView", bundle: Bundle.main)
+class VideoViewController: NSViewController {
 
     var playerLayer: AVPlayerLayer?
     var player : AVQueuePlayer?
@@ -29,6 +27,7 @@ class VideoView: NSViewController {
         
     }
     
+    // MARK: - 初始化播放
     func initPlay() {
         player = AVQueuePlayer()
         playerLayer = AVPlayerLayer(player: player)
@@ -49,6 +48,7 @@ class VideoView: NSViewController {
         player?.insert(playerItem, after: nil)
     }
     
+    // MARK: - 新播放
     func newPlay(_ _index: Int) {
         player?.pause()
         player?.seek(to: CMTime.zero)
@@ -70,7 +70,7 @@ class VideoView: NSViewController {
         player?.play()
     }
     
-    deinit {
-        print("视频销毁")
-    }
+//    deinit {
+//        print("视频销毁")
+//    }
 }

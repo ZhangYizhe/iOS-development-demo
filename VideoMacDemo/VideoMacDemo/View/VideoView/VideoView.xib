@@ -5,7 +5,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="VideoView" customModule="VideoMacDemo" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="VideoViewController" customModule="VideoMacDemo" customModuleProvider="target">
             <connections>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>

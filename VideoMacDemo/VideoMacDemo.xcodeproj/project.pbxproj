@@ -13,9 +13,9 @@
 		626935142255891E000A0A1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 626935122255891E000A0A1D /* Main.storyboard */; };
 		62693522225589AB000A0A1D /* VideoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62693521225589AB000A0A1D /* VideoWindow.xib */; };
 		62693524225589D0000A0A1D /* VideoWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62693523225589D0000A0A1D /* VideoWindowController.swift */; };
-		6269352B22558CBE000A0A1D /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6269352922558CBE000A0A1D /* VideoView.swift */; };
+		6269352B22558CBE000A0A1D /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6269352922558CBE000A0A1D /* VideoViewController.swift */; };
 		6269352C22558CBE000A0A1D /* VideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6269352A22558CBE000A0A1D /* VideoView.xib */; };
-		6269352F2255A488000A0A1D /* VideoControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6269352D2255A488000A0A1D /* VideoControlView.swift */; };
+		6269352F2255A488000A0A1D /* VideoControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6269352D2255A488000A0A1D /* VideoControlViewController.swift */; };
 		626935302255A488000A0A1D /* VideoControlView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6269352E2255A488000A0A1D /* VideoControlView.xib */; };
 		E05FD1F5834600C5B9269D7B /* Pods_VideoMacDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAC6085710CA4B0C1F489705 /* Pods_VideoMacDemo.framework */; };
 /* End PBXBuildFile section */
@@ -31,9 +31,9 @@
 		626935162255891E000A0A1D /* VideoMacDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VideoMacDemo.entitlements; sourceTree = "<group>"; };
 		62693521225589AB000A0A1D /* VideoWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoWindow.xib; sourceTree = "<group>"; };
 		62693523225589D0000A0A1D /* VideoWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoWindowController.swift; sourceTree = "<group>"; };
-		6269352922558CBE000A0A1D /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
+		6269352922558CBE000A0A1D /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		6269352A22558CBE000A0A1D /* VideoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoView.xib; sourceTree = "<group>"; };
-		6269352D2255A488000A0A1D /* VideoControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoControlView.swift; sourceTree = "<group>"; };
+		6269352D2255A488000A0A1D /* VideoControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoControlViewController.swift; sourceTree = "<group>"; };
 		6269352E2255A488000A0A1D /* VideoControlView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoControlView.xib; sourceTree = "<group>"; };
 		D2C13F25B8F51037D35263EB /* Pods-VideoMacDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoMacDemo.debug.xcconfig"; path = "Target Support Files/Pods-VideoMacDemo/Pods-VideoMacDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		EAC6085710CA4B0C1F489705 /* Pods_VideoMacDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VideoMacDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,10 +113,8 @@
 			children = (
 				62693521225589AB000A0A1D /* VideoWindow.xib */,
 				62693523225589D0000A0A1D /* VideoWindowController.swift */,
-				6269352A22558CBE000A0A1D /* VideoView.xib */,
-				6269352922558CBE000A0A1D /* VideoView.swift */,
-				6269352E2255A488000A0A1D /* VideoControlView.xib */,
-				6269352D2255A488000A0A1D /* VideoControlView.swift */,
+				62798A4E225C76BE007461DD /* VideoView */,
+				62798A4F225C76CB007461DD /* VideoControl */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -126,6 +124,24 @@
 			children = (
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		62798A4E225C76BE007461DD /* VideoView */ = {
+			isa = PBXGroup;
+			children = (
+				6269352A22558CBE000A0A1D /* VideoView.xib */,
+				6269352922558CBE000A0A1D /* VideoViewController.swift */,
+			);
+			path = VideoView;
+			sourceTree = "<group>";
+		};
+		62798A4F225C76CB007461DD /* VideoControl */ = {
+			isa = PBXGroup;
+			children = (
+				6269352E2255A488000A0A1D /* VideoControlView.xib */,
+				6269352D2255A488000A0A1D /* VideoControlViewController.swift */,
+			);
+			path = VideoControl;
 			sourceTree = "<group>";
 		};
 		DB5A70B861C0376E3B0C1FAA /* Pods */ = {
@@ -264,8 +280,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6269352B22558CBE000A0A1D /* VideoView.swift in Sources */,
-				6269352F2255A488000A0A1D /* VideoControlView.swift in Sources */,
+				6269352B22558CBE000A0A1D /* VideoViewController.swift in Sources */,
+				6269352F2255A488000A0A1D /* VideoControlViewController.swift in Sources */,
 				62693524225589D0000A0A1D /* VideoWindowController.swift in Sources */,
 				6269350F2255891D000A0A1D /* ViewController.swift in Sources */,
 				6269350D2255891D000A0A1D /* AppDelegate.swift in Sources */,
