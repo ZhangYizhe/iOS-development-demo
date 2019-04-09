@@ -48,6 +48,9 @@
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" metaFont="system"/>
                                     </buttonCell>
+                                    <connections>
+                                        <action selector="nextVideoBtnTap:" target="-2" id="UIf-HI-8z4"/>
+                                    </connections>
                                 </button>
                                 <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S8X-84-cM4">
                                     <rect key="frame" x="64" y="7" width="79" height="17"/>

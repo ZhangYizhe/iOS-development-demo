@@ -19,6 +19,17 @@ class ViewController: NSViewController {
     var videoWindowController : VideoWindowController? = VideoWindowController(windowNibName: "VideoWindow")
 
     @IBAction func openBtnTap(_ sender: NSButton) {
+        
+        let url1 = "http://qiniu.yizheyun.cn/ipad-pro-product-tpl-cn-2018_1280x720h.mp4"
+        let url2 = "http://oss-cdn.ipo3.com/ipo3/public/attachment/ad/201809/21/20/origin/20180921201620_788.mp4"
+        
+        var url: [String] = []
+        url.append(url1)
+        url.append(url2)
+        
+         VideoWindowController.sharedViewWindowController.urls = url
+        VideoWindowController.sharedViewWindowController.index = 0
+        
         VideoWindowController.sharedViewWindowController.showWindow(self)
     }
     

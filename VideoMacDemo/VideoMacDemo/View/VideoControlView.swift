@@ -33,76 +33,37 @@ class VideoControlView: NSViewController {
     }
     
     func initListen() {
-        initProgress { [weak self] in
-            guard let self = self else { return }
-            // 监听缓存进度
-            self.VideoViewDelegate?.playerItem?.addObserver(self, forKeyPath: "loadedTimeRanges", options: .new, context: nil)
-            // 监听是否能开始播放
-            self.VideoViewDelegate?.playerItem?.addObserver(self, forKeyPath: "status", options: .new, context: nil)
-            // 监听当前播放状态
-            self.VideoViewDelegate?.avPlayerView.player?.addObserver(self, forKeyPath: "rate", options: .new, context: nil)
-            
-            // 监听是否播放结束
-            NotificationCenter.default.addObserver(self, selector: #selector(self.playToEndTime), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
-            
-            // 初始音量设置
-            self.VideoViewDelegate?.avPlayerView.player?.volume = self.volumeSliderView.floatValue
-            
-            self.refreshInterface()
-        }
+        initProgress()
+
+        // 监听当前播放状态
+        VideoViewDelegate?.player?.addObserver(self, forKeyPath: "rate", options: .new, context: nil)
         
+        // 监听是否播放结束
+        NotificationCenter.default.addObserver(self, selector: #selector(self.playToEndTime), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
+        
+        // 初始音量设置
+        VideoViewDelegate?.player?.volume = volumeSliderView.floatValue
+        
+        refreshInterface()
 
     }
     
     // MARK:- 播放按钮
     @IBOutlet weak var playPauseBtn: NSButton!
     @IBAction func playPauseBtnTap(_ sender: NSButton) {
-        if VideoViewDelegate?.avPlayerView.player?.rate == 1.0 {
-            VideoViewDelegate?.avPlayerView.player?.pause()
+        if VideoViewDelegate?.player?.rate == 1.0 {
+            VideoViewDelegate?.player?.pause()
         } else {
-            VideoViewDelegate?.avPlayerView.player?.play()
+            VideoViewDelegate?.player?.play()
         }
     }
     
     // MARK:- 音量条控制
     @IBOutlet weak var volumeSliderView: NSSlider!
     @IBAction func volumeSliderAction(_ sender: NSSlider) {
-        guard let player = VideoViewDelegate?.avPlayerView.player else { return }
+        guard let player = VideoViewDelegate?.player else { return }
         player.volume = sender.floatValue
     }
-    
-    // MARK:- 进度条控制
-    var playSliderFlag = false // 是否正在活动
-//    @IBOutlet weak var loadProgressView: NSProgressIndicator! // 缓存进度
-//    @IBOutlet weak var playSliderView: NSSlider!
-//    @IBAction func playSliderAction(_ sender: NSSlider) {
-//        guard let event = NSApplication.shared.currentEvent else { return }
-//        guard let player = VideoViewDelegate?.avPlayerView.player else { return }
-//        guard let playerItem = VideoViewDelegate?.playerItem else { return }
-//        switch event.type {
-//        case .leftMouseDown, .rightMouseDown: // 按下
-//            playSliderFlag = true
-//        case .leftMouseUp, .rightMouseUp: // 抬起
-//            if playerItem.status == AVPlayerItem.Status.readyToPlay{
-//                let duration = sender.doubleValue * CMTimeGetSeconds(player.currentItem!.duration)
-//                let seekTime = CMTimeMake(value: Int64(duration), timescale: 1)
-//                player.seek(to: seekTime, completionHandler: { [weak self] (status) in
-//                    guard let self = self else { return }
-//                    self.playSliderFlag = false
-//                    self.setPlayBtnStatus()
-//                })
-//            } else {
-//                playSliderFlag = false
-//                setPlayBtnStatus()
-//            }
-//        case .leftMouseDragged, .rightMouseDragged:  // 移动
-//            let value = sender.doubleValue
-//            let duration = value * Double(TimeInterval(playerItem.duration.value) / TimeInterval(playerItem.duration.timescale))
-//            self.currentTimeTextField.stringValue = "\(formatPlayTime(secounds: TimeInterval(duration)))" // 当前进度
-//        default:
-//            break
-//        }
-//    }
     
     
     // MARK:- 播放时间转换
@@ -149,29 +110,32 @@ class VideoControlView: NSViewController {
         timer = Timer.every(0.1) { [weak self] _ in
             guard let self = self else { return }
             self.timeDisplay()
+            // 监听缓存进度 ; 监听是否能开始播放
+            self.currentItemListen()
         }
     }
     
     func timeDisplay() {
-        guard let player = VideoViewDelegate?.avPlayerView.player else { return }
-        guard let playerItem = VideoViewDelegate?.playerItem else { return }
+        guard let player = VideoViewDelegate?.player else { return }
+        guard let playerItem = VideoViewDelegate?.player?.currentItem else { return }
         
-        
-        // 当前播放到的时间
-        let currentTime = player.currentTime().seconds
-        // 总时间
-        let totalTime   = TimeInterval(playerItem.duration.value) / TimeInterval(playerItem.duration.timescale)
-        // timescale 这里表示压缩比例
-        self.totalTimeTextField.stringValue = "\(self.formatPlayTime(secounds: totalTime))" // 总长度
-        if !self.playSliderFlag {
-            self.currentTimeTextField.stringValue = "\(self.formatPlayTime(secounds: currentTime))" // 当前进度
-            self.playProgress = CGFloat(currentTime / totalTime)
+        if playerItem.status == AVPlayerItem.Status.readyToPlay{
+            // 当前播放到的时间
+            let currentTime = player.currentTime().seconds
+            // 总时间
+            let totalTime   = TimeInterval(playerItem.duration.value) / TimeInterval(playerItem.duration.timescale)
+            // timescale 这里表示压缩比例
+            totalTimeTextField.stringValue = "\(formatPlayTime(secounds: totalTime))" // 总长度
+            currentTimeTextField.stringValue = "\(formatPlayTime(secounds: currentTime))" // 当前进度
+            if !playSliderViewMoveTimerFlag {
+                playProgress = CGFloat(currentTime / totalTime)
+            }
         }
     }
     
     // 当前进度
     func avalableDurationWithplayerItem()->TimeInterval{
-        guard let player = VideoViewDelegate?.avPlayerView.player else { return 0.0 }
+        guard let player = VideoViewDelegate?.player else { return 0.0 }
         guard let loadedTimeRanges = player.currentItem?.loadedTimeRanges, let first = loadedTimeRanges.first else {fatalError()}
         let timeRange = first.timeRangeValue
         let startSeconds = CMTimeGetSeconds(timeRange.start)
@@ -183,8 +147,9 @@ class VideoControlView: NSViewController {
     
     // MARK: 设置播放按钮状态
     func setPlayBtnStatus() {
-        DispatchQueue.main.async {
-            if self.VideoViewDelegate?.avPlayerView.player?.rate == 1.0 {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {return}
+            if self.VideoViewDelegate?.player?.rate == 1.0 {
                 self.playPauseBtn.image = NSImage(named: "Pause")
             } else {
                 self.playPauseBtn.image = NSImage(named: "Play")
@@ -192,29 +157,54 @@ class VideoControlView: NSViewController {
         }
     }
     
+    // MARK: 下一曲按钮
+    @IBAction func nextVideoBtnTap(_ sender: NSButton) {
+        playAppointItem(index: nil)
+    }
+    
     // MARK: 播放完毕
     @objc func playToEndTime(){
-        guard let player = VideoViewDelegate?.avPlayerView.player else { return }
-        guard let playerItem = VideoViewDelegate?.playerItem else { return }
+        playAppointItem(index: nil)
+    }
+    
+    // MARK: 切换播放
+    func playAppointItem(index: Int?) {
+        var _index = 0
+        if index == nil {
+            _index = (VideoViewDelegate?.index ?? 0) + 1
+        }
+        VideoViewDelegate?.newPlay(_index)
+        currentItemListenFlag = false
         
+    }
+    
+    var currentItemListenFlag = false
+    func currentItemListen() {
+        if currentItemListenFlag {
+            return
+        }
+        guard let playerItem = VideoViewDelegate?.player?.currentItem else { return }
         if playerItem.status == AVPlayerItem.Status.readyToPlay {
-            let seekTime = CMTimeMake(value: Int64(0), timescale: 1)
-            player.seek(to: seekTime)
+            // 监听缓存进度
+            VideoViewDelegate?.player?.currentItem?.addObserver(self, forKeyPath: "loadedTimeRanges", options: .new, context: nil)
+            // 监听是否能开始播放
+            VideoViewDelegate?.player?.currentItem?.addObserver(self, forKeyPath: "status", options: .new, context: nil)
+            currentItemListenFlag = true
         }
         
-        timeDisplay()
     }
     
     
     deinit {
-        VideoViewDelegate?.avPlayerView.player?.removeObserver(self, forKeyPath: "rate")
-        VideoViewDelegate?.playerItem?.removeObserver(self, forKeyPath: "loadedTimeRanges")
-        VideoViewDelegate?.playerItem?.removeObserver(self, forKeyPath: "status")
+        VideoViewDelegate?.player?.removeObserver(self, forKeyPath: "rate")
+        VideoViewDelegate?.player?.currentItem?.removeObserver(self, forKeyPath: "loadedTimeRanges")
+        VideoViewDelegate?.player?.currentItem?.removeObserver(self, forKeyPath: "status")
         NotificationCenter.default.removeObserver(self)
         timer?.invalidate()
+        print("控制器销毁")
     }
     
-    // 加载进度条
+    // MARK:- 加载进度条
     let loadProgressView = NSView()
     let loadProgressSonView = NSView()
     var _loadProgress: CGFloat = 0.0
@@ -228,7 +218,7 @@ class VideoControlView: NSViewController {
         }
     }
     
-    // 播放进度条
+    // MARK:- 播放进度条
     var playProgressView = NSView()
     var playProgressSonView = NSView()
     var _playProgress: CGFloat = 0.0
@@ -242,20 +232,21 @@ class VideoControlView: NSViewController {
         }
     }
     
-    var playSliderView = NSView()
-    var test = false
+    // MARK:- 进度条钮
+    var playSliderView = DownUpNSView()
+    var playSliderViewMoveTimer : Timer? = nil
+    var playSliderViewMoveTimerFlag = false // 进度条钮移动标记
+    var mouseInitialPositionX : CGFloat = 0.0 // 鼠标移动初始位置
+    var playSliderViewInitialPositionX : CGFloat = 0.0 // 进度条钮初始位置
 }
 
 extension VideoControlView {
-    func initProgress(completion: @escaping () -> ()) {
+    func initProgress() {
         addLoadProgress()
         addPlayProgress()
-        Timer.after(1) {
-            completion()
-        }
     }
     
-    
+    // MARK:- 视频缓存加载进度
     func addLoadProgress() {
         loadProgressView.removeFromSuperview()
         loadProgressView.wantsLayer = true
@@ -270,6 +261,7 @@ extension VideoControlView {
         loadProgressView.addSubview(loadProgressSonView)
     }
     
+    // MARK: 调整布局
     func reloadLoadProgress(_ newValue: CGFloat) {
         NSAnimationContext.runAnimationGroup({ (_) in
             NSAnimationContext.current.duration = 0.25
@@ -278,10 +270,10 @@ extension VideoControlView {
         })
     }
     
+    // MARK:- 视频播放进度
     func addPlayProgress() {
         playProgressView.removeFromSuperview()
         playProgressView.wantsLayer = true
-        playProgressView.layer?.masksToBounds = false
         playProgressView.layer?.backgroundColor = NSColor.clear.cgColor
         playProgressView.frame = CGRect(x: 10, y: self.view.bounds.height - 15, width: self.view.bounds.width - 20, height: 5)
         playProgressView.layer?.cornerRadius = 2
@@ -295,51 +287,90 @@ extension VideoControlView {
         addplaySliderView()
     }
     
+    // MARK:- 调整布局
     func reloadPlayProgress(_ newValue: CGFloat) {
-        NSAnimationContext.runAnimationGroup({ (_) in
-            NSAnimationContext.current.duration = 0.25
-            playProgressView.frame = CGRect(x: 10, y: self.view.bounds.height - 15, width: self.view.bounds.width - 20, height: 5)
-            playProgressSonView.animator().frame = CGRect(x: 0, y: 0, width: newValue * playProgressView.bounds.width, height: playProgressView.bounds.height)
-            
-//            playSliderView.animator().frame = CGRect(x: -10 + newValue * playProgressView.bounds.width, y: -8.5, width: 20, height: 20)
-        })
-        
-//        reloadPlaySliderView(newValue)
+        if !playSliderViewMoveTimerFlag {
+            NSAnimationContext.runAnimationGroup({ (_) in
+                NSAnimationContext.current.duration = 0.25
+                playProgressView.frame = CGRect(x: 10, y: self.view.bounds.height - 15, width: self.view.bounds.width - 20, height: 5)
+                playProgressSonView.animator().frame = CGRect(x: 0, y: 0, width: newValue * playProgressView.bounds.width, height: playProgressView.bounds.height)
+
+                // 调整
+                playSliderView.animator().frame = CGRect(x: newValue * (self.view.frame.width - 20), y: playSliderView.frame.minY, width: 20, height: 20)
+            })
+        }
     }
     
+    // MARK:- 视频播放进度控制按钮
     func addplaySliderView() {
         playSliderView.removeFromSuperview()
         playSliderView.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
         playSliderView.wantsLayer = true
-        playSliderView.layer?.backgroundColor = NSColor.red.cgColor
+        playSliderView.layer?.backgroundColor = NSColor.white.cgColor
         playSliderView.layer?.cornerRadius = 10
-        playProgressView.addSubview(playSliderView)
-        playSliderView.frame = CGRect(x: -10, y: -8.5, width: 20, height: 20)
+        self.view.addSubview(playSliderView)
+        playSliderView.frame = CGRect(x: 0, y: self.view.bounds.height - 13.5, width: 20, height: 20)
+        playSliderView.mouseBack = { [weak self] status in
+            guard let self = self else { return }
+            switch status {
+            case .down:
+                self.playSliderViewMove(true)
+            case .up:
+                self.playSliderViewMove(false)
+            }
+        }
+        playSliderView.resignFirstResponder()
+    }
+    
+    // MARK: 视频播放进度控制按钮 移动
+    func playSliderViewMove(_ down: Bool) {
         
+        if down {
+            playSliderViewMoveTimerFlag = down
+            playSliderViewInitialPositionX = playSliderView.frame.minX
+            mouseInitialPositionX = NSEvent.mouseLocation.x
+            playSliderViewMoveTimer = Timer.every(0.01) { [weak self] in
+                guard let self = self else { return }
+                var playSliderViewNowX = NSEvent.mouseLocation.x - self.mouseInitialPositionX + self.playSliderViewInitialPositionX
+                if playSliderViewNowX < 0 {
+                    playSliderViewNowX = 0
+                } else if playSliderViewNowX > self.playProgressView.frame.width {
+                    playSliderViewNowX = self.playProgressView.frame.width
+                }
+                self.playProgressSonView.frame = CGRect(x: 0, y: 0, width: playSliderViewNowX, height: self.playProgressView.bounds.height)
+                self.playSliderView.frame = CGRect(x: playSliderViewNowX, y: self.playSliderView.frame.minY, width: 20, height: 20)
+                
+                
+            }
+        } else {
+            playSliderViewMoveTimer?.invalidate()
+            guard let player = VideoViewDelegate?.player else { return }
+            let test = Double(playProgressSonView.bounds.width / playProgressView.bounds.width)
+            let duration = test * Double(player.currentItem!.duration.value)
+            let seekTime = CMTimeMake(value: Int64(duration), timescale: player.currentItem!.duration.timescale)
+            player.seek(to: seekTime, completionHandler: { [weak self] (status) in
+                guard let self = self else {return}
+                self.playSliderViewMoveTimerFlag = false
+            })
+            
+        }
+    }
+    
+    class DownUpNSView: NSView {
+        enum mouseEvent {
+            case down
+            case up
+        }
+        var mouseBack = {(_ status : mouseEvent) in }
+        override func mouseDown(with event: NSEvent) {
+            mouseBack(.down)
+        }
         
-        playSliderView.addTrackingRect(playSliderView.frame, owner: playSliderView, userData: nil, assumeInside: false)
-
-        var trackingOptions: NSTrackingArea.Options = [.activeInActiveApp, .mouseMoved]
-        // note: NSTrackingActiveAlways flags turns off the cursor updating feature
-        var myTrackingArea = NSTrackingArea(rect: playSliderView.bounds /* in our case track the entire view */, options: trackingOptions, owner: playSliderView, userInfo: nil)
-        playSliderView.addTrackingArea(myTrackingArea)
-    }
-    
-    override func mouseEntered(with event: NSEvent) {
-        print(123)
-    }
-    
-    override func mouseExited(with event: NSEvent) {
-        print(456)
-    }
-    
-    
-    override func mouseDown(with event: NSEvent) {
-        test = true
-    }
-    
-    override func mouseMoved(with event: NSEvent) {
-//        print(event.deltaX)
-        playSliderView.frame = CGRect(x: event.locationInWindow.x - 20, y: -8.5, width: 20, height: 20)
+        override func mouseUp(with event: NSEvent) {
+            mouseBack(.up)
+        }
+        
     }
 }
+
+

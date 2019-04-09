@@ -9,10 +9,12 @@
 import Cocoa
 
 class VideoWindowController: NSWindowController, NSWindowDelegate {
-    
-    var url = "http://qiniu.yizheyun.cn/ipad-pro-product-tpl-cn-2018_1280x720h.mp4"
-    
+
     static let sharedViewWindowController = VideoWindowController(windowNibName: "VideoWindow")
+    
+    var urls : [String] = []
+    var index = 0
+
     override func showWindow(_ sender: Any?) {
         super.showWindow(sender)
         
@@ -32,7 +34,8 @@ class VideoWindowController: NSWindowController, NSWindowDelegate {
         super.windowDidLoad()
 
         videoView = VideoView(nibName: "VideoView", bundle: Bundle.main)
-        videoView?.urls.append(url)
+        videoView?.urls = urls
+        videoView?.index = index
         self.contentViewController = videoView
         
         videoControlView = VideoControlView(nibName: "VideoControlView", bundle: Bundle.main)
@@ -60,7 +63,8 @@ class VideoWindowController: NSWindowController, NSWindowDelegate {
         guard let videoViewBounds = videoView?.view.bounds else {
             return
         }
-       videoView?.avPlayerView.frame = videoViewBounds
+
+        videoView?.playerLayer?.frame = videoViewBounds
     }
     
     func windowShouldClose(_ sender: NSWindow) -> Bool {

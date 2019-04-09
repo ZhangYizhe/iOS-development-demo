@@ -14,33 +14,63 @@ class VideoView: NSViewController {
     
 //    static let sharedVideoView = VideoView(nibName: "VideoView", bundle: Bundle.main)
 
-    let avPlayerView = AVPlayerView()
+    var playerLayer: AVPlayerLayer?
+    var player : AVQueuePlayer?
     var playerItem : AVPlayerItem? = nil
     var urls : [String] = []
+    var index = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.wantsLayer = true
         self.view.layer?.backgroundColor = .black
         
-        initPlay(0)
+        initPlay()
         
     }
     
-    func initPlay(_ index: Int) {
+    func initPlay() {
+        player = AVQueuePlayer()
+        playerLayer = AVPlayerLayer(player: player)
+        playerLayer?.frame = self.view.bounds
+        guard let playerLayer = playerLayer else { fatalError("Error creating player layer") }
+        self.view.layer?.addSublayer(playerLayer)
+        
+        if urls.count == 0 {
+            return
+        } else if index > urls.count - 1 {
+            index = 0
+        }
+        
         let url = urls[index]
-        let fileURL = URL(string: url)
-        let avAsset = AVURLAsset(url: fileURL!, options: nil)
-        
-        playerItem = AVPlayerItem(asset: avAsset)
-        let videoPlayer = AVPlayer(playerItem: playerItem)
-        avPlayerView.player = videoPlayer
-        avPlayerView.controlsStyle = .none
-        avPlayerView.frame = self.view.bounds
-        self.view.addSubview(avPlayerView)
+        let avAsset = AVURLAsset(url: URL(string: url)!, options: nil)
+        let playerItem = AVPlayerItem(asset: avAsset)
+        player?.removeAllItems()
+        player?.insert(playerItem, after: nil)
     }
     
-//    deinit {
-//        print("视频销毁")
-//    }
+    func newPlay(_ _index: Int) {
+        player?.pause()
+        player?.seek(to: CMTime.zero)
+        if urls.count == 0 {
+            return
+        } else if _index > urls.count - 1 {
+            index = 0
+        } else {
+            index = _index
+        }
+        
+        let url = urls[index]
+        
+        let avAsset = AVURLAsset(url: URL(string: url)!, options: nil)
+        let playerItem = AVPlayerItem(asset: avAsset)
+        player?.removeAllItems()
+        
+        player?.insert(playerItem, after: nil)
+        player?.play()
+    }
+    
+    deinit {
+        print("视频销毁")
+    }
 }
