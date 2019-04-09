@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="VideoRightDetailItemsCourseItem" customModule="VideoMacDemo" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="661" height="37"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="r8y-4q-6bH">
+                    <rect key="frame" x="41" y="10" width="575" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="17" id="f9t-mR-8Gf"/>
+                    </constraints>
+                    <textFieldCell key="cell" lineBreakMode="charWrapping" truncatesLastVisibleLine="YES" title="标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题" id="n6a-Y7-hZ3">
+                        <font key="font" usesAppearanceFont="YES"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="252" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vg7-sF-gqp">
+                    <rect key="frame" x="622" y="10" width="31" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="17" id="MMq-iU-m8F"/>
+                    </constraints>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="时间" id="jQ2-YZ-Mue">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5c5-NX-y4Y">
+                    <rect key="frame" x="30" y="15" width="8" height="8"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="8" id="3yh-lQ-Y2k"/>
+                        <constraint firstAttribute="height" constant="8" id="Bfp-DS-mFo"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Play" id="pdh-mS-vfZ"/>
+                </imageView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="r8y-4q-6bH" firstAttribute="leading" secondItem="5c5-NX-y4Y" secondAttribute="trailing" constant="5" id="3kc-dU-kXs"/>
+                <constraint firstItem="vg7-sF-gqp" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="10" id="Hpl-ow-yzl"/>
+                <constraint firstAttribute="trailing" secondItem="vg7-sF-gqp" secondAttribute="trailing" constant="10" id="WIQ-dz-XKn"/>
+                <constraint firstAttribute="bottom" secondItem="vg7-sF-gqp" secondAttribute="bottom" constant="10" id="Z1A-2S-6q3"/>
+                <constraint firstItem="vg7-sF-gqp" firstAttribute="leading" secondItem="r8y-4q-6bH" secondAttribute="trailing" constant="10" id="Z9v-5Z-fdz"/>
+                <constraint firstItem="r8y-4q-6bH" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="10" id="Zcv-aE-9cq"/>
+                <constraint firstAttribute="bottom" secondItem="r8y-4q-6bH" secondAttribute="bottom" constant="10" id="dHO-F4-KRr"/>
+                <constraint firstItem="5c5-NX-y4Y" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="30" id="gYQ-PM-xvs"/>
+                <constraint firstItem="5c5-NX-y4Y" firstAttribute="centerY" secondItem="r8y-4q-6bH" secondAttribute="centerY" id="m1r-WJ-Lik"/>
+            </constraints>
+        </customView>
+    </objects>
+    <resources>
+        <image name="Play" width="30" height="31"/>
+    </resources>
+</document>

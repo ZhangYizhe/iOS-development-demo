@@ -60,12 +60,7 @@ class VideoControlViewController: NSViewController {
         guard let player = VideoViewDelegate?.player else { return }
         player.volume = sender.floatValue
     }
-    
-    
 
-    
-
-    
     // MARK:- 界面定时刷新函数
     func refreshInterface() {
         timer?.invalidate()
@@ -242,7 +237,7 @@ class VideoControlViewController: NSViewController {
         VideoViewDelegate?.player?.currentItem?.removeObserver(self, forKeyPath: "status")
         NotificationCenter.default.removeObserver(self)
         timer?.invalidate()
-        print("控制器销毁")
+//        print("控制器销毁")
     }
 }
 
