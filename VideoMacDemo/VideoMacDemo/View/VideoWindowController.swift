@@ -17,7 +17,7 @@ class VideoWindowController: NSWindowController, NSWindowDelegate {
 
     override func showWindow(_ sender: Any?) {
         super.showWindow(sender)
-        
+        window?.center()
         if videoView == nil || videoControlView == nil {
             videoControlView?.removeFromParent()
             self.contentViewController = nil

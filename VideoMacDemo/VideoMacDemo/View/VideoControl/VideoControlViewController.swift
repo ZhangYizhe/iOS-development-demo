@@ -264,11 +264,16 @@ extension VideoControlViewController {
     
     // MARK: 调整布局
     func reloadLoadProgress(_ newValue: CGFloat) {
-        NSAnimationContext.runAnimationGroup({ (_) in
-            NSAnimationContext.current.duration = 0.25
+        if #available(OSX 10.12, *) {
+            NSAnimationContext.runAnimationGroup({ (_) in
+                NSAnimationContext.current.duration = 0.25
+                loadProgressView.frame = CGRect(x: 10, y: self.view.bounds.height - 15, width: self.view.bounds.width - 20, height: 5)
+                loadProgressSonView.animator().frame = CGRect(x: 0, y: 0, width: newValue * loadProgressView.bounds.width, height: loadProgressView.bounds.height)
+            })
+        } else {
             loadProgressView.frame = CGRect(x: 10, y: self.view.bounds.height - 15, width: self.view.bounds.width - 20, height: 5)
-            loadProgressSonView.animator().frame = CGRect(x: 0, y: 0, width: newValue * loadProgressView.bounds.width, height: loadProgressView.bounds.height)
-        })
+            loadProgressSonView.frame = CGRect(x: 0, y: 0, width: newValue * loadProgressView.bounds.width, height: loadProgressView.bounds.height)
+        }
     }
     
     // MARK:- 视频播放进度
@@ -291,14 +296,18 @@ extension VideoControlViewController {
     // MARK: 调整布局
     func reloadPlayProgress(_ newValue: CGFloat) {
         if !playSliderViewMoveTimerFlag {
-            NSAnimationContext.runAnimationGroup({ (_) in
-                NSAnimationContext.current.duration = 0.25
+            if #available(OSX 10.12, *) {
+                NSAnimationContext.runAnimationGroup({ (_) in
+                    NSAnimationContext.current.duration = 0.25
+                    playProgressView.frame = CGRect(x: 10, y: self.view.bounds.height - 15, width: self.view.bounds.width - 20, height: 5)
+                    playProgressSonView.animator().frame = CGRect(x: 0, y: 0, width: newValue * playProgressView.bounds.width, height: playProgressView.bounds.height)
+                    playSliderView.animator().frame = CGRect(x: newValue * (self.view.frame.width - 20), y: playSliderView.frame.minY, width: 20, height: 20)
+                })
+            } else {
                 playProgressView.frame = CGRect(x: 10, y: self.view.bounds.height - 15, width: self.view.bounds.width - 20, height: 5)
-                playProgressSonView.animator().frame = CGRect(x: 0, y: 0, width: newValue * playProgressView.bounds.width, height: playProgressView.bounds.height)
-
-                // 调整
-                playSliderView.animator().frame = CGRect(x: newValue * (self.view.frame.width - 20), y: playSliderView.frame.minY, width: 20, height: 20)
-            })
+                playProgressSonView.frame = CGRect(x: 0, y: 0, width: newValue * playProgressView.bounds.width, height: playProgressView.bounds.height)
+                playSliderView.frame = CGRect(x: newValue * (self.view.frame.width - 20), y: playSliderView.frame.minY, width: 20, height: 20)
+            }
         }
     }
     
@@ -346,8 +355,7 @@ extension VideoControlViewController {
         } else {
             playSliderViewMoveTimer?.invalidate()
             guard let player = VideoViewDelegate?.player else { return }
-            let test = Double(playProgressSonView.bounds.width / playProgressView.bounds.width)
-            let duration = test * Double(player.currentItem!.duration.value)
+            let duration = Double(playProgressSonView.bounds.width / playProgressView.bounds.width) * Double(player.currentItem!.duration.value)
             let seekTime = CMTimeMake(value: Int64(duration), timescale: player.currentItem!.duration.timescale)
             player.seek(to: seekTime, completionHandler: { [weak self] (status) in
                 guard let self = self else {return}

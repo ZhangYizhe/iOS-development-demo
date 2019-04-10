@@ -23,8 +23,8 @@ class VideoRightDetailItemCommentSendItem: NSCollectionViewItem, NSTextViewDeleg
         inputCanvasView.layer?.backgroundColor = NSColor.init(red: 102/255, green: 102/255, blue: 102/255, alpha: 1).cgColor
         inputCanvasView.layer?.cornerRadius = 2
          inputTextView.backgroundColor = NSColor.clear
-        let test = inputTextView?.string ?? ""
-        wordCountLabel.stringValue = "还可以输入\(macWordNum - test.count)个字"
+        let inputString = inputTextView?.string ?? ""
+        wordCountLabel.stringValue = "还可以输入\(macWordNum - inputString.count)个字"
     }
     
     func textDidChange(_ notification: Notification) {
@@ -34,8 +34,8 @@ class VideoRightDetailItemCommentSendItem: NSCollectionViewItem, NSTextViewDeleg
             placeholderLabel.alphaValue = 0.0
         }
         
-        let test = inputTextView?.string ?? ""
-        wordCountLabel.stringValue = "还可以输入\(macWordNum - test.count)个字"
+        let inputString = inputTextView?.string ?? ""
+        wordCountLabel.stringValue = "还可以输入\(macWordNum - inputString.count)个字"
     }
     
 }

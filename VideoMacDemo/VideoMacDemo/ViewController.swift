@@ -27,12 +27,10 @@ class ViewController: NSViewController {
         url.append(url1)
         url.append(url2)
         
-         VideoWindowController.sharedViewWindowController.urls = url
+        VideoWindowController.sharedViewWindowController.urls = url
         VideoWindowController.sharedViewWindowController.index = 0
         
         VideoWindowController.sharedViewWindowController.showWindow(self)
-        
-        VideoWindowController.sharedViewWindowController.window?.center()
     }
     
     override var representedObject: Any? {

@@ -140,9 +140,9 @@ class VideoRightDetailController: NSViewController, NSCollectionViewDelegate, NS
     
     func setButtonColor(_ button : inout NSButton) {
         if button.tag == selectBtn {
-            button.contentTintColor = NSColor.white
+            button.attributedTitle = NSAttributedString(string: button.title, attributes: [ NSAttributedString.Key.foregroundColor: NSColor.white ])
         } else {
-            button.contentTintColor = NSColor.init(white: 1, alpha: 0.8)
+            button.attributedTitle = NSAttributedString(string: button.title, attributes: [ NSAttributedString.Key.foregroundColor: NSColor.init(white: 1, alpha: 0.8) ])
         }
         
         button.isBordered = false //Important
@@ -153,17 +153,20 @@ class VideoRightDetailController: NSViewController, NSCollectionViewDelegate, NS
     // MARK:- 打开或收起
     @IBOutlet weak var openAndCloseBtn: NSButton!
     @IBAction func openAndCloseBtnTap(_ sender: NSButton) {
-        var test : CGFloat = 0
+        var frameX : CGFloat = 0
         if self.view.animator().frame.minX == (videoWindowDelegate?.window?.frame.width ?? 0) - 20 {
-            test = (videoWindowDelegate?.window?.frame.width ?? 0) - 400
+            frameX = (videoWindowDelegate?.window?.frame.width ?? 0) - 400
         } else {
-            test = (videoWindowDelegate?.window?.frame.width ?? 0) - 20
+            frameX = (videoWindowDelegate?.window?.frame.width ?? 0) - 20
         }
-        NSAnimationContext.runAnimationGroup({ (_) in
-            NSAnimationContext.current.duration = 0.25
-            
-            self.view.animator().frame = CGRect(x: test, y: (videoWindowDelegate?.videoView?.playerLayer?.frame.minY ?? 0), width: 400, height: self.view.frame.height)
-        })
+        if #available(OSX 10.12, *) {
+            NSAnimationContext.runAnimationGroup({ (_) in
+                NSAnimationContext.current.duration = 0.25
+                self.view.animator().frame = CGRect(x: frameX, y: (videoWindowDelegate?.videoView?.playerLayer?.frame.minY ?? 0), width: 400, height: self.view.frame.height)
+            })
+        } else {
+            self.view.frame = CGRect(x: frameX, y: (videoWindowDelegate?.videoView?.playerLayer?.frame.minY ?? 0), width: 400, height: self.view.frame.height)
+        }
     }
 }
 
