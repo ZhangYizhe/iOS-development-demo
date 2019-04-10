@@ -30,6 +30,7 @@ class VideoWindowController: NSWindowController, NSWindowDelegate {
     var videoView : VideoViewController?
     var videoControlView : VideoControlViewController?
     var VideoRightDetailView : VideoRightDetailController?
+    var VideoBottomDetailView : VideoBottomDetailController?
     
     override func windowDidLoad() {
         super.windowDidLoad()
@@ -38,19 +39,28 @@ class VideoWindowController: NSWindowController, NSWindowDelegate {
         videoView?.urls = urls
         videoView?.index = index
         self.contentViewController = videoView
-        
-        videoControlView = VideoControlViewController(nibName: "VideoControlView", bundle: Bundle.main)
-        
-        VideoRightDetailView = VideoRightDetailController(nibName: "VideoRightDetail", bundle: Bundle.main)
 
-        if videoView != nil || videoControlView != nil || VideoRightDetailView != nil {
+        if videoView == nil || videoControlView == nil || VideoRightDetailView == nil {
+            
+            videoControlView = VideoControlViewController(nibName: "VideoControlView", bundle: Bundle.main)
+            
+            VideoRightDetailView = VideoRightDetailController(nibName: "VideoRightDetail", bundle: Bundle.main)
+            
+            VideoRightDetailView = VideoRightDetailController(nibName: "VideoRightDetail", bundle: Bundle.main)
+            
+            VideoBottomDetailView = VideoBottomDetailController(nibName: "VideoBottomDetail", bundle: Bundle.main)
+            
             self.contentViewController?.view.addSubview(videoControlView!.view)
             videoControlView!.VideoViewDelegate = videoView
             videoControlView?.initListen()
             self.contentViewController?.addChild(videoControlView!)
+            
             self.contentViewController?.view.addSubview(VideoRightDetailView!.view)
             VideoRightDetailView?.videoWindowDelegate = self
             self.contentViewController?.addChild(VideoRightDetailView!)
+            
+            self.contentViewController?.view.addSubview(VideoBottomDetailView!.view)
+            self.contentViewController?.addChild(VideoBottomDetailView!)
             
             drawSize()
             self.contentViewController?.view.window?.delegate = self
@@ -63,15 +73,25 @@ class VideoWindowController: NSWindowController, NSWindowDelegate {
     }
     
     func drawSize() {
-        videoControlView?.view.frame = CGRect(x: 0, y: 0, width: self.window?.frame.width ?? 100, height: 60)
+        
+        var VideoBottomDetailViewHeight : CGFloat = 200.0
+        if (self.window?.styleMask.contains(.fullScreen) ?? false) {
+            VideoBottomDetailViewHeight = 0.0
+        }
+        
+        VideoBottomDetailView?.view.frame = CGRect(x:  0, y: 0, width: self.window?.frame.width ?? 0, height: VideoBottomDetailViewHeight)
+        
+        videoControlView?.view.frame = CGRect(x: 0, y: (VideoBottomDetailView?.view.frame.height ?? 0), width: self.window?.frame.width ?? 100, height: 60)
         videoControlView?.reloadLoadProgress(videoControlView?.loadProgress ?? 0.0)
         videoControlView?.reloadPlayProgress(videoControlView?.playProgress ?? 0.0)
-        VideoRightDetailView?.view.frame = CGRect(x:  (self.window?.frame.width ?? 0) - 20, y: 0, width: 400, height: self.window?.frame.height ?? 0)
+        
+        VideoRightDetailView?.view.frame = CGRect(x:  (self.window?.frame.width ?? 0) - 20, y: (VideoBottomDetailView?.view.frame.height ?? 0), width: 400, height: (self.window?.frame.height ?? 0) - (VideoBottomDetailView?.view.frame.height ?? 0))
+
         guard let videoViewBounds = videoView?.view.bounds else {
             return
         }
 
-        videoView?.playerLayer?.frame = videoViewBounds
+        videoView?.playerLayer?.frame = CGRect(x: 0, y: (VideoBottomDetailView?.view.frame.height ?? 0), width: videoViewBounds.width, height: videoViewBounds.height - (VideoBottomDetailView?.view.frame.height ?? 0))
     }
     
     func windowShouldClose(_ sender: NSWindow) -> Bool {

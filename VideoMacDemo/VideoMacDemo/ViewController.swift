@@ -20,8 +20,8 @@ class ViewController: NSViewController {
 
     @IBAction func openBtnTap(_ sender: NSButton) {
         
-        let url1 = "https://www.apple.com/105/media/cn/iphone-xs/2018/674b340a-40f1-4156-bbea-00f386459d3c/films/design/iphone-xs-design-tpl-cn-2018_1280x720h.mp4"
-        let url2 = "http://oss-cdn.ipo3.com/ipo3/public/attachment/ad/201809/21/20/origin/20180921201620_788.mp4"
+        let url1 = "http://oss-cdn.ipo3.com/ipo3/public/attachment/ad/201809/21/20/origin/20180921201620_788.mp4"
+        let url2 = "https://www.apple.com/105/media/cn/iphone-xs/2018/674b340a-40f1-4156-bbea-00f386459d3c/films/design/iphone-xs-design-tpl-cn-2018_1280x720h.mp4"
         
         var url: [String] = []
         url.append(url1)
@@ -31,6 +31,8 @@ class ViewController: NSViewController {
         VideoWindowController.sharedViewWindowController.index = 0
         
         VideoWindowController.sharedViewWindowController.showWindow(self)
+        
+        VideoWindowController.sharedViewWindowController.window?.center()
     }
     
     override var representedObject: Any? {

@@ -29,15 +29,14 @@ class VideoRightDetailController: NSViewController, NSCollectionViewDelegate, NS
         self.collectionView.register(VideoRightDetailItemsCourseItem.self, forItemWithIdentifier:NSUserInterfaceItemIdentifier(rawValue: "VideoRightDetailItemsCourseItem"))
         self.collectionView.register(VideoRightDetailItemCommentSendItem.self, forItemWithIdentifier:NSUserInterfaceItemIdentifier(rawValue: "VideoRightDetailItemCommentSendItem"))
         self.collectionView.register(VideoRightDetailItemCommentItem.self, forItemWithIdentifier:NSUserInterfaceItemIdentifier(rawValue: "VideoRightDetailItemCommentItem"))
-        
-        
-        
+
         
         collectionView.backgroundColors = [NSColor.init(red: 0, green: 0, blue: 0, alpha: 0.8)]
         
         initView()
     }
     
+    // MARK:- 界面初始化
     func initView() {
         openAndCloseBtn.isBordered = false //Important
         openAndCloseBtn.wantsLayer = true
@@ -51,6 +50,8 @@ class VideoRightDetailController: NSViewController, NSCollectionViewDelegate, NS
         
     }
     
+    // MARK:- Collection
+    // MARK: Section 数量
     func numberOfSections(in collectionView: NSCollectionView) -> Int {
         if selectBtn == 0 {
             return 2
@@ -59,7 +60,7 @@ class VideoRightDetailController: NSViewController, NSCollectionViewDelegate, NS
         }
     }
     
-    // header头高度
+    // MARK: header头高度
     func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> NSSize {
         if selectBtn == 0 {
             return NSSize(width: collectionView.bounds.width - 20, height: 37)
@@ -68,10 +69,10 @@ class VideoRightDetailController: NSViewController, NSCollectionViewDelegate, NS
         }
     }
     
+    // MARK:- header样式
     func collectionView(_ collectionView: NSCollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> NSView {
         if selectBtn == 0 {
             let headerView = collectionView.makeSupplementaryView(ofKind:NSCollectionView.elementKindSectionHeader, withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "VideoRightDetailHeadersCourseView"), for: indexPath)
-            
             return headerView
         } else {
             return NSView()
@@ -79,22 +80,38 @@ class VideoRightDetailController: NSViewController, NSCollectionViewDelegate, NS
         
     }
     
+    // MARK:- collection 数量
     func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
         if selectBtn == 0 {
             return 3
+        } else if selectBtn == 1 {
+            if section == 0 {
+                return 1
+            } else {
+                return 3
+            }
         } else {
             if section == 0 {
                 return 1
             } else {
-                return 100
+                return 5
             }
         }
     }
     
+    // MARK:- collection 样式
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
         if selectBtn == 0 {
             let item = collectionView.makeItem(withIdentifier:NSUserInterfaceItemIdentifier(rawValue: "VideoRightDetailItemsCourseItem"), for: indexPath)
             return item
+        } else if selectBtn == 0 {
+            if indexPath.section == 0 {
+                let item = collectionView.makeItem(withIdentifier:NSUserInterfaceItemIdentifier(rawValue: "VideoRightDetailItemCommentSendItem"), for: indexPath)
+                return item
+            } else {
+                let item = collectionView.makeItem(withIdentifier:NSUserInterfaceItemIdentifier(rawValue: "VideoRightDetailItemCommentItem"), for: indexPath)
+                return item
+            }
         } else {
             if indexPath.section == 0 {
                 let item = collectionView.makeItem(withIdentifier:NSUserInterfaceItemIdentifier(rawValue: "VideoRightDetailItemCommentSendItem"), for: indexPath)
@@ -107,9 +124,10 @@ class VideoRightDetailController: NSViewController, NSCollectionViewDelegate, NS
         
     }
 
-    
+    // MARK:- 选择项目
     @IBAction func selectBtnTap(_ sender: NSButton) {
         selectBtn = sender.tag
+        print(selectBtn)
         selectButton()
     }
     
@@ -132,6 +150,7 @@ class VideoRightDetailController: NSViewController, NSCollectionViewDelegate, NS
         button.layer?.backgroundColor = NSColor.init(red: 0, green: 0, blue: 0, alpha: 0.8).cgColor
     }
     
+    // MARK:- 打开或收起
     @IBOutlet weak var openAndCloseBtn: NSButton!
     @IBAction func openAndCloseBtnTap(_ sender: NSButton) {
         var test : CGFloat = 0
@@ -143,13 +162,14 @@ class VideoRightDetailController: NSViewController, NSCollectionViewDelegate, NS
         NSAnimationContext.runAnimationGroup({ (_) in
             NSAnimationContext.current.duration = 0.25
             
-            self.view.animator().frame = CGRect(x: test, y: 0, width: 400, height: self.view.frame.height)
+            self.view.animator().frame = CGRect(x: test, y: (videoWindowDelegate?.videoView?.playerLayer?.frame.minY ?? 0), width: 400, height: self.view.frame.height)
         })
     }
 }
 
 extension VideoRightDetailController: NSCollectionViewDelegateFlowLayout
 {
+    // MARK:- collection 高度计算
     func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> NSSize {
         if selectBtn == 0 {
             return NSSize(width: self.view.frame.width - 20 , height: 37)
@@ -157,23 +177,18 @@ extension VideoRightDetailController: NSCollectionViewDelegateFlowLayout
             if indexPath.section == 0 {
                 return NSSize(width: self.view.frame.width - 20 , height: 200)
             } else {
-                let test = NSTextField(frame: CGRect(x: 0, y: 0, width: self.view.frame.width - 100, height: CGFloat.greatestFiniteMagnitude))
-
-                test.isBezeled = false
-                test.isEditable = false
-                test.cell?.wraps = true
-                test.cell?.truncatesLastVisibleLine = true
-                test.maximumNumberOfLines = 3
-                                test.stringValue = "asldfkajsdflaksjfsalkfjsaflkasjdfalsdjfaslkdfjasldkfsalkfajsdlfajsdfljslfasjflkasjfasdlkfjasljflsa"
-                test.sizeToFit()
-                print(test.intrinsicContentSize.height)
+                // 高度计算
+                let simulateLabel = NSTextField(frame: CGRect(x: 0, y: 0, width: self.view.frame.width - 20 , height: CGFloat.greatestFiniteMagnitude))
+                simulateLabel.font = NSFont.systemFont(ofSize: 13)
+                simulateLabel.stringValue = ""
+                let size = simulateLabel.cell!.cellSize(forBounds: simulateLabel.frame)
                 
-                return NSSize(width: self.view.frame.width - 20 , height: test.frame.height + 74)
+                return NSSize(width: self.view.frame.width - 20 , height: size.height + 74)
             }
         }
     }
     
-    // cell上下距离
+    // MARK:- cell上下距离
     func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }

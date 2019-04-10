@@ -21,7 +21,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="17" id="f9t-mR-8Gf"/>
                     </constraints>
-                    <textFieldCell key="cell" lineBreakMode="charWrapping" truncatesLastVisibleLine="YES" title="标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题" id="n6a-Y7-hZ3">
+                    <textFieldCell key="cell" lineBreakMode="charWrapping" truncatesLastVisibleLine="YES" title="标题" id="n6a-Y7-hZ3">
                         <font key="font" usesAppearanceFont="YES"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>

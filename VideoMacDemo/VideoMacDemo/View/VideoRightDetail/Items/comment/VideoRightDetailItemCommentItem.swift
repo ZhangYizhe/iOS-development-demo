@@ -10,6 +10,8 @@ import Cocoa
 
 class VideoRightDetailItemCommentItem: NSCollectionViewItem {
 
+    @IBOutlet weak var commentTextField: NSTextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.

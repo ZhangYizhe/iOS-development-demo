@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		62108D7B225D86560001B9AD /* VideoBottomDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62108D79225D86560001B9AD /* VideoBottomDetailController.swift */; };
+		62108D7C225D86560001B9AD /* VideoBottomDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62108D7A225D86560001B9AD /* VideoBottomDetail.xib */; };
 		6269350D2255891D000A0A1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6269350C2255891D000A0A1D /* AppDelegate.swift */; };
 		6269350F2255891D000A0A1D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6269350E2255891D000A0A1D /* ViewController.swift */; };
 		626935112255891E000A0A1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 626935102255891E000A0A1D /* Assets.xcassets */; };
@@ -31,6 +33,8 @@
 
 /* Begin PBXFileReference section */
 		2B9017CB0ABDE4A38ADB612A /* Pods-VideoMacDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoMacDemo.release.xcconfig"; path = "Target Support Files/Pods-VideoMacDemo/Pods-VideoMacDemo.release.xcconfig"; sourceTree = "<group>"; };
+		62108D79225D86560001B9AD /* VideoBottomDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoBottomDetailController.swift; sourceTree = "<group>"; };
+		62108D7A225D86560001B9AD /* VideoBottomDetail.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoBottomDetail.xib; sourceTree = "<group>"; };
 		626935092255891D000A0A1D /* VideoMacDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoMacDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6269350C2255891D000A0A1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6269350E2255891D000A0A1D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +81,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		62108D78225D85B30001B9AD /* VideoBottomDetail */ = {
+			isa = PBXGroup;
+			children = (
+				62108D7A225D86560001B9AD /* VideoBottomDetail.xib */,
+				62108D79225D86560001B9AD /* VideoBottomDetailController.swift */,
+			);
+			path = VideoBottomDetail;
+			sourceTree = "<group>";
+		};
 		626935002255891D000A0A1D = {
 			isa = PBXGroup;
 			children = (
@@ -102,28 +115,11 @@
 				626935122255891E000A0A1D /* Main.storyboard */,
 				6269350E2255891D000A0A1D /* ViewController.swift */,
 				6269351F22558953000A0A1D /* View */,
-				626935202255897E000A0A1D /* Controller */,
-				6269351D22558948000A0A1D /* Model */,
-				6269351C22558939000A0A1D /* Video */,
 				626935102255891E000A0A1D /* Assets.xcassets */,
 				626935152255891E000A0A1D /* Info.plist */,
 				626935162255891E000A0A1D /* VideoMacDemo.entitlements */,
 			);
 			path = VideoMacDemo;
-			sourceTree = "<group>";
-		};
-		6269351C22558939000A0A1D /* Video */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Video;
-			sourceTree = "<group>";
-		};
-		6269351D22558948000A0A1D /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		6269351F22558953000A0A1D /* View */ = {
@@ -134,15 +130,9 @@
 				62798A4E225C76BE007461DD /* VideoView */,
 				62798A4F225C76CB007461DD /* VideoControl */,
 				62CD861C225C7FEF009143AE /* VideoRightDetail */,
+				62108D78225D85B30001B9AD /* VideoBottomDetail */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		626935202255897E000A0A1D /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		62798A4E225C76BE007461DD /* VideoView */ = {
@@ -294,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6269352C22558CBE000A0A1D /* VideoView.xib in Resources */,
+				62108D7C225D86560001B9AD /* VideoBottomDetail.xib in Resources */,
 				626935302255A488000A0A1D /* VideoControlView.xib in Resources */,
 				626935112255891E000A0A1D /* Assets.xcassets in Resources */,
 				62CD8620225C802E009143AE /* VideoRightDetail.xib in Resources */,
@@ -365,6 +356,7 @@
 				62CD861F225C802E009143AE /* VideoRightDetailController.swift in Sources */,
 				6269352F2255A488000A0A1D /* VideoControlViewController.swift in Sources */,
 				62693524225589D0000A0A1D /* VideoWindowController.swift in Sources */,
+				62108D7B225D86560001B9AD /* VideoBottomDetailController.swift in Sources */,
 				6269350F2255891D000A0A1D /* ViewController.swift in Sources */,
 				6269350D2255891D000A0A1D /* AppDelegate.swift in Sources */,
 				62CD8629225C993C009143AE /* VideoRightDetailItemsCourseItem.swift in Sources */,

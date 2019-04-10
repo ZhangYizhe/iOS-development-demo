@@ -104,10 +104,10 @@
                             </customSpacing>
                         </stackView>
                         <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="31" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3zj-ix-8wS">
-                            <rect key="frame" x="334" y="5" width="146" height="25"/>
+                            <rect key="frame" x="390" y="10" width="90" height="15"/>
                             <subviews>
                                 <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="5" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jji-Kj-VGa">
-                                    <rect key="frame" x="0.0" y="5" width="90" height="15"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="90" height="15"/>
                                     <subviews>
                                         <button translatesAutoresizingMaskIntoConstraints="NO" id="Tib-Qm-Qze">
                                             <rect key="frame" x="0.0" y="3" width="10" height="10"/>
@@ -153,24 +153,11 @@
                                         <real value="3.4028234663852886e+38"/>
                                     </customSpacing>
                                 </stackView>
-                                <button translatesAutoresizingMaskIntoConstraints="NO" id="gN3-Ug-4Zn">
-                                    <rect key="frame" x="121" y="0.0" width="25" height="25"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="25" id="PgO-lH-0d3"/>
-                                        <constraint firstAttribute="width" constant="25" id="zAW-dp-3cf"/>
-                                    </constraints>
-                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="playlist" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="zH1-dG-iMn">
-                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                        <font key="font" metaFont="system"/>
-                                    </buttonCell>
-                                </button>
                             </subviews>
                             <visibilityPriorities>
                                 <integer value="1000"/>
-                                <integer value="1000"/>
                             </visibilityPriorities>
                             <customSpacing>
-                                <real value="3.4028234663852886e+38"/>
                                 <real value="3.4028234663852886e+38"/>
                             </customSpacing>
                         </stackView>
@@ -197,6 +184,5 @@
         <image name="IconPlaying" width="14" height="10"/>
         <image name="Next" width="30" height="31"/>
         <image name="Play" width="30" height="31"/>
-        <image name="playlist" width="14" height="14"/>
     </resources>
 </document>
