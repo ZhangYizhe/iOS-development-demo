@@ -123,6 +123,12 @@ class VideoRightDetailController: NSViewController, NSCollectionViewDelegate, NS
         }
         
     }
+    
+    func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
+        guard let indexPath = indexPaths.first else { return }
+        guard let row = indexPath.last else { return }
+        
+    }
 
     // MARK:- 选择项目
     @IBAction func selectBtnTap(_ sender: NSButton) {

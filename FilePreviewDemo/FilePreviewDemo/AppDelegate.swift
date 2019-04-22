@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  VideoMacDemo
+//  FilePreviewDemo
 //
-//  Created by Yizhe.Zhang on 2019/4/4.
+//  Created by Yizhe.Zhang on 2019/4/17.
 //  Copyright © 2019 cn.yizheyun. All rights reserved.
 //
 
@@ -15,8 +15,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
-        
-        
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
