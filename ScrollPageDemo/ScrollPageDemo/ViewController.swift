@@ -10,48 +10,18 @@ import Cocoa
 
 class ViewController: NSViewController {
     
-    lazy var scrollView: PageScrollView = {
-        let scrollView = PageScrollView()
-        
-        // scrollerStyle。overlay / legacy。 overlay 的效果，则是 scroller 背景透明，而 legacy 则是 独立出 scroller 的区域
-        scrollView.scrollerStyle = .overlay
-
-        scrollView.hasVerticalScroller = true
-        scrollView.hasHorizontalScroller = true
-        
-        // 滚动条的样式：light、 dark、default。default 的话，其实就是 dark
-        scrollView.scrollerKnobStyle = .dark
-        
-        //  bounce 的效果。elasticity 是弹性的含义。automatic\allowed\none。
-        scrollView.horizontalScrollElasticity = .automatic
-        scrollView.verticalScrollElasticity = .automatic
-        
-        return scrollView
-    }()
+    lazy var scrollView = NSPageScrollView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         scrollView.scrollDirection = { type in
-            switch type {
-            case .left:
-                let newValue = self.scrollView.documentVisibleRect.origin.x + self.scrollView.bounds.width
-                if newValue < self.scrollView.documentView?.frame.size.width ?? 0 {
-                    self.scrollView.scroll(to: NSPoint(x: newValue, y: 0), animationDuration: 0.3)
-                } else {
-                    self.scrollView.documentView?.scroll(NSPoint(x: 0, y: 0))
-                }
-            case .right:
-                let newValue = self.scrollView.documentVisibleRect.origin.x - self.scrollView.bounds.width
-                if newValue >= 0 {
-                    self.scrollView.scroll(to: NSPoint(x: newValue, y: 0), animationDuration: 0.3)
-                } else {
-                    self.scrollView.documentView?.scroll(NSPoint(x: self.scrollView.documentView?.bounds.width ?? 0 - self.scrollView.bounds.width, y: 0))
-                    
-                }
-            default:
-                break
-            }
+            
+            
+        }
+        
+        scrollView.pageCompletion = { page in
+            print(page)
             
         }
         
@@ -81,10 +51,10 @@ class ViewController: NSViewController {
         let itemWidth = self.scrollView.bounds.width
         let itemHeight = self.scrollView.bounds.height
         
-        let _contentView = NSView(frame: CGRect(x: 0, y: 0, width: itemWidth * 10, height: itemHeight))
+        let _contentView = NSView(frame: CGRect(x: 0, y: 0, width: itemWidth * 3, height: itemHeight))
         _contentView.wantsLayer = true
         
-        for i in 0..<10 {
+        for i in 0..<3 {
             let sonView = NSView(frame: CGRect(x: CGFloat(i) * itemWidth, y: 0, width: itemWidth, height: itemHeight))
             
             let red = CGFloat(arc4random()%256)/255.0
@@ -100,7 +70,46 @@ class ViewController: NSViewController {
 
 }
 
-class PageScrollView: NSScrollView {
+class NSPageScrollView: NSScrollView {
+    
+    var timer : Timer? = nil
+    
+    var area:NSTrackingArea!
+    
+    override init(frame frameRect: NSRect) {
+        super.init(frame: frameRect)
+        // scrollerStyle。overlay / legacy。 overlay 的效果，则是 scroller 背景透明，而 legacy 则是 独立出 scroller 的区域
+        //        scrollerStyle = .overlay
+        
+        hasVerticalScroller = false
+        hasHorizontalScroller = false
+        
+        // 滚动条的样式：light、 dark、default。default 的话，其实就是 dark
+        scrollerKnobStyle = .dark
+        
+        //  bounce 的效果。elasticity 是弹性的含义。automatic\allowed\none。
+        horizontalScrollElasticity = .automatic
+        verticalScrollElasticity = .automatic
+//
+//        timer = Timer.new(every: 3.second) {
+//            self.pageSwitch(direction: true)
+//        }
+//
+//        timer?.start()
+    }
+    
+    override func updateTrackingAreas() {
+        super.updateTrackingAreas()
+        let opt = (NSTrackingArea.Options.mouseEnteredAndExited.rawValue | NSTrackingArea.Options.mouseMoved.rawValue | NSTrackingArea.Options.activeAlways.rawValue)
+        
+        area = NSTrackingArea.init(rect: self.bounds, options: NSTrackingArea.Options(rawValue: opt), owner: self, userInfo: nil)
+        
+        self.addTrackingArea(area)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     enum directionType {
         case down
@@ -117,7 +126,9 @@ class PageScrollView: NSScrollView {
             if abs(event.deltaX) > abs(event.deltaY) {
                 if event.deltaX > 0 {
                     scrollDirection(.right)
+                    pageSwitch(direction: false)
                 } else {
+                    pageSwitch(direction: true)
                     scrollDirection(.left)
                 }
             } else {
@@ -132,6 +143,7 @@ class PageScrollView: NSScrollView {
         }
     }
     
+    // MARK: 滚动动画
     var scrollAnimation = false
     func scroll(to point: NSPoint, animationDuration: Double) {
         if scrollAnimation {
@@ -147,45 +159,90 @@ class PageScrollView: NSScrollView {
             self.scrollAnimation = false
         }
     }
-
     
-    var test : CGFloat = 0
+    // MARK: 鼠标监听
+    var mouseMove : CGFloat = 0
     override func mouseDragged(with event: NSEvent) {
         documentView?.scroll(NSPoint(x: documentVisibleRect.origin.x - event.deltaX, y: 0))
-        test += event.deltaX
+        mouseMove += event.deltaX
     }
     
     override func mouseDown(with event: NSEvent) {
-        test = 0
+        mouseMove = 0
     }
     override func mouseUp(with event: NSEvent) {
-        if test > 0 {
-            pageSet(test: false)
+        if mouseMove > 0 {
+            pageSwitch(direction: false)
         } else {
-            pageSet(test: true)
+            pageSwitch(direction: true)
         }
     }
     
-    var page = 0
+    override func mouseEntered(with event: NSEvent) {
+//        timer?.invalidate()
+    }
     
-    func pageSet(test : Bool) {
+    override func mouseExited(with event: NSEvent) {
+//        timer = Timer.new(every: 3.second) {
+//            self.pageSwitch(direction: true)
+//        }
+//        timer?.start()
+    }
+    
+    // MARK: 当前页数
+    var page = 0 {
+        willSet {
+            pageCompletion(newValue)
+        }
+    }
+    var pageCompletion = {(page: Int) in}
+    
+    // MARK: 上一页/下一页动画
+    func pageSwitch(direction : Bool) {
         
-        if test {
-            page += 1
+        var _page = page
+        
+        if direction { // 下一页
+            _page += 1
         } else {
-            page -= 1
+            _page -= 1 // 上一页
         }
         
         let totalPage = Int(((documentView?.bounds.width ?? 0) / self.bounds.width) - 1)
         
-        if page < 0 {
+        if _page < 0 {
             page = totalPage
-        } else if page > totalPage {
+        } else if _page > totalPage {
             page = 0
+        } else {
+            page = _page
         }
         
         scroll(to: NSPoint(x: CGFloat(page) * self.bounds.width, y: 0), animationDuration: 0.3)
     }
-
+    
+    // MARK: - 强制设置页
+    func pageSet(_ index: Int) {
+        let totalPage = Int(((documentView?.bounds.width ?? 0) / self.bounds.width) - 1)
+        
+        if index < 0 {
+            page = totalPage
+        } else if index > totalPage {
+            page = 0
+        } else {
+            page = index
+        }
+        
+        documentView?.scroll(NSPoint(x: CGFloat(page) * self.bounds.width, y: 0))
+    }
+    
+    
+    deinit {
+        self.removeTrackingArea(area)
+        timer?.invalidate()
+        timer = nil
+    }
+    
 }
+
 
