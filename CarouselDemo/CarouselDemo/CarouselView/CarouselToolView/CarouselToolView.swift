@@ -111,7 +111,11 @@ class CarouselToolView: NSView {
         let relativeX = event.locationInWindow.x - a
         
         if relativeX > 0 && relativeX < b {
-            index = Int(relativeX / (dotDiameter + dotSpacing)) + 1
+            let newValue = Int(relativeX / (dotDiameter + dotSpacing)) + 1
+            if index == newValue {
+                return
+            }
+            index = newValue
         }
         
     }

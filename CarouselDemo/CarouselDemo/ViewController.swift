@@ -10,7 +10,7 @@ import Cocoa
 
 class ViewController: NSViewController {
     
-    let content = CarouselView(nibName: "CarouselView", bundle: nil)
+    let content = NSCarouselView(nibName: "NSCarouselView", bundle: nil)
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -1,0 +1,24 @@
+PODS:
+  - Kingfisher (5.5.0)
+  - SnapKit (5.0.0)
+  - SwiftyTimer (2.1.0)
+
+DEPENDENCIES:
+  - Kingfisher
+  - SnapKit
+  - SwiftyTimer
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Kingfisher
+    - SnapKit
+    - SwiftyTimer
+
+SPEC CHECKSUMS:
+  Kingfisher: 6fe5e67a90fd335e49b0f5c075ff55ac5ebedd94
+  SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
+  SwiftyTimer: 02dd6cf10cbc71cbf67cec494f6e5eb782102543
+
+PODFILE CHECKSUM: 647a6031f630d8bd263de0ca90f8f0bcb29773b3
+
+COCOAPODS: 1.6.1
