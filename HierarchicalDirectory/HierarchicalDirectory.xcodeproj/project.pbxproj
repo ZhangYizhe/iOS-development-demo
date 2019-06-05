@@ -1,0 +1,802 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6281BFC722A752CB00161FAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6281BFC622A752CB00161FAA /* AppDelegate.swift */; };
+		6281BFC922A752CB00161FAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6281BFC822A752CB00161FAA /* Assets.xcassets */; };
+		6281BFCC22A752CB00161FAA /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6281BFCA22A752CB00161FAA /* MainMenu.xib */; };
+		6281BFD822A752CC00161FAA /* HierarchicalDirectoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6281BFD722A752CC00161FAA /* HierarchicalDirectoryTests.swift */; };
+		6281BFE322A752CC00161FAA /* HierarchicalDirectoryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6281BFE222A752CC00161FAA /* HierarchicalDirectoryUITests.swift */; };
+		6281BFF422A7530800161FAA /* MainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6281BFF222A7530800161FAA /* MainWindow.swift */; };
+		6281BFF522A7530800161FAA /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6281BFF322A7530800161FAA /* MainWindow.xib */; };
+		6281BFF922A753EB00161FAA /* HierarchicalDirectoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6281BFF722A753EB00161FAA /* HierarchicalDirectoryView.swift */; };
+		6281BFFA22A753EB00161FAA /* HierarchicalDirectoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6281BFF822A753EB00161FAA /* HierarchicalDirectoryView.xib */; };
+		6281BFFC22A763E900161FAA /* HierarchicalDirectoryTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6281BFFB22A763E900161FAA /* HierarchicalDirectoryTableCell.swift */; };
+		6281BFFF22A7641A00161FAA /* HierarchicalDirectoryTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6281BFFE22A7641A00161FAA /* HierarchicalDirectoryTableCell.xib */; };
+		6281C03F22A775AF00161FAA /* NSLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6281C03E22A775AF00161FAA /* NSLabel.swift */; };
+		6281C04222A7AE0700161FAA /* NSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6281C04122A7AE0700161FAA /* NSColor.swift */; };
+		6281C04422A7AE1200161FAA /* NSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6281C04322A7AE1200161FAA /* NSView.swift */; };
+		6281C04722A7B87800161FAA /* HierarchicalDirectoryOutlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6281C04622A7B87800161FAA /* HierarchicalDirectoryOutlineView.swift */; };
+		8C10636519709396ED853A63 /* Pods_HierarchicalDirectory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B19F0670542C4298BCFA93C /* Pods_HierarchicalDirectory.framework */; };
+		8E86FB483EB6A9B49BFD7371 /* Pods_HierarchicalDirectoryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6246C1B7239CEC26BE2625C3 /* Pods_HierarchicalDirectoryTests.framework */; };
+		FEB183FF4F86086D445D9015 /* Pods_HierarchicalDirectoryUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3E557F287C9E208F58F81F4 /* Pods_HierarchicalDirectoryUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6281BFD422A752CC00161FAA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6281BFBB22A752CA00161FAA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6281BFC222A752CA00161FAA;
+			remoteInfo = HierarchicalDirectory;
+		};
+		6281BFDF22A752CC00161FAA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6281BFBB22A752CA00161FAA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6281BFC222A752CA00161FAA;
+			remoteInfo = HierarchicalDirectory;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0C348EAB39FBA352445B42CE /* Pods-HierarchicalDirectoryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HierarchicalDirectoryTests.release.xcconfig"; path = "Target Support Files/Pods-HierarchicalDirectoryTests/Pods-HierarchicalDirectoryTests.release.xcconfig"; sourceTree = "<group>"; };
+		2B5AAC10E7E79DBDD510F987 /* Pods-HierarchicalDirectory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HierarchicalDirectory.release.xcconfig"; path = "Target Support Files/Pods-HierarchicalDirectory/Pods-HierarchicalDirectory.release.xcconfig"; sourceTree = "<group>"; };
+		6246C1B7239CEC26BE2625C3 /* Pods_HierarchicalDirectoryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HierarchicalDirectoryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6281BFC322A752CB00161FAA /* HierarchicalDirectory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HierarchicalDirectory.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6281BFC622A752CB00161FAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6281BFC822A752CB00161FAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6281BFCB22A752CB00161FAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		6281BFCD22A752CB00161FAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6281BFCE22A752CB00161FAA /* HierarchicalDirectory.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HierarchicalDirectory.entitlements; sourceTree = "<group>"; };
+		6281BFD322A752CC00161FAA /* HierarchicalDirectoryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HierarchicalDirectoryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6281BFD722A752CC00161FAA /* HierarchicalDirectoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HierarchicalDirectoryTests.swift; sourceTree = "<group>"; };
+		6281BFD922A752CC00161FAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6281BFDE22A752CC00161FAA /* HierarchicalDirectoryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HierarchicalDirectoryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6281BFE222A752CC00161FAA /* HierarchicalDirectoryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HierarchicalDirectoryUITests.swift; sourceTree = "<group>"; };
+		6281BFE422A752CC00161FAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6281BFF222A7530800161FAA /* MainWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindow.swift; sourceTree = "<group>"; };
+		6281BFF322A7530800161FAA /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		6281BFF722A753EB00161FAA /* HierarchicalDirectoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HierarchicalDirectoryView.swift; sourceTree = "<group>"; };
+		6281BFF822A753EB00161FAA /* HierarchicalDirectoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HierarchicalDirectoryView.xib; sourceTree = "<group>"; };
+		6281BFFB22A763E900161FAA /* HierarchicalDirectoryTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HierarchicalDirectoryTableCell.swift; sourceTree = "<group>"; };
+		6281BFFE22A7641A00161FAA /* HierarchicalDirectoryTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HierarchicalDirectoryTableCell.xib; sourceTree = "<group>"; };
+		6281C03E22A775AF00161FAA /* NSLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLabel.swift; sourceTree = "<group>"; };
+		6281C04122A7AE0700161FAA /* NSColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSColor.swift; sourceTree = "<group>"; };
+		6281C04322A7AE1200161FAA /* NSView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSView.swift; sourceTree = "<group>"; };
+		6281C04622A7B87800161FAA /* HierarchicalDirectoryOutlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HierarchicalDirectoryOutlineView.swift; sourceTree = "<group>"; };
+		74F61246674A9F5DF749A111 /* Pods-HierarchicalDirectoryUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HierarchicalDirectoryUITests.debug.xcconfig"; path = "Target Support Files/Pods-HierarchicalDirectoryUITests/Pods-HierarchicalDirectoryUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		859B6F6A9955AE333D755E9D /* Pods-HierarchicalDirectoryUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HierarchicalDirectoryUITests.release.xcconfig"; path = "Target Support Files/Pods-HierarchicalDirectoryUITests/Pods-HierarchicalDirectoryUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9B19F0670542C4298BCFA93C /* Pods_HierarchicalDirectory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HierarchicalDirectory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE3254CF9241C728B152F098 /* Pods-HierarchicalDirectoryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HierarchicalDirectoryTests.debug.xcconfig"; path = "Target Support Files/Pods-HierarchicalDirectoryTests/Pods-HierarchicalDirectoryTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D1FFFFAFDE82976FC449F639 /* Pods-HierarchicalDirectory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HierarchicalDirectory.debug.xcconfig"; path = "Target Support Files/Pods-HierarchicalDirectory/Pods-HierarchicalDirectory.debug.xcconfig"; sourceTree = "<group>"; };
+		F3E557F287C9E208F58F81F4 /* Pods_HierarchicalDirectoryUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HierarchicalDirectoryUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6281BFC022A752CA00161FAA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C10636519709396ED853A63 /* Pods_HierarchicalDirectory.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6281BFD022A752CC00161FAA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E86FB483EB6A9B49BFD7371 /* Pods_HierarchicalDirectoryTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6281BFDB22A752CC00161FAA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEB183FF4F86086D445D9015 /* Pods_HierarchicalDirectoryUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6281BFBA22A752CA00161FAA = {
+			isa = PBXGroup;
+			children = (
+				6281BFC522A752CB00161FAA /* HierarchicalDirectory */,
+				6281BFD622A752CC00161FAA /* HierarchicalDirectoryTests */,
+				6281BFE122A752CC00161FAA /* HierarchicalDirectoryUITests */,
+				6281BFC422A752CB00161FAA /* Products */,
+				B74F06A904BE4008BC38E293 /* Pods */,
+				DABC001EE6D543A984C9F877 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		6281BFC422A752CB00161FAA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6281BFC322A752CB00161FAA /* HierarchicalDirectory.app */,
+				6281BFD322A752CC00161FAA /* HierarchicalDirectoryTests.xctest */,
+				6281BFDE22A752CC00161FAA /* HierarchicalDirectoryUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6281BFC522A752CB00161FAA /* HierarchicalDirectory */ = {
+			isa = PBXGroup;
+			children = (
+				6281BFC622A752CB00161FAA /* AppDelegate.swift */,
+				6281BFC822A752CB00161FAA /* Assets.xcassets */,
+				6281BFCA22A752CB00161FAA /* MainMenu.xib */,
+				6281BFF022A752E800161FAA /* View */,
+				6281C04022A775B500161FAA /* Extension */,
+				6281BFCD22A752CB00161FAA /* Info.plist */,
+				6281BFCE22A752CB00161FAA /* HierarchicalDirectory.entitlements */,
+			);
+			path = HierarchicalDirectory;
+			sourceTree = "<group>";
+		};
+		6281BFD622A752CC00161FAA /* HierarchicalDirectoryTests */ = {
+			isa = PBXGroup;
+			children = (
+				6281BFD722A752CC00161FAA /* HierarchicalDirectoryTests.swift */,
+				6281BFD922A752CC00161FAA /* Info.plist */,
+			);
+			path = HierarchicalDirectoryTests;
+			sourceTree = "<group>";
+		};
+		6281BFE122A752CC00161FAA /* HierarchicalDirectoryUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6281BFE222A752CC00161FAA /* HierarchicalDirectoryUITests.swift */,
+				6281BFE422A752CC00161FAA /* Info.plist */,
+			);
+			path = HierarchicalDirectoryUITests;
+			sourceTree = "<group>";
+		};
+		6281BFF022A752E800161FAA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6281BFF122A752EC00161FAA /* MainWindow */,
+				6281BFF622A753B500161FAA /* HierarchicalDirectoryView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6281BFF122A752EC00161FAA /* MainWindow */ = {
+			isa = PBXGroup;
+			children = (
+				6281BFF322A7530800161FAA /* MainWindow.xib */,
+				6281BFF222A7530800161FAA /* MainWindow.swift */,
+			);
+			path = MainWindow;
+			sourceTree = "<group>";
+		};
+		6281BFF622A753B500161FAA /* HierarchicalDirectoryView */ = {
+			isa = PBXGroup;
+			children = (
+				6281BFF822A753EB00161FAA /* HierarchicalDirectoryView.xib */,
+				6281BFF722A753EB00161FAA /* HierarchicalDirectoryView.swift */,
+				6281C04522A7B86600161FAA /* HierarchicalDirectoryOutlineView */,
+				6281BFFD22A7641100161FAA /* HierarchicalDirectoryTableCell */,
+			);
+			path = HierarchicalDirectoryView;
+			sourceTree = "<group>";
+		};
+		6281BFFD22A7641100161FAA /* HierarchicalDirectoryTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				6281BFFE22A7641A00161FAA /* HierarchicalDirectoryTableCell.xib */,
+				6281BFFB22A763E900161FAA /* HierarchicalDirectoryTableCell.swift */,
+			);
+			path = HierarchicalDirectoryTableCell;
+			sourceTree = "<group>";
+		};
+		6281C04022A775B500161FAA /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				6281C04322A7AE1200161FAA /* NSView.swift */,
+				6281C04122A7AE0700161FAA /* NSColor.swift */,
+				6281C03E22A775AF00161FAA /* NSLabel.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		6281C04522A7B86600161FAA /* HierarchicalDirectoryOutlineView */ = {
+			isa = PBXGroup;
+			children = (
+				6281C04622A7B87800161FAA /* HierarchicalDirectoryOutlineView.swift */,
+			);
+			path = HierarchicalDirectoryOutlineView;
+			sourceTree = "<group>";
+		};
+		B74F06A904BE4008BC38E293 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D1FFFFAFDE82976FC449F639 /* Pods-HierarchicalDirectory.debug.xcconfig */,
+				2B5AAC10E7E79DBDD510F987 /* Pods-HierarchicalDirectory.release.xcconfig */,
+				AE3254CF9241C728B152F098 /* Pods-HierarchicalDirectoryTests.debug.xcconfig */,
+				0C348EAB39FBA352445B42CE /* Pods-HierarchicalDirectoryTests.release.xcconfig */,
+				74F61246674A9F5DF749A111 /* Pods-HierarchicalDirectoryUITests.debug.xcconfig */,
+				859B6F6A9955AE333D755E9D /* Pods-HierarchicalDirectoryUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DABC001EE6D543A984C9F877 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9B19F0670542C4298BCFA93C /* Pods_HierarchicalDirectory.framework */,
+				6246C1B7239CEC26BE2625C3 /* Pods_HierarchicalDirectoryTests.framework */,
+				F3E557F287C9E208F58F81F4 /* Pods_HierarchicalDirectoryUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6281BFC222A752CA00161FAA /* HierarchicalDirectory */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6281BFE722A752CC00161FAA /* Build configuration list for PBXNativeTarget "HierarchicalDirectory" */;
+			buildPhases = (
+				44EFAD720A524A04BE666866 /* [CP] Check Pods Manifest.lock */,
+				6281BFBF22A752CA00161FAA /* Sources */,
+				6281BFC022A752CA00161FAA /* Frameworks */,
+				6281BFC122A752CA00161FAA /* Resources */,
+				EABDC3EB8DC964007E2F6E7E /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HierarchicalDirectory;
+			productName = HierarchicalDirectory;
+			productReference = 6281BFC322A752CB00161FAA /* HierarchicalDirectory.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6281BFD222A752CC00161FAA /* HierarchicalDirectoryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6281BFEA22A752CC00161FAA /* Build configuration list for PBXNativeTarget "HierarchicalDirectoryTests" */;
+			buildPhases = (
+				018F607C110EC628C4B67E21 /* [CP] Check Pods Manifest.lock */,
+				6281BFCF22A752CC00161FAA /* Sources */,
+				6281BFD022A752CC00161FAA /* Frameworks */,
+				6281BFD122A752CC00161FAA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6281BFD522A752CC00161FAA /* PBXTargetDependency */,
+			);
+			name = HierarchicalDirectoryTests;
+			productName = HierarchicalDirectoryTests;
+			productReference = 6281BFD322A752CC00161FAA /* HierarchicalDirectoryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6281BFDD22A752CC00161FAA /* HierarchicalDirectoryUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6281BFED22A752CC00161FAA /* Build configuration list for PBXNativeTarget "HierarchicalDirectoryUITests" */;
+			buildPhases = (
+				BCF2F2692D99410DF5FF02BB /* [CP] Check Pods Manifest.lock */,
+				6281BFDA22A752CC00161FAA /* Sources */,
+				6281BFDB22A752CC00161FAA /* Frameworks */,
+				6281BFDC22A752CC00161FAA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6281BFE022A752CC00161FAA /* PBXTargetDependency */,
+			);
+			name = HierarchicalDirectoryUITests;
+			productName = HierarchicalDirectoryUITests;
+			productReference = 6281BFDE22A752CC00161FAA /* HierarchicalDirectoryUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6281BFBB22A752CA00161FAA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "张艺哲";
+				TargetAttributes = {
+					6281BFC222A752CA00161FAA = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					6281BFD222A752CC00161FAA = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 6281BFC222A752CA00161FAA;
+					};
+					6281BFDD22A752CC00161FAA = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 6281BFC222A752CA00161FAA;
+					};
+				};
+			};
+			buildConfigurationList = 6281BFBE22A752CA00161FAA /* Build configuration list for PBXProject "HierarchicalDirectory" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6281BFBA22A752CA00161FAA;
+			productRefGroup = 6281BFC422A752CB00161FAA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6281BFC222A752CA00161FAA /* HierarchicalDirectory */,
+				6281BFD222A752CC00161FAA /* HierarchicalDirectoryTests */,
+				6281BFDD22A752CC00161FAA /* HierarchicalDirectoryUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6281BFC122A752CA00161FAA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6281BFC922A752CB00161FAA /* Assets.xcassets in Resources */,
+				6281BFFA22A753EB00161FAA /* HierarchicalDirectoryView.xib in Resources */,
+				6281BFCC22A752CB00161FAA /* MainMenu.xib in Resources */,
+				6281BFFF22A7641A00161FAA /* HierarchicalDirectoryTableCell.xib in Resources */,
+				6281BFF522A7530800161FAA /* MainWindow.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6281BFD122A752CC00161FAA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6281BFDC22A752CC00161FAA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		018F607C110EC628C4B67E21 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HierarchicalDirectoryTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		44EFAD720A524A04BE666866 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HierarchicalDirectory-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BCF2F2692D99410DF5FF02BB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HierarchicalDirectoryUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EABDC3EB8DC964007E2F6E7E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HierarchicalDirectory/Pods-HierarchicalDirectory-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HierarchicalDirectory/Pods-HierarchicalDirectory-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HierarchicalDirectory/Pods-HierarchicalDirectory-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6281BFBF22A752CA00161FAA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6281C04722A7B87800161FAA /* HierarchicalDirectoryOutlineView.swift in Sources */,
+				6281C04422A7AE1200161FAA /* NSView.swift in Sources */,
+				6281BFF922A753EB00161FAA /* HierarchicalDirectoryView.swift in Sources */,
+				6281BFF422A7530800161FAA /* MainWindow.swift in Sources */,
+				6281BFFC22A763E900161FAA /* HierarchicalDirectoryTableCell.swift in Sources */,
+				6281C03F22A775AF00161FAA /* NSLabel.swift in Sources */,
+				6281C04222A7AE0700161FAA /* NSColor.swift in Sources */,
+				6281BFC722A752CB00161FAA /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6281BFCF22A752CC00161FAA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6281BFD822A752CC00161FAA /* HierarchicalDirectoryTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6281BFDA22A752CC00161FAA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6281BFE322A752CC00161FAA /* HierarchicalDirectoryUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6281BFD522A752CC00161FAA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6281BFC222A752CA00161FAA /* HierarchicalDirectory */;
+			targetProxy = 6281BFD422A752CC00161FAA /* PBXContainerItemProxy */;
+		};
+		6281BFE022A752CC00161FAA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6281BFC222A752CA00161FAA /* HierarchicalDirectory */;
+			targetProxy = 6281BFDF22A752CC00161FAA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6281BFCA22A752CB00161FAA /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6281BFCB22A752CB00161FAA /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6281BFE522A752CC00161FAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6281BFE622A752CC00161FAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		6281BFE822A752CC00161FAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1FFFFAFDE82976FC449F639 /* Pods-HierarchicalDirectory.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HierarchicalDirectory/HierarchicalDirectory.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = UR6X4CRK5E;
+				INFOPLIST_FILE = HierarchicalDirectory/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yizheyun.HierarchicalDirectory;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		6281BFE922A752CC00161FAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B5AAC10E7E79DBDD510F987 /* Pods-HierarchicalDirectory.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HierarchicalDirectory/HierarchicalDirectory.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = UR6X4CRK5E;
+				INFOPLIST_FILE = HierarchicalDirectory/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yizheyun.HierarchicalDirectory;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		6281BFEB22A752CC00161FAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE3254CF9241C728B152F098 /* Pods-HierarchicalDirectoryTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = UR6X4CRK5E;
+				INFOPLIST_FILE = HierarchicalDirectoryTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yizheyun.HierarchicalDirectoryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HierarchicalDirectory.app/Contents/MacOS/HierarchicalDirectory";
+			};
+			name = Debug;
+		};
+		6281BFEC22A752CC00161FAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C348EAB39FBA352445B42CE /* Pods-HierarchicalDirectoryTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = UR6X4CRK5E;
+				INFOPLIST_FILE = HierarchicalDirectoryTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yizheyun.HierarchicalDirectoryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HierarchicalDirectory.app/Contents/MacOS/HierarchicalDirectory";
+			};
+			name = Release;
+		};
+		6281BFEE22A752CC00161FAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74F61246674A9F5DF749A111 /* Pods-HierarchicalDirectoryUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = UR6X4CRK5E;
+				INFOPLIST_FILE = HierarchicalDirectoryUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yizheyun.HierarchicalDirectoryUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = HierarchicalDirectory;
+			};
+			name = Debug;
+		};
+		6281BFEF22A752CC00161FAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 859B6F6A9955AE333D755E9D /* Pods-HierarchicalDirectoryUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = UR6X4CRK5E;
+				INFOPLIST_FILE = HierarchicalDirectoryUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yizheyun.HierarchicalDirectoryUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = HierarchicalDirectory;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6281BFBE22A752CA00161FAA /* Build configuration list for PBXProject "HierarchicalDirectory" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6281BFE522A752CC00161FAA /* Debug */,
+				6281BFE622A752CC00161FAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6281BFE722A752CC00161FAA /* Build configuration list for PBXNativeTarget "HierarchicalDirectory" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6281BFE822A752CC00161FAA /* Debug */,
+				6281BFE922A752CC00161FAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6281BFEA22A752CC00161FAA /* Build configuration list for PBXNativeTarget "HierarchicalDirectoryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6281BFEB22A752CC00161FAA /* Debug */,
+				6281BFEC22A752CC00161FAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6281BFED22A752CC00161FAA /* Build configuration list for PBXNativeTarget "HierarchicalDirectoryUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6281BFEE22A752CC00161FAA /* Debug */,
+				6281BFEF22A752CC00161FAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6281BFBB22A752CA00161FAA /* Project object */;
+}
