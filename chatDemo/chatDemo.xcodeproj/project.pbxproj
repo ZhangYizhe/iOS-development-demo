@@ -23,6 +23,8 @@
 		629652A522994A0A00131184 /* NSLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629652A422994A0A00131184 /* NSLabel.swift */; };
 		629652A722994B2500131184 /* NSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629652A622994B2500131184 /* NSColor.swift */; };
 		629652A922994B3D00131184 /* NSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629652A822994B3D00131184 /* NSView.swift */; };
+		62F4304A229CC5D500CEE534 /* ChatDetailTimeHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62F43049229CC5D500CEE534 /* ChatDetailTimeHeader.xib */; };
+		62F4304C229CC5E400CEE534 /* ChatDetailTimeHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F4304B229CC5E400CEE534 /* ChatDetailTimeHeader.swift */; };
 		698FFA0F4F4D1DE629878661 /* Pods_chatDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A209815978F5986DF19A61D0 /* Pods_chatDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +49,8 @@
 		629652A422994A0A00131184 /* NSLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLabel.swift; sourceTree = "<group>"; };
 		629652A622994B2500131184 /* NSColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSColor.swift; sourceTree = "<group>"; };
 		629652A822994B3D00131184 /* NSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSView.swift; sourceTree = "<group>"; };
+		62F43049229CC5D500CEE534 /* ChatDetailTimeHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatDetailTimeHeader.xib; sourceTree = "<group>"; };
+		62F4304B229CC5E400CEE534 /* ChatDetailTimeHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDetailTimeHeader.swift; sourceTree = "<group>"; };
 		8C6F5A4B58ABB5B7236CBCE1 /* Pods-chatDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chatDemo.debug.xcconfig"; path = "Target Support Files/Pods-chatDemo/Pods-chatDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		A209815978F5986DF19A61D0 /* Pods_chatDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_chatDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -118,8 +122,10 @@
 			children = (
 				629652A0229949BA00131184 /* ChatDetailView.xib */,
 				6296529F229949BA00131184 /* ChatDetailView.swift */,
-				625CB2FF229BC41E00179077 /* ChatDetailTextView.swift */,
+				62F43048229CC58200CEE534 /* ChatDetailTimeHeader */,
 				625CB2ED229B713500179077 /* ChatDetailTextItem */,
+				62F43046229CC3C300CEE534 /* InputTextView */,
+				62F43047229CC3EE00CEE534 /* CollectionViewFlowLayout */,
 			);
 			path = ChatDetailView;
 			sourceTree = "<group>";
@@ -132,10 +138,34 @@
 				629652A622994B2500131184 /* NSColor.swift */,
 				629652A822994B3D00131184 /* NSView.swift */,
 				625CB2F9229BB9A100179077 /* NSCollectionView.swift */,
-				625CB2F7229B841700179077 /* ChatDetailCollectionviewFlowLayout.swift */,
 				625CB2FD229BC1D200179077 /* String.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		62F43046229CC3C300CEE534 /* InputTextView */ = {
+			isa = PBXGroup;
+			children = (
+				625CB2FF229BC41E00179077 /* ChatDetailTextView.swift */,
+			);
+			path = InputTextView;
+			sourceTree = "<group>";
+		};
+		62F43047229CC3EE00CEE534 /* CollectionViewFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				625CB2F7229B841700179077 /* ChatDetailCollectionviewFlowLayout.swift */,
+			);
+			path = CollectionViewFlowLayout;
+			sourceTree = "<group>";
+		};
+		62F43048229CC58200CEE534 /* ChatDetailTimeHeader */ = {
+			isa = PBXGroup;
+			children = (
+				62F43049229CC5D500CEE534 /* ChatDetailTimeHeader.xib */,
+				62F4304B229CC5E400CEE534 /* ChatDetailTimeHeader.swift */,
+			);
+			path = ChatDetailTimeHeader;
 			sourceTree = "<group>";
 		};
 		665DCC9E322763C4D4BB0C27 /* Pods */ = {
@@ -215,6 +245,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62F4304A229CC5D500CEE534 /* ChatDetailTimeHeader.xib in Resources */,
 				629652A2229949BA00131184 /* ChatDetailView.xib in Resources */,
 				629652922299493800131184 /* Assets.xcassets in Resources */,
 				625CB2F1229B715600179077 /* ChatDetailTextItem.xib in Resources */,
@@ -287,6 +318,7 @@
 				625CB2FA229BB9A100179077 /* NSCollectionView.swift in Sources */,
 				629652A722994B2500131184 /* NSColor.swift in Sources */,
 				625CB300229BC41E00179077 /* ChatDetailTextView.swift in Sources */,
+				62F4304C229CC5E400CEE534 /* ChatDetailTimeHeader.swift in Sources */,
 				625CB2F8229B841700179077 /* ChatDetailCollectionviewFlowLayout.swift in Sources */,
 				629652A522994A0A00131184 /* NSLabel.swift in Sources */,
 				625CB2FC229BC15E00179077 /* NSAttributedString.swift in Sources */,
