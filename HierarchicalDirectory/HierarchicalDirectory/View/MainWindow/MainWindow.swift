@@ -23,6 +23,25 @@ class MainWindow: NSWindowController, NSWindowDelegate{
         self.window?.delegate = self
         
         self.contentViewController = hierarchicalDirectoryViewController
+        
+        var items = HierarchicalDirectoryViewController.Item()
+        
+        items.name = "公司名称"
+        
+        items.childs = [HierarchicalDirectoryViewController.Item(),HierarchicalDirectoryViewController.Item(),HierarchicalDirectoryViewController.Item()]
+        
+        items.childs[0] = items
+        items.childs[0].childs = [items]
+        items.childs[2] = items
+        items.childs[2] = items
+        items.childs[2] = items
+        
+        hierarchicalDirectoryViewController.items = items
+        hierarchicalDirectoryViewController.itemClickedCompletion = {(item) in
+            
+        }
+        
+        
 //        hierarchicalDirectoryViewController.view.snp.makeConstraints { (make) in
 //            make.edges.equalToSuperview()
 //        }

@@ -39,7 +39,7 @@ class ViewController: UIViewController {
     // MARK: - 界面初始化
     func initView() {
         // 检测连接是否存在 不存在报错
-        guard let url = URL(string: "http://qiniu.yizheyun.cn/iphone.mp4") else { fatalError("连接错误") }
+        guard let url = URL(string: "https://www.apple.com/105/media/cn/iphone-xs/2018/674b340a-40f1-4156-bbea-00f386459d3c/films/design/iphone-xs-design-tpl-cn-2018_1280x720h.mp4") else { fatalError("连接错误") }
         playerItem = AVPlayerItem(url: url)
         avplayer = AVPlayer(playerItem: playerItem)
         playerLayer = AVPlayerLayer(player: avplayer)

@@ -12,22 +12,14 @@ class HierarchicalDirectoryViewController: NSViewController,NSOutlineViewDelegat
     
     @IBOutlet weak var outlineView: NSOutlineView!
 
-    var items = Item()
+    var items = Item() {
+        didSet {
+            outlineView.reloadData()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        items.name = "公司名称"
-        
-        items.childs = [Item(),Item(),Item()]
-        
-        items.childs[0] = items
-        items.childs[0].childs = [items]
-        items.childs[2] = items
-        items.childs[2] = items
-        items.childs[2] = items
-        
-        
         initOutlineView()
     }
     
@@ -85,6 +77,8 @@ class HierarchicalDirectoryViewController: NSViewController,NSOutlineViewDelegat
         return HierarchicalDirectoryOutlineViewNSTableRowView()
     }
 
+    // 当点击时
+    var itemClickedCompletion = {(item: Item) in}
     @objc private func onItemClicked() {
         
         let clickItem = outlineView.item(atRow: outlineView.clickedRow)
@@ -94,6 +88,12 @@ class HierarchicalDirectoryViewController: NSViewController,NSOutlineViewDelegat
         } else {
             outlineView.collapseItem(clickItem)
         }
+        
+        guard let item : Item = clickItem as? Item else {
+            return
+        }
+        
+        itemClickedCompletion(item)
     }
     
     struct Item {
