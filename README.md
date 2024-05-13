@@ -2,36 +2,36 @@
 
 ### websocketDemo
 
-im通讯小样
+im communication sample
 
 ### SwiftQRCamera
-二维码扫描相机
+QR code scanning camera
 
 ### pictureWindow
-大图浏览
+Large image view
 
 ### themeManage
-主题管理
+Topic management
 
 ### MultipleColumns
-多栏目滑动与返回
+Multi-column sliding and return
 
 ### video
-在线视频模块
+Online video module
 
 ### MachineLearn
-机器学习
+Machine learning
 
 ### FrameworkTest
 
-Framework打包与引入
+Framework packaging and introduction
 
-### Swift5 新特性
+### Swift5 new features
 
-#### 错误返回机制Result
+#### Error return mechanism Result
 
-#### 异步回调的应用
+#### Application of asynchronous callback
 
-### XMind 连线Demo
+### XMind Connection Demo
 
-### 爱奇艺轮播小样
+### iQIYI carousel demo
